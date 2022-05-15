@@ -1,0 +1,6 @@
+# Required files:
+urllib3>=1.25.8
+bs4>=0.0.1
+requests>=2.23.0
+nmap>=0.7.1
+

@@ -1,5 +1,4 @@
 from unicodedata import name
-import socket
 import nmap
 import time
 
@@ -9,7 +8,7 @@ def port_scan(target,ports):
         scanner = nmap.PortScanner()
         startTime = time.time()
         # scannen van hosts op bepaalde poorten volgens bepaalde nmap flags
-        scanner.scan(target, ports=ports, arguments='-T4 -A -v')
+        scanner.scan(target, ports=ports, arguments='-T3 -v')
         hostlist = scanner.all_hosts()
         # door alle gescande hosts loopen
         for host in hostlist:
@@ -21,14 +20,18 @@ def port_scan(target,ports):
                 # per host het ip en hostname ophalen en printen waar mogelijk
                 print('-----------------------')
                 print('Host : %s (%s)' % (host, hostname))
+                print('State : %s' % scanner[host].state())
                 for protocol in scanner[host].all_protocols():
                     print('-----')
                     print('Protocol : %s' % protocol)
 
                     portList = sorted(scanner[host][protocol])
                     for port in portList:
-                            print('port : %s\tstatus : %s\tservice : %s' % (port, scanner[host][protocol][port]['state'], scanner[host][protocol][port]['name']))
-                    print('\n')
+                            print('poort : ', port,
+                            '\tstatus : ', scanner[host][protocol][port]['state'],
+                            ' \tservice : ', scanner[host][protocol][port]['name'])
+                    # print(scanner[host])
+                    # print('\n')
             except KeyError as e:
                 print(e)
                 return False
@@ -46,6 +49,5 @@ def port_scan(target,ports):
     print('-----------------------')
     print('De scan heeft', format(totalTime, ".2f"), 'seconden geduurd.')
     print(totalHosts, 'host(s) gescand.')
-    print('-----------------------')
 
-# portScan('localhost', '1-5')
+# port_scan('192.168.1.1', 'http')

@@ -7,8 +7,8 @@ def header_checker(url):
         resp = requests.get(url)
         if resp.status_code == 200:
             print('-----------------------')
-            print('Response header opgehaald van', url)
-            print('Controleren op NOREA waarden:')
+            print('[i] Response header opgehaald van', url)
+            print('[i] Controleren op NOREA waarden...')
             print('-----')
 
             # X-Content-Type-Options
@@ -16,11 +16,11 @@ def header_checker(url):
             try:
                 x_content_type = resp.headers['X-Content-Type-Options']
                 if 'nosniff' in x_content_type:
-                    print('[*] X-Content-Type-Options staan juist ingesteld volgens de aanbevolen waarden van NOREA.')
+                    print('[*] X-Content-Type-Options staat juist ingesteld volgens de aanbevolen waarden van NOREA.')
                 else:
-                    print('[*] X-Content-Type-Options voldoet niet aan de eisen van NOREA, ', x_content_type)
+                    print('[!] X-Content-Type-Options voldoet niet aan de eisen van NOREA.')
             except:
-                print('[*] X-Content-Type-Options mist.')
+                print('[!] X-Content-Type-Options mist.')
 
             # Content-Security-Policy
             # unsafe-eval/unsafe-inline + nonce = goed
@@ -29,14 +29,14 @@ def header_checker(url):
             try:
                 content_security = resp.headers['Content-Security-Policy']
                 # print(content_security)
-                if (('unsafe-eval' or 'unsafe-inline' in content_security) and ('nonce' in content_security)):
+                if (('unsafe-eval' and 'unsafe-inline') and ('nonce' in content_security) in content_security):
                     print('[*] Content-Security-Policy maakt gebruik van unsafe-eval of unsafe-inline met een nonce.')
-                elif 'unsafe-eval' or 'unsafe-inline' not in content_security:
+                elif ('unsafe-eval' and 'unsafe-inline') not in content_security:
                     print('[*] Content-Security-Policy maakt geen gebruik van unsafe-eval of unsafe-inline.')
                 else:
-                    print('[*] Content-Security-Policy voldoet niet aan de eisen van NOREA.')
+                    print('[!] Content-Security-Policy voldoet niet aan de eisen van NOREA.')
             except:
-                print('[*] Content-Security-Policy mist.')
+                print('[!] Content-Security-Policy mist.')
 
             # Referrer-Policy
             # same-origin of no-referrer
@@ -48,9 +48,9 @@ def header_checker(url):
                 elif 'same-origin' in referrer_policy:
                     print('[*] Referrer-Policy maakt gebruik van same-origin.')
                 else:
-                    print('[*] Referrer-Policy maakt geen gebruik van same-origin en staat niet ingesteld volgens de aanbevolen waarden van NOREA.')
+                    print('[!] Referrer-Policy maakt geen gebruik van same-origin en staat niet ingesteld volgens de aanbevolen waarden van NOREA.')
             except:
-                print('[*] Referrer-Policy mist.')
+                print('[!] Referrer-Policy mist.')
 
             # Strict-Transport-Security
             # max-age=31536000 of includeSubdomains
@@ -60,7 +60,7 @@ def header_checker(url):
                 if 'max-age=31536000'  and 'includeSubdomains' in strict_transport_security:
                     print('[*] Strict-Transport voldoet aan de eisen van NOREA, en heeft de headers max-age=31536000 en includeSubdomains juist ingesteld. ')
             except:
-                print('[*] Strict-Transport-Security mist.')
+                print('[!] Strict-Transport-Security mist.')
 
             # X-Frame-Options
             # deny of sameorigin, één van beiden
@@ -70,7 +70,7 @@ def header_checker(url):
                 if 'deny' or 'sameorigin' in x_frame_options:
                     print('[*] X-Frame-Options voldoet aan de eisen van NOREA, en maakt gebruik van deny of sameorigin.')
             except:
-                print('[*] X-Frame-Options mist.')
+                print('[!] X-Frame-Options mist.')
             print('------------')
 
             # controleren op verschillende requestmethodes & mogelijk onnodige data binnen de response header
@@ -85,27 +85,29 @@ def header_checker(url):
                     print('[*] Ophalen van response header met request method', method, 'is mogelijk.')
             print('------------\n')
             
-            print('Controleren op mogelijk overbodige headers:')
-            print('-----')
-            for header in headers:
-                try:
-                    result = resp.headers[header]
-                    if header != None:
-                        print('[*] %s: %s' % (header, result))
-                    else:
-                        print('Geen overbodige headers gevonden.')
-                except Exception as e:
-                    return False
-            print('------------')
+            # print('Controleren op mogelijk overbodige headers:')
+            # print('-----')
+            # for header in headers:
+            #     try:
+            #         result = resp.headers[header]
+            #         print(header, result)
+            #         if header != None:
+            #             print('[i] %s: %s' % (header, result))
+            #         else:
+            #             print('[i] Geen mogelijk overbodige headers gevonden.')
+            #     except Exception as e:
+            #         return False
+            # print('------------')
+
+        else:
+            print('[!] HTTP header niet kunnen ophalen.')
 
 
     except requests.exceptions.SSLError as g:
-        print('Website maakt geen gebruik van een veilig SSL certificaat, waardoor de response header niet opgehaald kon worden.')
-    
-    else:
-        print('HTTP header niet kunnen ophalen.')
+        print('[!] Website maakt gebruik van een ongeldig SSL certificaat, waardoor de response header niet opgehaald kon worden.')
 
 # header_checker('https://vulnerable-website.com')
 # header_checker('https://www.python.org')
 # header_checker('https://github.com/')
+# header_checker('https://www.martiniziekenhuis.nl')
 # header_checker('https://expired.badssl.com/')
