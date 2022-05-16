@@ -17,8 +17,8 @@ def find_tls(url):
     real_tls_version = list(filter(None, real_tls_version))
     print("[i]", url," ondersteunt  de volgende TLS-versies:", ', '.join(real_tls_version))
     if ("TLSv1.0" in real_tls_version) or ("TLSv1.1" in real_tls_version):
-        print("[!]", url, "ondersteunt versie(s) van TLS onder TLSv1.2.")
+        print("[!] LET OP:", url, "ondersteunt versie(s) van TLS onder TLSv1.2!")
     
-# find_tls('howsmyssl.com')
-# find_tls('python.org')
-# find_tls('argentarchives.com')
+# demo
+# find_tls('nu.nl')
+# find_tls('vpn.phoenixus.com')

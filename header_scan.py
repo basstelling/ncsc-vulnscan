@@ -106,8 +106,6 @@ def header_checker(url):
     except requests.exceptions.SSLError as g:
         print('[!] Website maakt gebruik van een ongeldig SSL certificaat, waardoor de response header niet opgehaald kon worden.')
 
-# header_checker('https://vulnerable-website.com')
-# header_checker('https://www.python.org')
-# header_checker('https://github.com/')
+# demo
 # header_checker('https://www.martiniziekenhuis.nl')
-# header_checker('https://expired.badssl.com/')
+# header_checker('https://www.python.org')

@@ -50,4 +50,6 @@ def port_scan(target,ports):
     print('De scan heeft', format(totalTime, ".2f"), 'seconden geduurd.')
     print(totalHosts, 'host(s) gescand.')
 
-# port_scan('192.168.1.1', 'http')
+# demo
+# port_scan('localhost', '1-50')
+# port_scan('localhost', '80, 443')
