@@ -51,7 +51,7 @@ def submit_form(form_details, url, value):
 def scan_xss(url):
     # get all the forms from the URL
     forms = get_all_forms(url)
-    print(forms)
+    # print(forms)
     print(f"[+] Detected {len(forms)} forms on {url}.")
     js_script = "<Script>alert('test')</scripT>"
     # value teruggeven
@@ -70,4 +70,4 @@ def scan_xss(url):
             # won't break because we want to print available vulnerable forms
     return is_vulnerable
 
-print(scan_xss('https://www.martiniziekenhuis.nl'))
+# print(scan_xss('https://www.martiniziekenhuis.nl'))
