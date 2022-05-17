@@ -28,13 +28,12 @@ def header_checker(url):
             # unsafe-eval = fout
             try:
                 content_security = resp.headers['Content-Security-Policy']
-                # print(content_security)
-                if (('unsafe-eval' and 'unsafe-inline') and ('nonce' in content_security) in content_security):
-                    print('[*] Content-Security-Policy maakt gebruik van unsafe-eval of unsafe-inline met een nonce.')
-                elif ('unsafe-eval' and 'unsafe-inline') not in content_security:
-                    print('[*] Content-Security-Policy maakt geen gebruik van unsafe-eval of unsafe-inline.')
-                else:
-                    print('[!] Content-Security-Policy voldoet niet aan de eisen van NOREA.')
+                print(content_security)
+                if 'unsafe-eval' or 'unsafe-inline' in content_security:
+                    if 'nonce' in content_security:
+                        print('[!] Content-Security-Policy maakt gebruik van unsafe-eval of unsafe-inline met nonce.')
+                    else:
+                        print('[*] Content-Security-Policy maakt gebruik van unsafe-eval of unsafe-inline zonder nonce.')
             except:
                 print('[!] Content-Security-Policy mist.')
 
@@ -48,7 +47,7 @@ def header_checker(url):
                 elif 'same-origin' in referrer_policy:
                     print('[*] Referrer-Policy maakt gebruik van same-origin.')
                 else:
-                    print('[!] Referrer-Policy maakt geen gebruik van same-origin en staat niet ingesteld volgens de aanbevolen waarden van NOREA.')
+                    print('[!] Referrer-Policy maakt geen gebruik van same-origin en staat niet ingesteld volgens de aanbevolen waarden van het NCSC.')
             except:
                 print('[!] Referrer-Policy mist.')
 

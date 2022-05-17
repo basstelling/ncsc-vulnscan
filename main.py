@@ -1,9 +1,7 @@
 from datetime import date
 from email.quoprimime import header_check
 import sys
-from time import strftime
-
-from click import DateTime
+from ncsc_config import get_boolean, read_config
 from port_scan import port_scan
 from header_scan import header_checker
 from tls_scan import find_tls
@@ -14,6 +12,9 @@ def cls():
     os.system('cls' if os.name=='nt' else 'clear')
 
 date = str(date.today())
+# check if data needs to be saved according to the config
+saveData = get_boolean("Export data", "boolean")
+
 
 try:
     cls()
@@ -23,15 +24,21 @@ try:
                 "[i] \t3) TLS-versie herkennen\n"
                 "[i] \t4) XSS-scannner\n"
                 "[?] Voer het nummer in van de scan die u wilt uitvoeren: ")
-    save = input("[?] Wilt u de output opslaan? Y/n ")
-    if save == 'Y' or 'y':
-        saveData = True
+    # save = input("[?] Wilt u de output opslaan? Y/n ")
+    # if save == ('Y' or 'y'):
+    #     saveData = True
+    #     try:
+    #         dir_name = "Scans"
+    #         os.mkdir(dir_name)
+    #         print("[i] Scans directory aangemaakt; hierin zal de output opgeslagen worden.")
+    #     except FileExistsError as e:
+    #         print("[i] Directory '%s' bestaat al, verder gaan met scan..." % dir_name)
 
     if resp == '1':
         host = input("[?] Voer het te scannen IP adres in: ")
         ports = input("[?] Voer de te scannen poort(en) in: ")
         if saveData == True:
-            with open(r'scans/Port scan '+date,'w') as f:
+            with open(r'Scans/Port scan '+date,'w') as f:
                 sys.stdout = f
                 cls()
                 port_scan(host, ports)
@@ -41,7 +48,7 @@ try:
     elif resp == '2':
         url = input("[?] Voer de URL in waarvan u de headers wilt analyseren: ")
         if saveData == True:
-            with open(r'scans/Header scan '+date,'w') as f:
+            with open(r'Scans/Header scan '+date,'w') as f:
                 sys.stdout = f
                 cls()
                 header_checker(url)
@@ -51,7 +58,7 @@ try:
     elif resp == '3':
         url = input("[?] Voer de URL in waarvan u de ondersteunde TLS-versies wilt herkennen: ")
         if saveData == True:
-            with open(r'scans/TLS scan '+date,'w') as f:
+            with open(r'Scans/TLS scan '+date,'w') as f:
                 sys.stdout = f
                 cls()
                 find_tls(url)
@@ -61,7 +68,7 @@ try:
     elif resp == '4':
         url = input("[?] Voer de URL in die u op XSS wilt toetsen: ")
         if saveData == True:
-            with open(r'scans/XSS scan '+date,'w', encoding='utf-8') as f:
+            with open(r'Scans/XSS scan '+date,'w', encoding='utf-8') as f:
                 sys.stdout = f
                 cls()
                 scan_xss(url)
@@ -75,7 +82,7 @@ try:
         url = input("[?] Voer de URL van de website die u wilt scannen: ")
         print("[i] Scan wordt uitgevoerd...")
         if saveData == True:
-            with open(r'scans/General scan '+date,'w') as f:
+            with open(r'Scans/General scan '+date,'w') as f:
                 sys.stdout = f
                 port_scan(host, ports)
                 header_checker(url)
