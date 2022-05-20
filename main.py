@@ -6,6 +6,7 @@ from port_scan import port_scan
 from header_scan import header_checker
 from tls_scan import find_tls
 from xss_scanner import scan_xss
+from crawler import crawl
 import os
 
 def cls():
@@ -23,6 +24,7 @@ try:
                 "[i] \t2) HTTP response header\n"
                 "[i] \t3) TLS-versie herkennen\n"
                 "[i] \t4) XSS-scannner\n"
+                "[i] \t5) Web crawler\n"
                 "[?] Voer het nummer in van de scan die u wilt uitvoeren: ")
     # save = input("[?] Wilt u de output opslaan? Y/n ")
     # if save == ('Y' or 'y'):
@@ -74,6 +76,10 @@ try:
                 scan_xss(url)
         else:
             scan_xss(url)
+    
+    elif resp == '5':
+        url = input("[?] Voer de URL in die u wilt crawlen: ")
+        print(crawl(url, '/'), len(crawl(url, '/')))
         
 
     else:
