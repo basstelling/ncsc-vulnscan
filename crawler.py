@@ -1,90 +1,65 @@
 from pathlib import Path
 import queue
-import requests
+import re
+from urllib.request import urlopen
 from bs4 import BeautifulSoup
+from urllib.parse import urlparse
 import time
-
+import threading
+import concurrent.futures
 import requests
 from bs4 import BeautifulSoup
  
+base_url = 'http://localhost/Home_GemeenteTynaarlo.html'
 
-base_url = 'http://localhost'
-resp = requests.get(base_url)
-soup = BeautifulSoup(resp.text, 'html.parser')
-urls = []
+# localhost_base vervangen met base_url voor live versie!
+localhost_base = 'https://www.tynaarlo.nl'
 
-for link in soup.find_all('a'):
-    if link.get('href').startswith('/'):
-        urls.append(base_url + str(link.get('href')))
-    elif link.get('href').startswith(base_url):
-        urls.append(link.get('href'))
+def crawler(base_url):
+    startTime = time.time()
+    urls = []
+    resp = requests.get(base_url)
+    soup = BeautifulSoup(resp.text, 'html.parser')
+    # print(soup)
+    for link in soup.find_all('a'):
+        # print(link)
+        if link.get('href').startswith('/'):
+            # print(link.get('href').startswith('/'))
+            urls.append(localhost_base + str(link.get('href')))
+        elif link.get('href').startswith(localhost_base):
+            urls.append(link.get('href'))
+
+    # duplicates verwijderen uit de list
+    urls = list(set(urls))
+
+    for deep_url in urls:
+        deep_resp = requests.get(deep_url)
+        try:
+            deep_soup = BeautifulSoup(deep_resp.text, "html.parser")
+            for deep_link in deep_soup.find_all('a'):
+                if str(deep_link.get('href')).startswith('/'):
+                    # print(deep_link.get('href'))
+                    if localhost_base + str(deep_link.get('href')) not in urls:
+                        urls.append(localhost_base + str(deep_link.get('href')))
+                        print(deep_link.get('href'))
+        #         if deep_link.get('href') is not None:
+        #             print(deep_link.get('href').startswith('/') and localhost_base + deep_link.get('href') not in urls)
+        #             if deep_link.get('href').startswith('/') and localhost_base + deep_link.get('href') not in urls:
+        #                     urls.append(localhost_base + str(deep_link.get('href')))
+        #         else:
+        #             continue
+        except (TypeError, UserWarning) as e:
+            print(e)
+
+
+    # return urls
+    for url in urls:
+        print(url)
+    totalTime = time.time() - startTime
+    print(f'Gevonden websites: {len(urls)}')
+    print(f'Totale tijd: {format(totalTime, ".2f")}')
+    # print(f'Extra website: {deep_url}')
 
 
 
-# for url in urls:
-#     resp = requests.get(url)
-#     # time.sleep(1)
-#     deep_soup = BeautifulSoup(resp.text, "html.parser")
-#     for a in deep_soup.find_all('a'):
-#         # print(a.get('href'))
-#         if a.get('href') is not None:
-#             if a.get('href').startswith('/'):
-#                 urls.append(url + (str(a.get('href'))))
-#             elif a.get('href').startswith(base_url):
-#                 urls.append(a.get('href'))
-
-# duplicates verwijderen uit de list
-urls = list(set(urls))
-
-    # for link in urls:
-    #     resp = requests.get(link)
-    #     deep_soup = BeautifulSoup(resp.text, "html.parser")
-    #     for a in deep_soup.find_all('a'):
-    #         if a.get('href').startswith('/'):
-    #             urls.append(url + str(a) + str(a.get('href')))
-    #         elif a.get('href').startswith(url + str(a)):
-    #             urls.append(a.get('href'))
-        # for url in urls:
-        #     resp = requests.get(url)
-
-    # if (link.get('href')).startswith('/'):
-    #     url = url + str(link.get('href'))
-    #     urls.append(url)
-        # print(url, "\n")
-
-for url in urls:
-    print(url)
-print(len(urls))
-
-# def crawl(base_url, start_anchor):
-#     search_anchors = queue.Queue()
-#     urls = []
-#     while True:
-#         headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:82.0) Gecko/20100101 Firefox/82.0' }
-#         response = requests.request('GET', base_url + start_anchor, headers=headers)
-#         soup = BeautifulSoup(response.text, "html.parser")
-#         anchors = find_local_anchors(soup, start_anchor)
-#         if anchors:
-#             for a in anchors:
-#                 url = base_url + a
-#                 time.sleep(1)
-#                 if url in urls:
-#                     continue
-#                 if not Path(a).suffix:
-#                     search_anchors.put(a)
-#                 urls.append(a)
-#                 print(url)
-
-#         if search_anchors.empty():
-#             break
-#         start_anchor = search_anchors.get()
-#     return urls
-
-# def find_local_anchors(soup, start_anchor):
-#     anchors = []
-#     for link in soup.find_all('a'):
-#         if "href" in link.attrs:
-#             anchor = link.attrs["href"]
-#         if anchor.startswith(start_anchor):
-#             anchors.append(anchor)
-#     return anchors
+crawler(base_url)

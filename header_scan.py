@@ -28,7 +28,7 @@ def header_checker(url):
             # unsafe-eval = fout
             try:
                 content_security = resp.headers['Content-Security-Policy']
-                print(content_security)
+                # print(content_security)
                 if 'unsafe-eval' or 'unsafe-inline' in content_security:
                     if 'nonce' in content_security:
                         print('[!] Content-Security-Policy maakt gebruik van unsafe-eval of unsafe-inline met nonce.')

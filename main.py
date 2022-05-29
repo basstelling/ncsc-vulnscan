@@ -90,14 +90,22 @@ try:
         if saveData == True:
             with open(r'Scans/General scan '+date,'w') as f:
                 sys.stdout = f
+                print("Poort scan:")
                 port_scan(host, ports)
+                print("\nHTTP response header checker:")
                 header_checker(url)
+                print("\nTLS-versies en ciphers controleren:")
                 find_tls(url)
+                print("\nXSS-scan uitvoeren:")
                 scan_xss(url)
         else:
+            print("Poort scan:")
             port_scan(host, ports)
+            print("\nHTTP response header checker:")
             header_checker(url)
+            print("\nTLS-versies en ciphers controleren:")
             find_tls(url)
+            print("\nXSS-scan uitvoeren:")
             scan_xss(url)
     
     # export = input("Wilt u de data opslaan? Y/n ")
