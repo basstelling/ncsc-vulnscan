@@ -1,3 +1,4 @@
+import time
 import requests
 from pprint import pprint
 from bs4 import BeautifulSoup as bs
@@ -72,7 +73,10 @@ def scan_xss(url):
         # return is_vulnerable
 
 # demo
-# scan_xss('https://www.martiniziekenhuis.nl')
-# scan_xss('http://sudo.co.il/xss/level0.php')
+startTime = time.time()
+scan_xss('https://www.martiniziekenhuis.nl')
+result = scan_xss('http://sudo.co.il/xss/level0.php')
+totalTime = time.time() - startTime
+print(totalTime)
 
 # print(scan_xss('https://www.martiniziekenhuis.nl'))

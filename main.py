@@ -6,7 +6,8 @@ from port_scan import port_scan
 from header_scan import header_checker
 from tls_scan import find_tls
 from xss_scanner import scan_xss
-from crawler import crawl
+from ncsc_config import set_config
+# from crawler import crawl
 import os
 
 def cls():
@@ -77,9 +78,13 @@ try:
         else:
             scan_xss(url)
     
-    elif resp == '5':
-        url = input("[?] Voer de URL in die u wilt crawlen: ")
-        print(crawl(url, '/'), len(crawl(url, '/')))
+    # elif resp == '5':
+    #     url = input("[?] Voer de URL in die u wilt crawlen: ")
+
+        # print(crawl(url, '/'), len(crawl(url, '/')))
+
+    elif resp == 'conf':
+        set_config()
         
 
     else:

@@ -1,3 +1,4 @@
+from enum import unique
 import time
 from scrapy.spiders import CrawlSpider, Rule
 from scrapy.linkextractors import LinkExtractor
@@ -8,18 +9,21 @@ import os
 
 class MySpider(CrawlSpider):
     name = 'webcrawler'
-    allowed_domains = ['tynaarlo.nl']
-    start_urls = ['https://www.tynaarlo.nl/']
+    
+    allowed_domains = ['readshopeelde.nl']
+    start_urls = ['https://www.readshopeelde.nl/']
+    unique_urls = set()
 
     custom_settings = {
-        'DEPTH_LIMIT': 1,
-        'CONCURRENT_REQUESTS': 10,
+        # 'DEPTH_LIMIT': 1,
+        'CONCURRENT_REQUESTS': 100,
         'ROBOTSTXT_OBEY': False,
         'REACTOR_THREADPOOL_MAXSIZE': 400,
         'LOG_LEVEL': 'INFO',
         'DEPTH_PRIORITY': 1,
         'SCHEDULER_DISK_QUEUE' : 'scrapy.squeues.PickleFifoDiskQueue',
-        'SCHEDULER_MEMORY_QUEUE' :'scrapy.squeues.FifoMemoryQueue'
+        'SCHEDULER_MEMORY_QUEUE' :'scrapy.squeues.FifoMemoryQueue',
+        'USER_AGENT': "Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.93 Safari/537.36"
     }
 
     try:
@@ -37,13 +41,15 @@ class MySpider(CrawlSpider):
         self.link_extractor = LinkExtractor(allow_domains=self.allowed_domains, unique=True)
 
     def parse(self, response):
-        for link in self.link_extractor.extract_links(response):
-            # hasForm = response.xpath("//form").extract_first(default='not-found')
-            # if hasForm != 'not-found':
+        hasForm = response.xpath("//form").extract_first(default='not-found')
+        if hasForm != 'not-found':
+            self.unique_urls.add(response.url)
             with open('src\\crawler_data\\urls.txt','a+') as f:
-                f.write(f"{str(link)}\n")
+                f.write(f"{str(response.url)}\n")
+        else:
+            pass
 
-            yield response.follow(url=link, callback=self.parse)
+        # yield response.follow(url=link, callback=self.parse)
 
 if __name__ == "__main__":
     startTime = time.time()
