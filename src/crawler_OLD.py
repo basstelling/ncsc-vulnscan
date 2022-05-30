@@ -32,6 +32,7 @@ def crawler(base_url):
     # duplicates verwijderen uit de list
     urls = list(set(urls))
 
+    # rest van de urls ophalen
     for deep_url in urls:
         deep_resp = requests.get(deep_url)
         try:
@@ -42,12 +43,9 @@ def crawler(base_url):
                     if localhost_base + str(deep_link.get('href')) not in urls:
                         urls.append(localhost_base + str(deep_link.get('href')))
                         print(deep_link.get('href'))
-        #         if deep_link.get('href') is not None:
-        #             print(deep_link.get('href').startswith('/') and localhost_base + deep_link.get('href') not in urls)
-        #             if deep_link.get('href').startswith('/') and localhost_base + deep_link.get('href') not in urls:
-        #                     urls.append(localhost_base + str(deep_link.get('href')))
-        #         else:
-        #             continue
+                    else:
+                        continue
+
         except (TypeError, UserWarning) as e:
             print(e)
 
@@ -62,4 +60,4 @@ def crawler(base_url):
 
 
 
-crawler(base_url)
+# crawler(base_url)
