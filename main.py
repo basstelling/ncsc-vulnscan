@@ -1,12 +1,11 @@
 from datetime import date
 from email.quoprimime import header_check
 import sys
-from ncsc_config import get_boolean, read_config
-from port_scan import port_scan
-from header_scan import header_checker
-from tls_scan import find_tls
-from xss_scanner import scan_xss
-from ncsc_config import set_config
+from src.ncsc_config import get_boolean, set_config
+from src.port_scan import port_scan
+from src.header_scan import header_checker
+from src.tls_scan import find_tls
+from src.xss_scanner import scan_xss
 # from crawler import crawl
 import os
 
@@ -14,12 +13,20 @@ def cls():
     os.system('cls' if os.name=='nt' else 'clear')
 
 date = str(date.today())
+# check of config.ini bestaat
+
+if os.path.exists('src/data/ncsc_config.ini') == False:
+    set_config()
+else:
+    print("Config bestaat.")
+
+
 # check if data needs to be saved according to the config
 saveData = get_boolean("Export data", "boolean")
 
 
 try:
-    cls()
+    # cls()
     resp = input("[i] Welkom bij deze tool. Welke scan wilt u uitvoeren? Typ 'all' voor alle onderstaande. \n"
                 "[i] \t1) Portscan\n"
                 "[i] \t2) HTTP response header\n"

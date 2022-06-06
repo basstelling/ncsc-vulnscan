@@ -56,7 +56,7 @@ def set_config():
     config_file.add_section("Export data")
     config_file.set("Export data", "boolean", "True")
 
-    with open(r"ncsc_configs.ini", "w") as configFileObj:
+    with open(r"src/data/ncsc_configs.ini", "w") as configFileObj:
         config_file.write(configFileObj)
         configFileObj.flush()
         configFileObj.close()
@@ -65,18 +65,18 @@ def set_config():
 # print(config_file.get('Cipher Suites', 'goed'))
 
 def read_config(section, key):
-    config_file.read(r'ncsc_configs.ini')
+    config_file.read(r'src/data/ncsc_configs.ini')
     section = config_file.get(section, key)
     return section
 
 
 def get_boolean(section, key):
-    config_file.read(r'ncsc_configs.ini')
+    config_file.read(r'src/data/ncsc_configs.ini')
     boolean = config_file.getboolean("Export data", option='boolean')
     return boolean
 
 
 def readConfig(section, key):
-    read_file = open(r"ncsc_configs.ini", "r")
+    read_file = open(r"src/data/ncsc_configs.ini", "r")
     configs = read_file.read()
     return configs

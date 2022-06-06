@@ -57,7 +57,7 @@ def header_checker(url):
                 strict_transport_security = resp.headers['Strict-Transport-Security']
                 # print(strict_transport_security)
                 if 'max-age=31536000'  and 'includeSubdomains' in strict_transport_security:
-                    print('[*] Strict-Transport voldoet aan de eisen van NOREA, en heeft de headers max-age=31536000 en includeSubdomains juist ingesteld. ')
+                    print('[*] Strict-Transport voldoet aan de eisen van het NCSC, en heeft de headers max-age=31536000 en includeSubdomains juist ingesteld. ')
             except:
                 print('[!] Strict-Transport-Security mist.')
 
@@ -106,5 +106,5 @@ def header_checker(url):
         print('[!] Website maakt gebruik van een ongeldig SSL certificaat, waardoor de response header niet opgehaald kon worden.')
 
 # demo
-# header_checker('https://www.martiniziekenhuis.nl')
+header_checker('https://www.martiniziekenhuis.nl')
 # header_checker('https://www.python.org')

@@ -1,5 +1,7 @@
+from email.policy import default
 from enum import unique
 import time
+from requests import Request
 from scrapy.spiders import CrawlSpider, Rule
 from scrapy.linkextractors import LinkExtractor
 from scrapy.crawler import CrawlerProcess
@@ -10,8 +12,8 @@ import os
 class MySpider(CrawlSpider):
     name = 'webcrawler'
     
-    allowed_domains = ['readshopeelde.nl']
-    start_urls = ['https://www.readshopeelde.nl/']
+    allowed_domains = [ 'appspot.com']
+    start_urls = ['https://xss-game.appspot.com/']
     unique_urls = set()
 
     custom_settings = {
@@ -19,7 +21,7 @@ class MySpider(CrawlSpider):
         'CONCURRENT_REQUESTS': 100,
         'ROBOTSTXT_OBEY': False,
         'REACTOR_THREADPOOL_MAXSIZE': 400,
-        'LOG_LEVEL': 'INFO',
+        'LOG_LEVEL': 'CRITICAL',
         'DEPTH_PRIORITY': 1,
         'SCHEDULER_DISK_QUEUE' : 'scrapy.squeues.PickleFifoDiskQueue',
         'SCHEDULER_MEMORY_QUEUE' :'scrapy.squeues.FifoMemoryQueue',
@@ -27,7 +29,7 @@ class MySpider(CrawlSpider):
     }
 
     try:
-        os.remove('src\\crawler_data\\urls.txt')
+        os.remove('src\\data\\urls.txt')
     except OSError:
         pass
 
@@ -41,15 +43,33 @@ class MySpider(CrawlSpider):
         self.link_extractor = LinkExtractor(allow_domains=self.allowed_domains, unique=True)
 
     def parse(self, response):
-        hasForm = response.xpath("//form").extract_first(default='not-found')
+        # print(response.url)
+        hasForm = response.xpath("//form").get(default='not-found')
+        iframe = response.xpath('//iframe/@src').get(default='not-found')
+        # print(iframe)
+        # print(hasForm, response.url)
+
+        if iframe != 'not-found':
+            yield(Request(response.url + iframe, callback=self.parse_iframe))
+
+        # for url in self.start_urls:
+        #     if url not in iframe and iframe != 'not-found':
+        #         iframe = url + iframe
+        # print(iframe)
+
         if hasForm != 'not-found':
             self.unique_urls.add(response.url)
-            with open('src\\crawler_data\\urls.txt','a+') as f:
+            with open('src\\data\\urls.txt','a+') as f:
                 f.write(f"{str(response.url)}\n")
-        else:
-            pass
+        # else:
+        #     pass
 
         # yield response.follow(url=link, callback=self.parse)
+
+    def parse_iframe(self, response):
+        hasForm = response.xpath("//form").get(default='not-found')
+        print(hasForm)
+
 
 if __name__ == "__main__":
     startTime = time.time()
@@ -58,4 +78,4 @@ if __name__ == "__main__":
     process.start()
     totalTime = time.time() - startTime
     print("Webcrawling voltooid.")
-    print("Tijd: ", format(totalTime, ".2f"))
+    # print(f"Tijd: {(format(totalTime, ".2f"))} seconden"))
