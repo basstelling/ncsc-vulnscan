@@ -1,0 +1,67 @@
+Host Name:                 DESKTOP-0K62BON
+OS Name:                   Microsoft Windows 10 Home
+OS Version:                10.0.19044 N/A Build 19044
+OS Manufacturer:           Microsoft Corporation
+OS Configuration:          Standalone Workstation
+OS Build Type:             Multiprocessor Free
+Registered Owner:          Eigenaar
+Registered Organization:
+Product ID:                00325-80016-55233-AAOEM
+Original Install Date:     29-4-2021, 07:03:27
+System Boot Time:          23-5-2022, 08:56:10
+System Manufacturer:       ASUSTeK COMPUTER INC.
+System Model:              X510UNR
+System Type:               x64-based PC
+Processor(s):              1 Processor(s) Installed.
+                           [01]: Intel64 Family 6 Model 142 Stepping 10 GenuineIntel ~1792 Mhz
+BIOS Version:              American Megatrends Inc. X510UNR.309, 14-5-2019
+Windows Directory:         C:\WINDOWS
+System Directory:          C:\WINDOWS\system32
+Boot Device:               \Device\HarddiskVolume2
+System Locale:             nl;Nederlands (Nederland)
+Input Locale:              en-us;Engels (Verenigde Staten)
+Time Zone:                 (UTC+01:00) Amsterdam, Berlijn, Bern, Rome, Stockholm, Wenen
+Total Physical Memory:     16.271 MB
+Available Physical Memory: 5.465 MB
+Virtual Memory: Max Size:  19.215 MB
+Virtual Memory: Available: 4.358 MB
+Virtual Memory: In Use:    14.857 MB
+Page File Location(s):     C:\pagefile.sys
+Domain:                    WORKGROUP
+Logon Server:              \\DESKTOP-0K62BON
+Hotfix(s):                 10 Hotfix(s) Installed.
+                           [01]: KB5013624
+                           [02]: KB4562830
+                           [03]: KB4580325
+                           [04]: KB5003791
+                           [05]: KB5013942
+                           [06]: KB5006753
+                           [07]: KB5007273
+                           [08]: KB5011651
+                           [09]: KB5014032
+                           [10]: KB5005699
+Network Card(s):           4 NIC(s) Installed.
+                           [01]: Intel(R) Dual Band Wireless-AC 8265
+                                 Connection Name: Wi-Fi
+                                 DHCP Enabled:    Yes
+                                 DHCP Server:     172.31.98.1
+                                 IP address(es)
+                                 [01]: 172.31.98.152
+                                 [02]: fe80::54a2:49f8:e066:d4fa
+                           [02]: Bluetooth Device (Personal Area Network)
+                                 Connection Name: Bluetooth-netwerkverbinding
+                                 Status:          Media disconnected
+                           [03]: TAP-NordVPN Windows Adapter V9
+                                 Connection Name: Ethernet 2
+                                 Status:          Media disconnected
+                           [04]: VirtualBox Host-Only Ethernet Adapter
+                                 Connection Name: Ethernet 3
+                                 DHCP Enabled:    Yes
+                                 DHCP Server:     255.255.255.255
+                                 IP address(es)
+                                 [01]: 169.254.120.212
+                                 [02]: fe80::d0e4:2ada:9409:78d4
+Hyper-V Requirements:      VM Monitor Mode Extensions: Yes
+                           Virtualization Enabled In Firmware: Yes
+                           Second Level Address Translation: Yes
+                           Data Execution Prevention Available: Yes

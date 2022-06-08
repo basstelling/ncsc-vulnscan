@@ -80,3 +80,5 @@ def readConfig(section, key):
     read_file = open(r"src/data/ncsc_configs.ini", "r")
     configs = read_file.read()
     return configs
+
+# set_config()

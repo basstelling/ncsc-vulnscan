@@ -41,14 +41,19 @@ def find_tls(url):
                 used_tls_versions.append(tls)
 
     print("[i]",url,"maakt gebruik van TLS-versies:", ', '.join(used_tls_versions))
+    length = sum([1 if isinstance(used_ciphers[a], (str, int))
+            else len(used_ciphers[a])
+            for a in used_ciphers])
+    print(f"[i] {url} maakt gebruik van {length} ciphers.")
 
     for classificatie, cipher in used_ciphers.items():
-        print("[i] Classificatie:", classificatie)
-        print("[i]", len(cipher), "ciphers gevonden. ")
-        for c in cipher:
-            print("[*]", c)
+        if len(cipher) != 0:
+            # print("[i] Classificatie:", classificatie)
+            # print(f"[i] Voor NCSC-classificatie {classificatie.lower()} zijn {len(cipher)} ciphers gevonden")
+            for c in cipher:
+                print(f"[*] {c} - {classificatie}")
     
 # demo
-# find_tls('nu.nl')
+find_tls('nu.nl')
 # find_tls('vpn.phoenixus.com')
 # find_tls('martiniziekenhuis.nl')

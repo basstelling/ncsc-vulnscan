@@ -1,27 +1,29 @@
 from email.policy import default
 from enum import unique
 import time
-from requests import Request
+import scrapy
+# from requests import Request
 from scrapy.spiders import CrawlSpider, Rule
 from scrapy.linkextractors import LinkExtractor
 from scrapy.crawler import CrawlerProcess
+from xss_scanner import get_form_details, submit_form, scan_xss
 
 import os
 
 
 class MySpider(CrawlSpider):
     name = 'webcrawler'
-    
-    allowed_domains = [ 'appspot.com']
-    start_urls = ['https://xss-game.appspot.com/']
+    allowed_domains = ['tynaarlo.nl']
+    start_urls = ['http://localhost/Home_GemeenteTynaarlo.html']
     unique_urls = set()
+    unique_forms = set()
 
     custom_settings = {
-        # 'DEPTH_LIMIT': 1,
+        'DEPTH_LIMIT': 1,
         'CONCURRENT_REQUESTS': 100,
         'ROBOTSTXT_OBEY': False,
         'REACTOR_THREADPOOL_MAXSIZE': 400,
-        'LOG_LEVEL': 'CRITICAL',
+        'LOG_LEVEL': 'INFO',
         'DEPTH_PRIORITY': 1,
         'SCHEDULER_DISK_QUEUE' : 'scrapy.squeues.PickleFifoDiskQueue',
         'SCHEDULER_MEMORY_QUEUE' :'scrapy.squeues.FifoMemoryQueue',
@@ -50,25 +52,35 @@ class MySpider(CrawlSpider):
         # print(hasForm, response.url)
 
         if iframe != 'not-found':
-            yield(Request(response.url + iframe, callback=self.parse_iframe))
-
-        # for url in self.start_urls:
-        #     if url not in iframe and iframe != 'not-found':
-        #         iframe = url + iframe
-        # print(iframe)
+            iframe_url = str(self.start_urls[0] + iframe)
+            # print(type(iframe_url))
+            # print(iframe_url)
+            yield scrapy.Request(iframe_url, callback = self.parse_iframe)
 
         if hasForm != 'not-found':
-            self.unique_urls.add(response.url)
-            with open('src\\data\\urls.txt','a+') as f:
-                f.write(f"{str(response.url)}\n")
+            if hasForm not in self.unique_forms:
+                self.unique_forms.add(hasForm)
+                self.unique_urls.add(response.url)
+
+        
+
+                # scan_xss(response.url, hasForm)
+                with open('src\\data\\urls.txt','a+') as f:
+                    f.write(f"{str(response.url)}\n")
+                    print(response.url, hasForm)
         # else:
         #     pass
 
         # yield response.follow(url=link, callback=self.parse)
 
     def parse_iframe(self, response):
+        # print(response)
         hasForm = response.xpath("//form").get(default='not-found')
-        print(hasForm)
+        if hasForm != 'not-found':
+            self.unique_urls.add(response.url)
+            with open('src\\data\\urls.txt','a+') as f:
+                f.write(f"{str(response.url)}\n")
+        # print(hasForm)
 
 
 if __name__ == "__main__":
