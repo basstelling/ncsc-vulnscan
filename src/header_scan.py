@@ -106,5 +106,5 @@ def header_checker(url):
         print('[!] Website maakt gebruik van een ongeldig SSL certificaat, waardoor de response header niet opgehaald kon worden.')
 
 # demo
-header_checker('https://www.martiniziekenhuis.nl')
+# header_checker('https://www.martiniziekenhuis.nl')
 # header_checker('https://www.python.org')

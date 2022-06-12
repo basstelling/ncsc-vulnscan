@@ -50,7 +50,7 @@ def submit_form(form_details, url, value):
         # controleren op GET method
         return requests.get(target_url, params=data)
 
-def scan_xss(url, forms):
+def scan_xss(url):
     # alle forms binnen de URL ophalen dmv bovenstaande functie
 
     # with open('src\\data\\urls.txt', 'r') as url_file:
@@ -61,7 +61,7 @@ def scan_xss(url, forms):
     # print(form_urls)
 
     # for url in form_ur
-    # forms = get_all_forms(url)
+    forms = get_all_forms(url)
     # print(forms)
     print(f"[+] {len(forms)} forms gevonden op {url}")
     # meerdere soorten toevoegen -- mogelijk meerdere vectors lezen vanuit .txt

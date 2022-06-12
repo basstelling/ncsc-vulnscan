@@ -1,0 +1,49 @@
+-----------------------
+Host : 192.168.1.1 (Hostname unknown)
+State : up
+-----
+Protocol : tcp
+poort :  10 	status :  closed  	service :  unknown
+poort :  11 	status :  closed  	service :  systat
+poort :  12 	status :  closed  	service :  unknown
+poort :  13 	status :  closed  	service :  daytime
+poort :  14 	status :  closed  	service :  unknown
+poort :  15 	status :  closed  	service :  netstat
+poort :  16 	status :  closed  	service :  unknown
+poort :  17 	status :  closed  	service :  qotd
+poort :  18 	status :  closed  	service :  msp
+poort :  19 	status :  closed  	service :  chargen
+poort :  20 	status :  closed  	service :  ftp-data
+poort :  21 	status :  closed  	service :  ftp
+poort :  22 	status :  filtered  	service :  ssh
+poort :  23 	status :  filtered  	service :  telnet
+poort :  24 	status :  closed  	service :  priv-mail
+poort :  25 	status :  closed  	service :  smtp
+poort :  26 	status :  closed  	service :  rsftp
+poort :  27 	status :  closed  	service :  nsw-fe
+poort :  28 	status :  closed  	service :  unknown
+poort :  29 	status :  closed  	service :  msg-icp
+poort :  30 	status :  closed  	service :  unknown
+poort :  31 	status :  closed  	service :  msg-auth
+poort :  32 	status :  closed  	service :  unknown
+poort :  33 	status :  closed  	service :  dsp
+poort :  34 	status :  closed  	service :  unknown
+poort :  35 	status :  closed  	service :  priv-print
+poort :  36 	status :  closed  	service :  
+poort :  37 	status :  closed  	service :  time
+poort :  38 	status :  closed  	service :  rap
+poort :  39 	status :  closed  	service :  rlp
+poort :  40 	status :  closed  	service :  unknown
+poort :  41 	status :  closed  	service :  graphics
+poort :  42 	status :  closed  	service :  nameserver
+poort :  43 	status :  closed  	service :  whois
+poort :  44 	status :  closed  	service :  mpm-flags
+poort :  45 	status :  closed  	service :  mpm
+poort :  46 	status :  closed  	service :  mpm-snd
+poort :  47 	status :  closed  	service :  ni-ftp
+poort :  48 	status :  closed  	service :  auditd
+poort :  49 	status :  closed  	service :  tacacs
+poort :  50 	status :  closed  	service :  re-mail-ck
+-----------------------
+De scan heeft 2.21 seconden geduurd.
+1 host(s) gescand.

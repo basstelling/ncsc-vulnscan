@@ -1,6 +1,6 @@
 import re
 import subprocess
-from ncsc_config import read_config
+from src.ncsc_config import read_config
 
 def find_tls(url):
     if "https://www." in url:
@@ -54,6 +54,6 @@ def find_tls(url):
                 print(f"[*] {c} - {classificatie}")
     
 # demo
-find_tls('nu.nl')
+# find_tls('nu.nl')
 # find_tls('vpn.phoenixus.com')
 # find_tls('martiniziekenhuis.nl')

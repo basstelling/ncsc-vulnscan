@@ -1,5 +1,6 @@
 import configparser
 
+
 config_file = configparser.ConfigParser()
 
 def set_config():
@@ -50,7 +51,8 @@ def set_config():
     "TLS_RSA_WITH_3DES_EDE_CBC_SHA")
 
     # Te scannen websites
-    config_file.add_section("Websites")
+    config_file.add_section("Te scannen websites")
+    config_file.set("Te scannen websites", "websites", "https://www.nu.nl")
 
     # moet altijd '1', 'yes', 'true', of 'on' zijn!
     config_file.add_section("Export data")
@@ -70,15 +72,10 @@ def read_config(section, key):
     return section
 
 
-def get_boolean(section, key):
-    config_file.read(r'src/data/ncsc_configs.ini')
-    boolean = config_file.getboolean("Export data", option='boolean')
-    return boolean
-
-
-def readConfig(section, key):
-    read_file = open(r"src/data/ncsc_configs.ini", "r")
-    configs = read_file.read()
-    return configs
+# def get_boolean(section, key):
+#     config_file.read(r'src/data/ncsc_configs.ini')
+#     boolean = config_file.getboolean("Export data", option='boolean')
+#     return boolean
 
 # set_config()
+# print(read_config("Export data", "boolean"))
