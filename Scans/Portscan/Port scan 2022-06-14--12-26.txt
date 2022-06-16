@@ -1,0 +1,18 @@
+-----------------------
+Host : 127.0.0.1 (localhost)
+State : up
+-----
+Protocol : tcp
+poort :  1 	status :  closed  	service :  tcpmux
+poort :  2 	status :  closed  	service :  compressnet
+poort :  3 	status :  closed  	service :  compressnet
+poort :  4 	status :  closed  	service :  unknown
+poort :  5 	status :  closed  	service :  rje
+poort :  6 	status :  closed  	service :  unknown
+poort :  7 	status :  closed  	service :  echo
+poort :  8 	status :  closed  	service :  unknown
+poort :  9 	status :  closed  	service :  discard
+poort :  10 	status :  closed  	service :  unknown
+-----------------------
+De scan heeft 0.38 seconden geduurd.
+1 host(s) gescand.

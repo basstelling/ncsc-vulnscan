@@ -72,10 +72,10 @@ def read_config(section, key):
     return section
 
 
-# def get_boolean(section, key):
-#     config_file.read(r'src/data/ncsc_configs.ini')
-#     boolean = config_file.getboolean("Export data", option='boolean')
-#     return boolean
+def get_boolean(section):
+    config_file.read(r'src/data/ncsc_configs.ini')
+    boolean = config_file.getboolean(section, option='boolean')
+    return boolean
 
 # set_config()
 # print(read_config("Export data", "boolean"))

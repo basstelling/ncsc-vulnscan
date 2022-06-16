@@ -33,7 +33,7 @@ def header_checker(url):
                     if 'nonce' in content_security:
                         print('[!] Content-Security-Policy maakt gebruik van unsafe-eval of unsafe-inline met nonce.')
                     else:
-                        print('[*] Content-Security-Policy maakt gebruik van unsafe-eval of unsafe-inline zonder nonce.')
+                        print(f'[*] Content-Security-Policy maakt gebruik van unsafe-eval of unsafe-inline, mogelijk zonder nonce; controleer dit door in te loggen op {url}.')
             except:
                 print('[!] Content-Security-Policy mist.')
 
