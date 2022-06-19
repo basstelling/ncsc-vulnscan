@@ -16,30 +16,30 @@ def port_scan(target,ports):
                 if len(scanner[host].hostname()) != 0:
                     hostname = scanner[host].hostname()
                 else:
-                    hostname = 'Hostname unknown'
+                    hostname = 'Hostname onbekend'
                 # per host het ip en hostname ophalen en printen waar mogelijk
                 print('-----------------------')
-                print('Host : %s (%s)' % (host, hostname))
-                print('State : %s' % scanner[host].state())
+                print('[i] Host: %s (%s)' % (host, hostname))
+                print('[i] Status: %s' % scanner[host].state())
                 for protocol in scanner[host].all_protocols():
                     print('-----')
-                    print('Protocol : %s' % protocol)
+                    print('[+] Protocol : %s' % protocol)
 
                     portList = sorted(scanner[host][protocol])
                     for port in portList:
-                            print('poort : ', port,
-                            '\tstatus : ', scanner[host][protocol][port]['state'],
-                            ' \tservice : ', scanner[host][protocol][port]['name'])
+                            print('\t - poort: ', port,
+                            '\t\t status: ', scanner[host][protocol][port]['state'],
+                            ' \t\tservice: ', scanner[host][protocol][port]['name'])
                     # print(scanner[host])
                     # print('\n')
             except KeyError as e:
                 print(e)
                 return False
     except nmap.PortScannerError as b:
-        print("Er is geen installatie van Nmap gevonden in de omgevingsvariabelen van deze machine.\n", b)
+        print("[!] Er is geen installatie van Nmap gevonden in de omgevingsvariabelen van deze machine.\n", b)
         return False
     except KeyboardInterrupt as c:
-        print('Scan beëindigd.')
+        print('[!] Scan beëindigd.')
         return False
 
     # totale tijd teruggeven
@@ -47,9 +47,9 @@ def port_scan(target,ports):
     totalHosts = len(hostlist)
 
     print('-----------------------')
-    print('De scan heeft', format(totalTime, ".2f"), 'seconden geduurd.')
-    print(totalHosts, 'host(s) gescand.')
+    print(f'[i] De scan heeft {format(totalTime, ".2f")} seconden geduurd.')
+    print(f'[i] {totalHosts} host(s) gescand op poorten {ports}.')
 
 # demo
-# port_scan('localhost', '1-50')
+# port_scan('localhost', '1-1000')
 # port_scan('localhost', '80, 443')

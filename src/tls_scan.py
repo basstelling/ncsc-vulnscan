@@ -5,6 +5,8 @@ from src.ncsc_config import read_config
 def find_tls(url):
     if "https://www." in url:
         url = url[12:]
+    elif "http://www." in url:
+        url = url[11:]
     nmap_command = 'nmap --script ssl-enum-ciphers -p 443 ' + url
     output = subprocess.getoutput(nmap_command)
     output_lines = output.splitlines()
@@ -54,6 +56,6 @@ def find_tls(url):
                 print(f"[*] {c} - {classificatie}")
     
 # demo
-# find_tls('nu.nl')
+find_tls('nu.nl')
 # find_tls('vpn.phoenixus.com')
 # find_tls('martiniziekenhuis.nl')
