@@ -1,0 +1,23 @@
+-----------------------
+[i] Host: 127.0.0.1 (localhost)
+[i] Status: up
+-----
+[+] Protocol : tcp
+	- poort:   135		status: open    	service: msrpc
+	- poort:   137		status: filtered	service: netbios-ns
+	- poort:   445		status: open    	service: microsoft-ds
+	- poort:  1120		status: open    	service: bnetfile
+	- poort:  1337		status: open    	service: waste
+	- poort:  1778		status: open    	service: prodigy-intrnet
+	- poort:  2015		status: open    	service: cypress
+	- poort:  3213		status: open    	service: neon24x7
+	- poort:  3306		status: open    	service: mysql
+	- poort:  4800		status: open    	service: iims
+	- poort:  4801		status: open    	service: iwec
+	- poort:  5040		status: open    	service: unknown
+	- poort:  5426		status: open    	service: devbasic
+	- poort:  6463		status: open    	service: 
+	- poort:  7070		status: open    	service: realserver
+-----------------------
+[i] De scan heeft 2.43 seconden geduurd.
+[i] 1 host(s) gescand op poorten 1-11000.

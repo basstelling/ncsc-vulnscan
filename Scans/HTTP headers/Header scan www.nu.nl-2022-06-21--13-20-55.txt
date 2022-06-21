@@ -1,0 +1,16 @@
+-----------------------
+[i] Response header opgehaald van https://www.nu.nl
+[i] Controleren op NOREA waarden...
+-----
+[*] X-Content-Type-Options staat juist ingesteld volgens de aanbevolen waarden van NOREA.
+[*] Content-Security-Policy maakt gebruik van unsafe-eval of unsafe-inline, mogelijk zonder nonce; controleer dit door in te loggen op https://www.nu.nl.
+[!] Referrer-Policy mist.
+[*] X-Frame-Options voldoet aan de eisen van NOREA, en maakt gebruik van deny of sameorigin.
+------------
+
+Controleren op onnodige request methodes:
+-----
+[*] Ophalen van response header met request method GET is mogelijk.
+[*] Ophalen van response header met request method HEAD is mogelijk.
+------------
+

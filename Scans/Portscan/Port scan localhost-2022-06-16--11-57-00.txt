@@ -1,0 +1,6 @@
+-----------------------
+Host : 127.0.0.1 (localhost)
+State : up
+-----------------------
+De scan heeft 0.42 seconden geduurd.
+1 host(s) gescand.

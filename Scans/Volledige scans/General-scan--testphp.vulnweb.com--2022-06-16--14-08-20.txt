@@ -1,0 +1,336 @@
+[i] RESULTATEN VAN DE PORTSCAN:
+-----------------------
+[i] Host: 127.0.0.1 (localhost)
+[i] Status: up
+-----
+[+] Protocol : tcp
+	 - poort:  80 		 status:  open  		service:  http
+-----------------------
+[i] De scan heeft 0.55 seconden geduurd.
+[i] 1 host(s) gescand op poorten 1-100.
+None
+
+[i] RESULTATEN VAN DE HTTP HEADER CONTROLE: 
+-----------------------
+[i] Response header opgehaald van http://testphp.vulnweb.com
+[i] Controleren op NOREA waarden...
+-----
+[!] X-Content-Type-Options mist.
+[!] Content-Security-Policy mist.
+[!] Referrer-Policy mist.
+[!] Strict-Transport-Security mist.
+[!] X-Frame-Options mist.
+------------
+
+Controleren op onnodige request methodes:
+-----
+[*] Ophalen van response header met request method GET is mogelijk.
+[*] Ophalen van response header met request method POST is mogelijk.
+[*] Ophalen van response header met request method HEAD is mogelijk.
+------------
+
+None
+
+[i] RESULTATEN VAN DE TLS-SCAN:
+[i] http://testphp.vulnweb.com maakt gebruik van TLS-versies: 
+[i] http://testphp.vulnweb.com maakt gebruik van 0 ciphers.
+None
+
+[i] MOGELIJKE XSS-KWETSBAARHEDEN: 
+oads: <svG onLoad=prompt(9)>
+[i] Line: <strong>1zqjtt'"(){}<x>:/1zqjtt;9
+
+[i] URL: http://testphp.vulnweb.com/login.php
+[i] Response URL: http://testphp.vulnweb.com/userinfo.php
+[i] POST URL: http://testphp.vulnweb.com/userinfo.php
+[+] Ongefilterde tekens: N/A
+[+] Payload: 1zqjbi'"(){}<x>:/1zqjbi;9
+[+] Type: form
+[+] Injectiepunten: pass
+[i] Line: Possible SQL injection error! Suspected DBMS: MySQL, regex used: Warning.*mysql_.*
+
+[i] URL: http://testphp.vulnweb.com/hpp/?pp=12
+[i] Response URL: http://testphp.vulnweb.com/hpp/?pp=1zqjre'%22()%7B%7D%3Cx%3E:/1zqjre;9
+[+] Ongefilterde tekens: '"(){}<x>:/;
+[+] Payload: 1zqjre'"(){}<x>:/1zqjre;9
+[+] Type: url
+[+] Injectiepunten: pp
+[+] Mogelijke payloads: x" onmouseover=prompt(9) ", x"/onmouseover=prompt(9)/", x"><svG onLoad=prompt(9)>
+[i] Line: <a href="params.php?p=valid&pp=1zqjre'"(){}<x>:/1zqjre;9
+
+[i] URL: http://testphp.vulnweb.com/listproducts.php?cat=3
+[i] Response URL: http://testphp.vulnweb.com/listproducts.php?cat=1zqjsu'%22()%7B%7D%3Cx%3E:/1zqjsu;9
+[+] Ongefilterde tekens: N/A
+[+] Payload: 1zqjsu'"(){}<x>:/1zqjsu;9
+[+] Type: url
+[+] Injectiepunten: cat
+[i] Line: Possible SQL injection error! Suspected DBMS: MySQL, regex used: SQL syntax.*MySQL
+
+[i] URL: http://testphp.vulnweb.com/listproducts.php?cat=3
+[i] Response URL: http://testphp.vulnweb.com/listproducts.php?cat=1zqjsu'%22()%7B%7D%3Cx%3E:/1zqjsu;9
+[+] Ongefilterde tekens: '"(){}<x>:/
+[+] Payload: 1zqjsu'"(){}<x>:/1zqjsu;9
+[+] Type: url
+[+] Injectiepunten: cat
+[i] Line: 	error: you have an error in your sql syntax; check the manual that corresponds to your mysql server version for the right syntax to use near ''"(){}<x>:/1zqjsu;9' at line 1
+[!] Fout: Payload delims do not surround this injection point. Found via search for entire payload.
+
+[i] URL: http://testphp.vulnweb.com/hpp/params.php?p=valid&pp=12
+[i] Response URL: http://testphp.vulnweb.com/hpp/params.php?p=valid&pp=1zqjpg'%22()%7B%7D%3Cx%3E:/1zqjpg;9
+[+] Ongefilterde tekens: '"(){}<x>:/;
+[+] Payload: 1zqjpg'"(){}<x>:/1zqjpg;9
+[+] Type: url
+[+] Injectiepunten: pp
+[+] Mogelijke payloads: <svG onLoad=prompt(9)>
+[i] Line: <pvalid1zqjpg'"(){}<x>:/1zqjpg;9
+
+[i] URL: http://testphp.vulnweb.com/hpp/params.php?p=valid&pp=12
+[i] Response URL: http://testphp.vulnweb.com/hpp/params.php?p=1zqjpb'%22()%7B%7D%3Cx%3E:/1zqjpb;9&pp=12
+[+] Ongefilterde tekens: '"(){}<x>:/;
+[+] Payload: 1zqjpb'"(){}<x>:/1zqjpb;9
+[+] Type: url
+[+] Injectiepunten: p
+[+] Mogelijke payloads: <svG onLoad=prompt(9)>
+[i] Line: <p1zqjpb'"(){}<x>:/1zqjpb;9
+
+[i] URL: http://testphp.vulnweb.com/listproducts.php?cat=1
+[i] Response URL: http://testphp.vulnweb.com/listproducts.php?cat=1zqjrm'%22()%7B%7D%3Cx%3E:/1zqjrm;9
+[+] Ongefilterde tekens: N/A
+[+] Payload: 1zqjrm'"(){}<x>:/1zqjrm;9
+[+] Type: url
+[+] Injectiepunten: cat
+[i] Line: Possible SQL injection error! Suspected DBMS: MySQL, regex used: SQL syntax.*MySQL
+
+[i] URL: http://testphp.vulnweb.com/listproducts.php?cat=1
+[i] Response URL: http://testphp.vulnweb.com/listproducts.php?cat=1zqjrm'%22()%7B%7D%3Cx%3E:/1zqjrm;9
+[+] Ongefilterde tekens: '"(){}<x>:/
+[+] Payload: 1zqjrm'"(){}<x>:/1zqjrm;9
+[+] Type: url
+[+] Injectiepunten: cat
+[i] Line: 	error: you have an error in your sql syntax; check the manual that corresponds to your mysql server version for the right syntax to use near ''"(){}<x>:/1zqjrm;9' at line 1
+[!] Fout: Payload delims do not surround this injection point. Found via search for entire payload.
+
+[i] URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/6.jpg
+[i] Response URL: http://testphp.vulnweb.com/showimage.php?file=1zqjpg'%22()%7B%7D%3Cx%3E:/1zqjpg;9
+[+] Ongefilterde tekens: '"(){}<x>:/;
+[+] Payload: 1zqjpg'"(){}<x>:/1zqjpg;9
+[+] Type: url
+[+] Injectiepunten: file
+[+] Mogelijke payloads: <svG onLoad=prompt(9)>
+[i] Line: <p
+warning: fopen(1zqjpg'"(){}<x>:/1zqjpg;9
+
+[i] URL: http://testphp.vulnweb.com/listproducts.php?cat=2
+[i] Response URL: http://testphp.vulnweb.com/listproducts.php?cat=1zqjgj'%22()%7B%7D%3Cx%3E:/1zqjgj;9
+[+] Ongefilterde tekens: N/A
+[+] Payload: 1zqjgj'"(){}<x>:/1zqjgj;9
+[+] Type: url
+[+] Injectiepunten: cat
+[i] Line: Possible SQL injection error! Suspected DBMS: MySQL, regex used: SQL syntax.*MySQL
+
+[i] URL: http://testphp.vulnweb.com/listproducts.php?cat=2
+[i] Response URL: http://testphp.vulnweb.com/listproducts.php?cat=1zqjgj'%22()%7B%7D%3Cx%3E:/1zqjgj;9
+[+] Ongefilterde tekens: '"(){}<x>:/
+[+] Payload: 1zqjgj'"(){}<x>:/1zqjgj;9
+[+] Type: url
+[+] Injectiepunten: cat
+[i] Line: 	error: you have an error in your sql syntax; check the manual that corresponds to your mysql server version for the right syntax to use near ''"(){}<x>:/1zqjgj;9' at line 1
+[!] Fout: Payload delims do not surround this injection point. Found via search for entire payload.
+
+[i] URL: http://testphp.vulnweb.com/listproducts.php?cat=4
+[i] Response URL: http://testphp.vulnweb.com/listproducts.php?cat=1zqjed'%22()%7B%7D%3Cx%3E:/1zqjed;9
+[+] Ongefilterde tekens: N/A
+[+] Payload: 1zqjed'"(){}<x>:/1zqjed;9
+[+] Type: url
+[+] Injectiepunten: cat
+[i] Line: Possible SQL injection error! Suspected DBMS: MySQL, regex used: SQL syntax.*MySQL
+
+[i] URL: http://testphp.vulnweb.com/listproducts.php?cat=4
+[i] Response URL: http://testphp.vulnweb.com/listproducts.php?cat=1zqjed'%22()%7B%7D%3Cx%3E:/1zqjed;9
+[+] Ongefilterde tekens: '"(){}<x>:/
+[+] Payload: 1zqjed'"(){}<x>:/1zqjed;9
+[+] Type: url
+[+] Injectiepunten: cat
+[i] Line: 	error: you have an error in your sql syntax; check the manual that corresponds to your mysql server version for the right syntax to use near ''"(){}<x>:/1zqjed;9' at line 1
+[!] Fout: Payload delims do not surround this injection point. Found via search for entire payload.
+
+[i] URL: http://testphp.vulnweb.com/product.php?pic=7
+[i] Response URL: http://testphp.vulnweb.com/product.php?pic=1zqjyz'%22()%7B%7D%3Cx%3E:/1zqjyz;9
+[+] Ongefilterde tekens: N/A
+[+] Payload: 1zqjyz'"(){}<x>:/1zqjyz;9
+[+] Type: url
+[+] Injectiepunten: pic
+[i] Line: Possible SQL injection error! Suspected DBMS: MySQL, regex used: Warning.*mysql_.*
+
+[i] URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/3.jpg
+[i] Response URL: http://testphp.vulnweb.com/showimage.php?file=1zqjpm'%22()%7B%7D%3Cx%3E:/1zqjpm;9
+[+] Ongefilterde tekens: '"(){}<x>:/;
+[+] Payload: 1zqjpm'"(){}<x>:/1zqjpm;9
+[+] Type: url
+[+] Injectiepunten: file
+[+] Mogelijke payloads: <svG onLoad=prompt(9)>
+[i] Line: <p
+warning: fopen(1zqjpm'"(){}<x>:/1zqjpm;9
+
+[i] URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/7.jpg
+[i] Response URL: http://testphp.vulnweb.com/showimage.php?file=1zqjsj'%22()%7B%7D%3Cx%3E:/1zqjsj;9
+[+] Ongefilterde tekens: '"(){}<x>:/;
+[+] Payload: 1zqjsj'"(){}<x>:/1zqjsj;9
+[+] Type: url
+[+] Injectiepunten: file
+[+] Mogelijke payloads: <svG onLoad=prompt(9)>
+[i] Line: <p
+warning: fopen(1zqjsj'"(){}<x>:/1zqjsj;9
+
+[i] URL: http://testphp.vulnweb.com/product.php?pic=1
+[i] Response URL: http://testphp.vulnweb.com/product.php?pic=1zqjdx'%22()%7B%7D%3Cx%3E:/1zqjdx;9
+[+] Ongefilterde tekens: N/A
+[+] Payload: 1zqjdx'"(){}<x>:/1zqjdx;9
+[+] Type: url
+[+] Injectiepunten: pic
+[i] Line: Possible SQL injection error! Suspected DBMS: MySQL, regex used: Warning.*mysql_.*
+
+[i] URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/1.jpg
+[i] Response URL: http://testphp.vulnweb.com/showimage.php?file=1zqjng'%22()%7B%7D%3Cx%3E:/1zqjng;9
+[+] Ongefilterde tekens: '"(){}<x>:/;
+[+] Payload: 1zqjng'"(){}<x>:/1zqjng;9
+[+] Type: url
+[+] Injectiepunten: file
+[+] Mogelijke payloads: <svG onLoad=prompt(9)>
+[i] Line: <p
+warning: fopen(1zqjng'"(){}<x>:/1zqjng;9
+
+[i] URL: http://testphp.vulnweb.com/product.php?pic=6
+[i] Response URL: http://testphp.vulnweb.com/product.php?pic=1zqjre'%22()%7B%7D%3Cx%3E:/1zqjre;9
+[+] Ongefilterde tekens: N/A
+[+] Payload: 1zqjre'"(){}<x>:/1zqjre;9
+[+] Type: url
+[+] Injectiepunten: pic
+[i] Line: Possible SQL injection error! Suspected DBMS: MySQL, regex used: Warning.*mysql_.*
+
+[i] URL: http://testphp.vulnweb.com/product.php?pic=2
+[i] Response URL: http://testphp.vulnweb.com/product.php?pic=1zqjyu'%22()%7B%7D%3Cx%3E:/1zqjyu;9
+[+] Ongefilterde tekens: N/A
+[+] Payload: 1zqjyu'"(){}<x>:/1zqjyu;9
+[+] Type: url
+[+] Injectiepunten: pic
+[i] Line: Possible SQL injection error! Suspected DBMS: MySQL, regex used: Warning.*mysql_.*
+
+[i] URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/4.jpg
+[i] Response URL: http://testphp.vulnweb.com/showimage.php?file=1zqjhi'%22()%7B%7D%3Cx%3E:/1zqjhi;9
+[+] Ongefilterde tekens: '"(){}<x>:/;
+[+] Payload: 1zqjhi'"(){}<x>:/1zqjhi;9
+[+] Type: url
+[+] Injectiepunten: file
+[+] Mogelijke payloads: <svG onLoad=prompt(9)>
+[i] Line: <p
+warning: fopen(1zqjhi'"(){}<x>:/1zqjhi;9
+
+[i] URL: http://testphp.vulnweb.com/artists.php?artist=2
+[i] Response URL: http://testphp.vulnweb.com/artists.php?artist=1zqjno'%22()%7B%7D%3Cx%3E:/1zqjno;9
+[+] Ongefilterde tekens: N/A
+[+] Payload: 1zqjno'"(){}<x>:/1zqjno;9
+[+] Type: url
+[+] Injectiepunten: artist
+[i] Line: Possible SQL injection error! Suspected DBMS: MySQL, regex used: Warning.*mysql_.*
+
+[i] URL: http://testphp.vulnweb.com/artists.php?artist=3
+[i] Response URL: http://testphp.vulnweb.com/artists.php?artist=1zqjnt'%22()%7B%7D%3Cx%3E:/1zqjnt;9
+[+] Ongefilterde tekens: N/A
+[+] Payload: 1zqjnt'"(){}<x>:/1zqjnt;9
+[+] Type: url
+[+] Injectiepunten: artist
+[i] Line: Possible SQL injection error! Suspected DBMS: MySQL, regex used: Warning.*mysql_.*
+
+[i] URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/2.jpg
+[i] Response URL: http://testphp.vulnweb.com/showimage.php?file=1zqjcc'%22()%7B%7D%3Cx%3E:/1zqjcc;9
+[+] Ongefilterde tekens: '"(){}<x>:/;
+[+] Payload: 1zqjcc'"(){}<x>:/1zqjcc;9
+[+] Type: url
+[+] Injectiepunten: file
+[+] Mogelijke payloads: <svG onLoad=prompt(9)>
+[i] Line: <p
+warning: fopen(1zqjcc'"(){}<x>:/1zqjcc;9
+
+[i] URL: http://testphp.vulnweb.com/product.php?pic=3
+[i] Response URL: http://testphp.vulnweb.com/product.php?pic=1zqjvy'%22()%7B%7D%3Cx%3E:/1zqjvy;9
+[+] Ongefilterde tekens: N/A
+[+] Payload: 1zqjvy'"(){}<x>:/1zqjvy;9
+[+] Type: url
+[+] Injectiepunten: pic
+[i] Line: Possible SQL injection error! Suspected DBMS: MySQL, regex used: Warning.*mysql_.*
+
+[i] URL: http://testphp.vulnweb.com/product.php?pic=4
+[i] Response URL: http://testphp.vulnweb.com/product.php?pic=1zqjul'%22()%7B%7D%3Cx%3E:/1zqjul;9
+[+] Ongefilterde tekens: N/A
+[+] Payload: 1zqjul'"(){}<x>:/1zqjul;9
+[+] Type: url
+[+] Injectiepunten: pic
+[i] Line: Possible SQL injection error! Suspected DBMS: MySQL, regex used: Warning.*mysql_.*
+
+[i] URL: http://testphp.vulnweb.com/product.php?pic=5
+[i] Response URL: http://testphp.vulnweb.com/product.php?pic=1zqjaq'%22()%7B%7D%3Cx%3E:/1zqjaq;9
+[+] Ongefilterde tekens: N/A
+[+] Payload: 1zqjaq'"(){}<x>:/1zqjaq;9
+[+] Type: url
+[+] Injectiepunten: pic
+[i] Line: Possible SQL injection error! Suspected DBMS: MySQL, regex used: Warning.*mysql_.*
+
+[i] URL: http://testphp.vulnweb.com/listproducts.php?artist=2
+[i] Response URL: http://testphp.vulnweb.com/listproducts.php?artist=1zqjyf'%22()%7B%7D%3Cx%3E:/1zqjyf;9
+[+] Ongefilterde tekens: N/A
+[+] Payload: 1zqjyf'"(){}<x>:/1zqjyf;9
+[+] Type: url
+[+] Injectiepunten: artist
+[i] Line: Possible SQL injection error! Suspected DBMS: MySQL, regex used: SQL syntax.*MySQL
+
+[i] URL: http://testphp.vulnweb.com/listproducts.php?artist=2
+[i] Response URL: http://testphp.vulnweb.com/listproducts.php?artist=1zqjyf'%22()%7B%7D%3Cx%3E:/1zqjyf;9
+[+] Ongefilterde tekens: '"(){}<x>:/
+[+] Payload: 1zqjyf'"(){}<x>:/1zqjyf;9
+[+] Type: url
+[+] Injectiepunten: artist
+[i] Line: 	error: you have an error in your sql syntax; check the manual that corresponds to your mysql server version for the right syntax to use near ''"(){}<x>:/1zqjyf;9' at line 1
+[!] Fout: Payload delims do not surround this injection point. Found via search for entire payload.
+
+[i] URL: http://testphp.vulnweb.com/listproducts.php?artist=3
+[i] Response URL: http://testphp.vulnweb.com/listproducts.php?artist=1zqjir'%22()%7B%7D%3Cx%3E:/1zqjir;9
+[+] Ongefilterde tekens: N/A
+[+] Payload: 1zqjir'"(){}<x>:/1zqjir;9
+[+] Type: url
+[+] Injectiepunten: artist
+[i] Line: Possible SQL injection error! Suspected DBMS: MySQL, regex used: SQL syntax.*MySQL
+
+[i] URL: http://testphp.vulnweb.com/listproducts.php?artist=3
+[i] Response URL: http://testphp.vulnweb.com/listproducts.php?artist=1zqjir'%22()%7B%7D%3Cx%3E:/1zqjir;9
+[+] Ongefilterde tekens: '"(){}<x>:/
+[+] Payload: 1zqjir'"(){}<x>:/1zqjir;9
+[+] Type: url
+[+] Injectiepunten: artist
+[i] Line: 	error: you have an error in your sql syntax; check the manual that corresponds to your mysql server version for the right syntax to use near ''"(){}<x>:/1zqjir;9' at line 1
+[!] Fout: Payload delims do not surround this injection point. Found via search for entire payload.
+
+[i] URL: http://testphp.vulnweb.com/artists.php?artist=1
+[i] Response URL: http://testphp.vulnweb.com/artists.php?artist=1zqjig'%22()%7B%7D%3Cx%3E:/1zqjig;9
+[+] Ongefilterde tekens: N/A
+[+] Payload: 1zqjig'"(){}<x>:/1zqjig;9
+[+] Type: url
+[+] Injectiepunten: artist
+[i] Line: Possible SQL injection error! Suspected DBMS: MySQL, regex used: Warning.*mysql_.*
+
+[i] URL: http://testphp.vulnweb.com/listproducts.php?artist=1
+[i] Response URL: http://testphp.vulnweb.com/listproducts.php?artist=1zqjiw'%22()%7B%7D%3Cx%3E:/1zqjiw;9
+[+] Ongefilterde tekens: N/A
+[+] Payload: 1zqjiw'"(){}<x>:/1zqjiw;9
+[+] Type: url
+[+] Injectiepunten: artist
+[i] Line: Possible SQL injection error! Suspected DBMS: MySQL, regex used: SQL syntax.*MySQL
+
+[i] URL: http://testphp.vulnweb.com/listproducts.php?artist=1
+[i] Response URL: http://testphp.vulnweb.com/listproducts.php?artist=1zqjiw'%22()%7B%7D%3Cx%3E:/1zqjiw;9
+[+] Ongefilterde tekens: '"(){}<x>:/
+[+] Payload: 1zqjiw'"(){}<x>:/1zqjiw;9
+[+] Type: url
+[+] Injectiepunten: artist
+[i] Line: 	error: you have an error in your sql syntax; check the manual that corresponds to your mysql server version for the right syntax to use near ''"(){}<x>:/1zqjiw;9' at line 1
+[!] Fout: Payload delims do not surround this injection point. Found via search for entire payload.

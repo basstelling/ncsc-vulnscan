@@ -31,7 +31,7 @@ class XSSCharFinder(object):
         filename = (f'Scans/XSS/xsscrapy-vulns.txt')
         up = urlparse(url).netloc.replace('www.', '').split(':')[0]
         if up:
-            filename = 'Scans/XSS/XSS-scan--' + up + '--.txt'
+            filename = f'Scans/XSS/XSS-scan--{up}--.txt'
 
         return filename
 

@@ -54,26 +54,24 @@ def set_config():
     config_file.add_section("Te scannen websites")
     config_file.set("Te scannen websites", "websites", "https://www.nu.nl")
 
-    # moet altijd '1', 'yes', 'true', of 'on' zijn!
+    # moet altijd '1', 'yes', 'true', of 'on' zijn om data op te slaan!
     config_file.add_section("Export data")
     config_file.set("Export data", "boolean", "True")
 
-    with open(r"src/data/ncsc_configs.ini", "w") as configFileObj:
+    with open(r"ncsc_configs.ini", "w") as configFileObj:
         config_file.write(configFileObj)
         configFileObj.flush()
         configFileObj.close()
-        # print("Config file 'ncsc_configs' created")
 
-# print(config_file.get('Cipher Suites', 'goed'))
 
 def read_config(section, key):
-    config_file.read(r'src/data/ncsc_configs.ini')
+    config_file.read(r'ncsc_configs.ini')
     section = config_file.get(section, key)
     return section
 
 
 def get_boolean(section):
-    config_file.read(r'src/data/ncsc_configs.ini')
+    config_file.read(r'ncsc_configs.ini')
     boolean = config_file.getboolean(section, option='boolean')
     return boolean
 

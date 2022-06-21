@@ -27,11 +27,12 @@ def port_scan(target,ports):
 
                     portList = sorted(scanner[host][protocol])
                     for port in portList:
-                            print('\t - poort: ', port,
-                            '\t\t status: ', scanner[host][protocol][port]['state'],
-                            ' \t\tservice: ', scanner[host][protocol][port]['name'])
-                    # print(scanner[host])
-                    # print('\n')
+
+                            port_string = ('\t- poort: {:5}' +
+                            '\t\tstatus: {:8}' +
+                            '\tservice: {}')
+                            
+                            print((port_string).format(port, scanner[host][protocol][port]['state'], scanner[host][protocol][port]['name']))
             except KeyError as e:
                 print(e)
                 return False
@@ -51,5 +52,5 @@ def port_scan(target,ports):
     print(f'[i] {totalHosts} host(s) gescand op poorten {ports}.')
 
 # demo
-# port_scan('localhost', '1-1000')
+# port_scan('localhost', '1-10000')
 # port_scan('localhost', '80, 443')

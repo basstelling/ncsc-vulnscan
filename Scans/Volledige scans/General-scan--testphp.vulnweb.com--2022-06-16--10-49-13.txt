@@ -1,0 +1,81 @@
+[i] RESULTATEN VAN DE PORTSCAN:
+-----------------------
+Host : 44.228.249.3 (ec2-44-228-249-3.us-west-2.compute.amazonaws.com)
+State : up
+-----
+Protocol : tcp
+poort :  80 	status :  open  	service :  http
+-----------------------
+De scan heeft 5.88 seconden geduurd.
+1 host(s) gescand.
+None
+
+[i] RESULTATEN VAN DE HTTP HEADER CONTROLE: 
+-----------------------
+[i] Response header opgehaald van http://testphp.vulnweb.com
+[i] Controleren op NOREA waarden...
+-----
+[!] X-Content-Type-Options mist.
+[!] Content-Security-Policy mist.
+[!] Referrer-Policy mist.
+[!] Strict-Transport-Security mist.
+[!] X-Frame-Options mist.
+------------
+
+Controleren op onnodige request methodes:
+-----
+[*] Ophalen van response header met request method GET is mogelijk.
+[*] Ophalen van response header met request method POST is mogelijk.
+[*] Ophalen van response header met request method HEAD is mogelijk.
+------------
+
+None
+
+[i] RESULTATEN VAN DE TLS-SCAN:
+[i] http://testphp.vulnweb.com maakt gebruik van TLS-versies: 
+[i] http://testphp.vulnweb.com maakt gebruik van 0 ciphers.
+None
+
+[i] RESULTATEN VAN DE PATCH ENUMERATION: 
+Windows Exploit Suggester 1.03 ( https://github.com/bitsadmin/wesng/ )
+[+] Parsing systeminfo output
+[+] Operating System
+    - Name: Windows 10 Version 21H2 for x64-based Systems
+    - Generation: 10
+    - Build: 19044
+    - Version: 21H2
+    - Architecture: x64-based
+    - Installed hotfixes (10): KB5013624, KB4562830, KB4580325, KB5003791, KB5013942, KB5006753, KB5007273, KB5011651, KB5014032, KB5005699
+[+] Loading definitions
+    - Creation date of definitions: 20220608
+[+] Determining missing patches
+[!] Found vulnerabilities!
+
+Date: 20220331
+CVE: CVE-2022-23295
+KB: KBUpdate Information
+Title: Raw Image Extension Remote Code Execution Vulnerability
+Affected product: Raw Image Extension on Windows 10 Version 21H2 for x64-based Systems
+Affected component: Microsoft
+Severity: Important
+Impact: Remote Code Execution
+Exploit: n/a
+
+Date: 20220324
+CVE: CVE-2022-23300
+KB: KBUpdate Information
+Title: Raw Image Extension Remote Code Execution Vulnerability
+Affected product: Raw Image Extension on Windows 10 Version 21H2 for x64-based Systems
+Affected component: Microsoft
+Severity: Important
+Impact: Remote Code Execution
+Exploit: n/a
+
+[-] Missing patches: 1
+    - KBUpdate Information: patches 2 vulnerabilities
+[I] KB with the most recent release date
+    - ID: KBUpdate Information
+    - Release date: 20220331
+[+] Done. Displaying 2 of the 2 vulnerabilities found.
+
+[i] MOGELIJKE XSS-KWETSBAARHEDEN: 

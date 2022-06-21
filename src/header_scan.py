@@ -1,4 +1,3 @@
-from email.policy import strict
 import requests
 
 def header_checker(url):
@@ -7,8 +6,8 @@ def header_checker(url):
         resp = requests.get(url)
         if resp.status_code == 200:
             print('-----------------------')
-            print('[i] Response header opgehaald van', url)
-            print('[i] Controleren op NOREA waarden...')
+            print(f'[i] Response header opgehaald van {url}')
+            print('[i] Controleren op NCSC waarden...')
             print('-----')
 
             # X-Content-Type-Options
@@ -16,9 +15,9 @@ def header_checker(url):
             try:
                 x_content_type = resp.headers['X-Content-Type-Options']
                 if 'nosniff' in x_content_type:
-                    print('[*] X-Content-Type-Options staat juist ingesteld volgens de aanbevolen waarden van NOREA.')
+                    print('[*] X-Content-Type-Options staat juist ingesteld volgens de aanbevolen waarden van het NCSC.')
                 else:
-                    print('[!] X-Content-Type-Options voldoet niet aan de eisen van NOREA.')
+                    print('[!] X-Content-Type-Options voldoet niet aan de eisen van het NCSC.')
             except:
                 print('[!] X-Content-Type-Options mist.')
 
@@ -31,9 +30,11 @@ def header_checker(url):
                 # print(content_security)
                 if 'unsafe-eval' or 'unsafe-inline' in content_security:
                     if 'nonce' in content_security:
-                        print('[!] Content-Security-Policy maakt gebruik van unsafe-eval of unsafe-inline met nonce.')
+                        print('[*] Content-Security-Policy maakt gebruik van unsafe-eval of unsafe-inline met nonce.')
                     else:
-                        print(f'[*] Content-Security-Policy maakt gebruik van unsafe-eval of unsafe-inline, mogelijk zonder nonce; controleer dit door in te loggen op {url}.')
+                        print(f'[!] Content-Security-Policy maakt gebruik van unsafe-eval of unsafe-inline, mogelijk zonder nonce; controleer dit door in te loggen op {url}.')
+                else:
+                    print(f'[*] {url} maakt geen gebruik van \'unsafe-eval\' of \'unsafe-inline\'.')
             except:
                 print('[!] Content-Security-Policy mist.')
 
@@ -57,7 +58,7 @@ def header_checker(url):
                 strict_transport_security = resp.headers['Strict-Transport-Security']
                 # print(strict_transport_security)
                 if 'max-age=31536000'  and 'includeSubdomains' in strict_transport_security:
-                    print('[*] Strict-Transport voldoet aan de eisen van het NCSC, en heeft de headers max-age=31536000 en includeSubdomains juist ingesteld. ')
+                    print('[*] Strict-Transport voldoet aan de eisen van het NCSC, en heeft de headers max-age en includeSubdomains juist ingesteld. ')
             except:
                 print('[!] Strict-Transport-Security mist.')
 
@@ -67,7 +68,7 @@ def header_checker(url):
                 x_frame_options = resp.headers['X-Frame-Options']
                 # print(x_frame_options)
                 if 'deny' or 'sameorigin' in x_frame_options:
-                    print('[*] X-Frame-Options voldoet aan de eisen van NOREA, en maakt gebruik van deny of sameorigin.')
+                    print('[*] X-Frame-Options voldoet aan de eisen van het NCSC, en maakt gebruik van deny of sameorigin.')
             except:
                 print('[!] X-Frame-Options mist.')
             print('------------')
@@ -76,27 +77,31 @@ def header_checker(url):
             reqmethods = ['GET', 'POST', 'PUT', 'HEAD', 'DELETE', 'OPTIONS', 'TRACE', 'CONNECT', 'TEST']
             headers = ['Server', 'Date', 'Via', 'X-Powered-By', 'X-Country-Code']
 
-            print('\nControleren op onnodige request methodes:')
+            print('\nControleren op overbodige request methodes:')
             print('-----')
             for method in reqmethods:
                 resp = requests.request(method, url)
                 if resp.status_code == 200:
-                    print('[*] Ophalen van response header met request method', method, 'is mogelijk.')
-            print('------------\n')
+                        print('[*] Ophalen van response header met request method', method, 'is mogelijk.')
+            # print('------------\n')
             
-            # print('Controleren op mogelijk overbodige headers:')
-            # print('-----')
+            # print(resp.headers)
             # for header in headers:
-            #     try:
-            #         result = resp.headers[header]
-            #         print(header, result)
-            #         if header != None:
-            #             print('[i] %s: %s' % (header, result))
-            #         else:
-            #             print('[i] Geen mogelijk overbodige headers gevonden.')
-            #     except Exception as e:
-            #         return False
-            # print('------------')
+            #     if header in resp.headers:
+            #         print(header, resp.headers[header])
+            #         print('Controleren op mogelijk overbodige headers:')
+            #         print('-----')
+            #         for h in headers:
+            #             # print(headers)
+            #             try:
+            #                 result = resp.headers[h]
+            #                 if len(result) != 0:
+            #                     print('[i] %s: %s' % (h, result))
+            #                 else:
+            #                     print('[i] Geen overbodige headers gevonden.')
+            #             except Exception as e:
+            #                 return False
+            #         print('------------')
 
         else:
             print('[!] HTTP header niet kunnen ophalen.')
