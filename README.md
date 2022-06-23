@@ -6,7 +6,7 @@ NCSC-Vulnscan is een tool die gebaseerd is op de normen van het NCSC. Aan de han
   - Python kan geïnstalleerd worden op https://www.python.org/ -- het is hierbij belangrijk dat Python aan de PATH-variabelen toevoegd wordt!
   - Nmap kan geïnstalleerd worden op https://nmap.org/download.html
   - Git kan geïnstalleerd worden op https://git-scm.com/download/win -- normaliter niet nodig, maar omdat PyPi momenteel niet de juiste versie van Pybloom installeert moet hij via Git opgehaald worden.
-  2) Installeer Pybloom door het volgende commando uit te voeren in de CMD:
+  2) Installeer Pybloom **vanuit de vulnscan directory** door het volgende commando uit te voeren in de CMD:
   ```shell
   pip install -e git+https://github.com/jaybaird/python-bloomfilter.git#egg=pybloom
   ```
