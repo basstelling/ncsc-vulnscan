@@ -1,6 +1,11 @@
-# Required files:
-urllib3>=1.25.8
-bs4>=0.0.1
-requests>=2.23.0
-nmap>=0.7.1
-datetime
+bitarray==2.5.1
+chardet==3.0.4
+colorama==0.4.4
+lxml==4.8.0
+mechanicalsoup==1.1.0
+python_nmap==0.7.1
+requests==2.23.0
+Scrapy==2.6.1
+setuptools==56.0.0
+termcolor==1.1.0
+urllib3==1.25.8

@@ -1,0 +1,61 @@
+2022-06-23 15:42:15 [scrapy.utils.log] INFO: Scrapy 2.6.1 started (bot: xsscrapy)
+2022-06-23 15:42:15 [scrapy.utils.log] INFO: Versions: lxml 4.8.0.0, libxml2 2.9.12, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 22.4.0, Python 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)], pyOpenSSL 22.0.0 (OpenSSL 1.1.1n  15 Mar 2022), cryptography 36.0.2, Platform Windows-10-10.0.19043-SP0
+2022-06-23 15:42:15 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'xsscrapy',
+ 'CONCURRENT_REQUESTS': '30',
+ 'DOWNLOAD_DELAY': '0',
+ 'DUPEFILTER_CLASS': 'xsscrapy.bloomfilters.BloomURLDupeFilter',
+ 'NEWSPIDER_MODULE': 'xsscrapy.spiders',
+ 'SPIDER_MODULES': ['xsscrapy.spiders']}
+2022-06-23 15:42:15 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.selectreactor.SelectReactor
+2022-06-23 15:42:15 [scrapy.extensions.telnet] INFO: Telnet Password: bf262bc27c8c95a0
+2022-06-23 15:42:15 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2022-06-23 15:42:16 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['xsscrapy.middlewares.InjectedDupeFilter',
+ 'xsscrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-06-23 15:42:16 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-06-23 15:42:16 [scrapy.middleware] INFO: Enabled item pipelines:
+['xsscrapy.pipelines.XSSCharFinder']
+2022-06-23 15:42:16 [scrapy.core.engine] INFO: Spider opened
+2022-06-23 15:42:16 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-06-23 15:42:16 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2022-06-23 15:42:16 [scrapy.core.engine] ERROR: Error while obtaining start requests
+Traceback (most recent call last):
+  File "C:\Users\basst\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\scrapy\core\engine.py", line 150, in _next_request
+    request = next(self.slot.start_requests)
+  File "D:\vulnscan\src\xsscrapy\spiders\xss_spider.py", line 115, in start_requests
+    yield Request(url=self.start_urls[0])
+  File "C:\Users\basst\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\scrapy\http\request\__init__.py", line 60, in __init__
+    self._set_url(url)
+  File "C:\Users\basst\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\scrapy\http\request\__init__.py", line 108, in _set_url
+    raise ValueError(f'Missing scheme in request url: {self._url}')
+ValueError: Missing scheme in request url: vulnweb.com
+2022-06-23 15:42:16 [scrapy.core.engine] INFO: Closing spider (finished)
+2022-06-23 15:42:16 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'elapsed_time_seconds': 0.00248,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2022, 6, 23, 13, 42, 16, 175957),
+ 'log_count/DEBUG': 1,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 10,
+ 'start_time': datetime.datetime(2022, 6, 23, 13, 42, 16, 173477)}
+2022-06-23 15:42:16 [scrapy.core.engine] INFO: Spider closed (finished)

@@ -106,7 +106,7 @@ def header_checker(url):
         else:
             print('[!] HTTP header niet kunnen ophalen.')
 
-
+    # Foute SSL-certificaten opvangen
     except requests.exceptions.SSLError as g:
         print('[!] Website maakt gebruik van een ongeldig SSL certificaat, waardoor de response header niet opgehaald kon worden.')
 

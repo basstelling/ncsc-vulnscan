@@ -2,6 +2,7 @@ from datetime import date, datetime
 import socket
 import subprocess
 import sys
+import time
 import requests
 import os
 from urllib.parse import urlparse
@@ -26,39 +27,48 @@ def cls():
     os.system('cls' if os.name=='nt' else 'clear')
 
 def xss_format(url):
-    xss_command = 'python src\\xsscrapy.py -u %s' % url
+    test_url = url.replace("www.", '')
+    xss_command = 'python src\\xsscrapy.py -u %s' % test_url
     xss_output = subprocess.getoutput(xss_command)
     xss_domain = urlparse(url).netloc.replace('www.', '').split(':')[0]
+    print(xss_domain)
 
-    path_vuln = 'Scans/XSS/XSS-scan--' + xss_domain + '--.txt'
-    path_log = f'Scans/XSS/Logging/Log-XSS--' + xss_domain + '--.txt'
+    # time.sleep(60)
+    path_vuln = f'Scans/XSS/XSS-scan--{xss_domain}--.txt'
+    path_log = f'Scans/XSS/Logging/Log-XSS--{xss_domain}--.txt'
 
     path_vuln_gen = f'Scans/Volledige scans/General-scan--{xss_domain}--{date_now}.txt'
     path_log_gen = f'Scans/Volledige scans/Logging/Log-General-XSS--{xss_domain}--{date_now}.txt'
 
-    with open(path_vuln, 'r') as vuln:
-        data = vuln.read()
-    
-    with open(path_vuln, 'w') as modified:
-        modified.write(f"[!] Mogelijke XSS-kwetsbaarheden op {xss_domain}:\n---" + data)
-
     with open(path_log,'w+') as f:
         f.write(xss_output)
 
-    if get_resp() == '6':
-        path_save_data = path_vuln_gen
-        with open(path_vuln_gen, 'w+') as general:
-            general.write(data)
-            os.remove(path_vuln)
+    try:
+        with open(path_vuln, 'r') as vuln:
+            data = vuln.read()
         
-        with open(path_log_gen, 'w+') as log_general:
-            log_general.write(xss_output)
-            os.remove(path_log)
+        with open(path_vuln, 'w') as modified:
+            modified.write(f"[!] Mogelijke XSS-kwetsbaarheden op {xss_domain}:\n---" + data)
+
+        if get_resp() == '6':
+            path_save_data = path_vuln_gen
+            with open(path_vuln_gen, 'w+') as general:
+                general.write(data)
+                os.remove(path_vuln)
+            
+            with open(path_log_gen, 'w+') as log_general:
+                log_general.write(xss_output)
+                os.remove(path_log)
+    except FileNotFoundError as e:
+        print("[!] Er is iets misgegaan bij het opzoeken van het XSS-bestand; waarschijnlijk zijn er geen XSS-kwetsbaarheden gevonden op " + test_url + ". Controleer het bijbehorende log-bestand.")
         
     if get_resp() == '5':
-        path_save_data = f'Scans/XSS/XSS-scan--{xss_domain}--' + date_now +  '.txt'
-        os.rename(path_vuln, f'Scans/XSS/XSS-scan--{xss_domain}--' + date_now +  '.txt')
-        os.rename(path_log, f'Scans/XSS/Logging/Log-XSS--{xss_domain}--' + date_now +  '.txt')
+        try:
+            path_save_data = f'Scans/XSS/XSS-scan--{xss_domain}--{date_now}.txt'
+            os.rename(path_vuln, f'Scans/XSS/XSS-scan--{xss_domain}--{date_now}.txt')
+        except FileNotFoundError:
+            ("[!] Zie bovenstaande.")
+        os.rename(path_log, f'Scans/XSS/Logging/Log-XSS--{xss_domain}--{date_now}.txt')
     
     if saveData == False:
         with open(path_save_data, 'r') as r:
@@ -80,19 +90,22 @@ def check_url(url):
 
 try:
     cls()
-    resp = input("[i] Welkom bij deze tool. Welke scan wilt u uitvoeren? Typ 'all' voor alle onderstaande. \n"
+    resp = input("[i] Welkom bij deze tool. Welke scan wilt u uitvoeren? \n"
                 "[i] \t1) Portscan\t\t\t4) Patch Enumeration\n"
                 "[i] \t2) HTTP response header\t\t5) XSS- & SQLi-spider\n"
                 "[i] \t3) TLS-versie herkennen\t\t6) Volledige scan\n"
                 "[?] Voer het nummer in van de scan die u wilt uitvoeren: ")
 
     if resp == '1':
-        host = input("[?] Voer het te scannen IP adres in: ")
+        host = input("[?] Voer het te scannen adres in: ")
         ports = input("[?] Voer de te scannen poort(en) in: ")
         if saveData == True:
             with open(r'Scans/Portscan/Port scan '+ host + '-' +date_now + ".txt",'w') as f:
                 sys.stdout = f
                 cls()
+                # if host_digit != True:
+                #     port_scan(host_ip, ports)
+                # else: 
                 port_scan(host, ports)
         else:
             port_scan(host, ports)
@@ -148,8 +161,9 @@ try:
 
             print("[i] Scan wordt uitgevoerd...")
             if saveData == True:
-                with open(r'Scans/Volledige scans/General-scan--' + stripped_url + '--' + date_now + '.txt', 'w') as f:
+                with open(r'Scans/Volledige scans/General-scan--' + stripped_url.replace("www.","") + '--' + date_now + '.txt', 'w') as f:
                     sys.stdout = f
+                    # f.write(stripped_url)
                     f.write("[i] RESULTATEN VAN DE PORTSCAN:\n")
                     print("\t", port_scan('127.0.0.1', '1-11000'))
                     f.write("\n[i] RESULTATEN VAN DE HTTP HEADER CONTROLE: \n")

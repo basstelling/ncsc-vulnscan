@@ -6,10 +6,13 @@ config_file = configparser.ConfigParser()
 def set_config():
     # TLS versies
     config_file.add_section('TLS')
-    config_file.set("TLS", "versie", "TLSv1.0\n"
-    "TLSv1.1\n"
-    "TLSv1.2\n"
-    "TLSv1.3\n")
+    config_file.set("TLS", "Goed", "TLSv1.3")
+    config_file.set("TLS", "Voldoende", "TLSv1.2")
+    config_file.set("TLS", "Uit te faseren", "TLSv1.1")
+    config_file.set("TLS", "Onvoldoende", 
+    "SSL3.0\n"
+    "SSL2.0\n"
+    "SSL1.0\n")
     # Cipher Suites
     config_file.add_section("Cipher Suites")
     config_file.set("Cipher Suites", "goed",
@@ -50,7 +53,7 @@ def set_config():
     "TLS_RSA_WITH_AES_128_CBC_SHA\n"
     "TLS_RSA_WITH_3DES_EDE_CBC_SHA")
 
-    # Te scannen websites
+    # Te scannen websites -- momenteel niet in gebruik
     config_file.add_section("Te scannen websites")
     config_file.set("Te scannen websites", "websites", "https://www.nu.nl")
 
@@ -58,18 +61,18 @@ def set_config():
     config_file.add_section("Export data")
     config_file.set("Export data", "boolean", "True")
 
+    # config file aanmaken en webschrijven naar bestand
     with open(r"ncsc_configs.ini", "w") as configFileObj:
         config_file.write(configFileObj)
         configFileObj.flush()
-        configFileObj.close()
 
-
+# functie om data op te halen uit de config
 def read_config(section, key):
     config_file.read(r'ncsc_configs.ini')
     section = config_file.get(section, key)
     return section
 
-
+# aparte functie om booleans op te halen zodat het degelijk als boolean gereturned wordt ipv string
 def get_boolean(section):
     config_file.read(r'ncsc_configs.ini')
     boolean = config_file.getboolean(section, option='boolean')
