@@ -19,6 +19,17 @@ date_now = str(date.today()) + "--" + str(current_time)
 # check if data needs to be saved according to the config
 saveData = get_boolean("Export data")
 
+try:
+    os.mkdir('Scans/Patch Enumeration')
+    os.mkdir('Scans/TLS')
+    os.mkdir('Scans/HTTP Headers')
+    os.mkdir('Scans/Portscan')
+    os.mkdir('Scans/XSS')
+    os.mkdir('Scans/XSS/Logging')
+    os.mkdir('Scans/Volledige scans')
+    os.mkdir('Scans/Volledige scans/Logging')
+except FileExistsError:
+    print("Directories bestaan al.")
 
 def get_resp():
     return resp
@@ -31,7 +42,6 @@ def xss_format(url):
     xss_command = 'python src\\xsscrapy.py -u %s' % test_url
     xss_output = subprocess.getoutput(xss_command)
     xss_domain = urlparse(url).netloc.replace('www.', '').split(':')[0]
-    print(xss_domain)
 
     # time.sleep(60)
     path_vuln = f'Scans/XSS/XSS-scan--{xss_domain}--.txt'
@@ -165,16 +175,18 @@ try:
                     sys.stdout = f
                     # f.write(stripped_url)
                     f.write("[i] RESULTATEN VAN DE PORTSCAN:\n")
-                    print("\t", port_scan('127.0.0.1', '1-11000'))
+                    # print(port_scan(url, 6000))
+                    print(port_scan('127.0.0.1', '1-11000'))
                     f.write("\n[i] RESULTATEN VAN DE HTTP HEADER CONTROLE: \n")
-                    print("\t",header_checker(url))
+                    print(header_checker(url))
                     f.write("\n[i] RESULTATEN VAN DE TLS-SCAN:\n")
-                    print("\t",find_tls(url))
+                    print(find_tls(url))
                     f.write("\n[i] MOGELIJKE XSS-KWETSBAARHEDEN: \n")
                     xss_format(url)
                 
             else:
                 print("Poort scan:")
+                # print(port_scan(url, 6000))
                 print(port_scan('127.0.0.1', '1-100'))
                 print("\nHTTP response header checker:")
                 print(header_checker(url))
@@ -186,6 +198,8 @@ try:
     
         else: 
             print(f"[!] De ingevoerde URL {url} bestaat niet of is offline. Controleer de URL en probeer het opnieuw.")
+    else:
+        print("[!] Het ingevoerde nummer komt niet overeen met de nummers van de scans. Probeer het opnieuw.")
 
 except KeyboardInterrupt as e:
     print('\n[!] Scan beëindigd.', e)
