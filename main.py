@@ -28,6 +28,7 @@ try:
     os.mkdir('Scans/XSS/Logging')
     os.mkdir('Scans/Volledige scans')
     os.mkdir('Scans/Volledige scans/Logging')
+    os.mkdir('src/systeminfo')
 except FileExistsError:
     print("Directories bestaan al.")
 
@@ -141,7 +142,7 @@ try:
             find_tls(url)
 
     elif resp == '4':
-            path = "src/data/systeminfo/"
+            path = "systeminfo/"
             filename = input("[?] Wat is de naam van het systeminfo bestand?\n[?] " + path)
             systeminfo_path = path + filename
             update_wesng_command = 'python src/wesng/wes.py --update'
