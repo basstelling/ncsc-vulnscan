@@ -33,7 +33,7 @@ De HTTP-header response checker controleert op de inhoud van waardes volgens het
 TLS-versies worden herkend d.m.v de waarden die meegegeven worden vanuit het ncsc_configs.ini bestand. Op het moment van schrijven (23-06-2022) zijn deze actueel, maar mochten hier veranderingen in komen dan hoeven alleen de waarden in het config bestand vervangen te worden. Het is hierbij belangrijk om de huidige structuur aan te houden.
  
 ### 4) Uitvoeren van Patch Enumeration (WES-NG)
-Om gebruik te maken van de patch enumeration functie, moet er een systeminfo.txt file aanwezig zijn. Deze kunnen opgeslagen worden onder src/data/systeminfo als .txt bestand. Tijdens het uitvoeren van het programma hoeft daarna alleen maar de naam van het bestand ingevoerd te worden, waarna geïnstalleerde KBs worden vergeleken.
+Om gebruik te maken van de patch enumeration functie, moet er een systeminfo.txt file aanwezig zijn. Deze kunnen opgeslagen worden onder src/data/systeminfo als .txt bestand. Tijdens het uitvoeren van het programma hoeft daarna alleen maar de naam van het bestand ingevoerd te worden, waarna geïnstalleerde KBs worden vergeleken. Voor het uitlezen van de resultaten, gebruik https://github.com/bitsadmin/wesng/wiki/Eliminating-false-positives als hulpmiddel.
 
 ### 5) XSS- en SQLi-spider
 De XSS- en SQLi-spider functie is geïmplementeerd met XSScrapy. Deze module controleert, zoals de naam zegt, d.m.v Scrapy op XSS- en SQLi-kwetsbaarheden binnen een webapplicatie. Voor deze functie hoeft alleen een link ingevoerd te worden.
